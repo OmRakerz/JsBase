@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Специальные значения</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 50%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      ("use strict");
+      //Задание №1
+      let a1;
+      alert("Задание №1. Значение переменной: " + a1); // выведет undefined
+
+      //Задание №2
+      let a2 = null;
+      alert("Задание №2. Значение переменной: " + a2); // выведет null
+
+      //Задание №3
+      let a3 = true;
+      alert("Задание №3. Значение переменной: " + a3);
+
+      //Задание №4
+      let a4 = false;
+      alert("Задание №4. Значение переменной: " + a4);
+
+      //Задание №5
+      alert("Задание №5. Значение переменной: " + "Java" * "Script"); // выведет NaN
+
+      //Задание №6
+      alert("Задание №6. Результат деления 10 на 0: " + 10 / 0); // выведет Infinity
+
+      //Задание №7
+      alert("Задание №7. Результат деления -10 на 0: " + -10 / 0); // выведет -Infinity
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №18</h1>
+    <p>Специальные значения</p>
+  </body>
+</html>
