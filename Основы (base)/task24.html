@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Преобразование к строке</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 50%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      ("use strict");
+      //Задание №1
+      let num1 = 2,
+        num2 = 2;
+      alert(
+        "Задание №1. На экран выведется число: " + (String(num1) + String(num2))
+      ); // Т.к произошло обратное преобразование - из числа в строку, получили ответ 22
+
+      //Задание №2
+      let a = 1234567890;
+      alert(
+        `Задание №2. Количество цифр в числе ${a} равна ` + String(a).length
+      ); // чтобы найти длину строки, нужно использовать свойство length
+
+      //Задание №3
+      let x = 12,
+        y = 78;
+      let z = String(x).length,
+        w = String(y).length;
+      let sum = z + w;
+      alert(
+        `Задание №3. Количество цифр в переменной x = ${z} ; Количество цифр в переменной y = ${w}`
+      );
+      alert(`Задание №3.1; Сложение результата, полученного выше = ${sum}`);
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №24</h1>
+    <p>Преобразование к строке</p>
+  </body>
+</html>
