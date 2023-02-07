@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Получение символов строки</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 50%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      //Задание №1
+      let x = "abcde";
+      alert(
+        `Задание №1. На экран выведется из строки ${x} следующие символы:   ` +
+          x[0] +
+          "     " +
+          x[2] +
+          "     " +
+          x[4]
+      );
+
+      //Задание №2
+      let y = "abcde";
+      let z = y[4] + y[3] + y[2] + y[1] + y[0];
+      alert(
+        `Задание №2. Переменная y со строкой: ${y};  Переменная z с обратной строкой: ${z}`
+      );
+
+      //Задание №3
+      let str = "abcde",
+        num = 4;
+      alert(
+        `Задание №3. Вывод на экран символа, номер которого хранится в переменной num, что равен ${num} → ` +
+          str[num]
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №27</h1>
+    <p>Получение символов строки</p>
+  </body>
+</html>
