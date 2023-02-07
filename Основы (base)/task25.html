@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Преобразование логического типа</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 50%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      ("use strict");
+      //Задание №1
+      alert("Задание №1. На экран выведется число: " + (true + 3)); // Т.к. true = 1, поэтому при сложении мы получим ответ 4
+
+      //Задание №2
+      alert("Задание №2. На экран выведется число: " + (true + true)); // Т.к. true = 1, поэтому при сложении мы получим ответ 2
+
+      //Задание №3
+      alert("Задание №3. На экран выведется число: " + (true - true)); // Т.к. true = 1, поэтому при сложении мы получим ответ 0
+
+      //Задание №4
+      alert("Задание №4. На экран выведется число: " + (true + false)); // Т.к. true = 1 а false = 0, поэтому при сложении мы получим ответ 1
+
+      //Задание №5
+      alert("Задание №5. На экран выведется строка: " + ("1" + true)); // всегда побеждает строка, поэтому при их сложении получим ответ 1true
+
+      //Задание №6
+      alert("Задание №6. На экран выведется строка: " + (String(true) + 1)); // произошло преобразованние из булево в строку, а строка всегда побеждает число, поэтому при их сложении получим ответ true1
+
+      //Задание №7
+      alert(
+        "Задание №7. На экран выведется строка: " +
+          (String(true) + Number(true))
+      ); // произошло преобразованние из булево в строку и преобразование из булево в чилсло, а строка всегда побеждает число, поэтому при их сложении получим ответ true1
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №25</h1>
+    <p>Преобразование логического типа</p>
+  </body>
+</html>
