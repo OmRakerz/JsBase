@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Преобразование к логическому типу</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 50%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      ("use strict");
+      //Задание №1
+      let test1 = Boolean(3);
+      alert("Задание №1. На экран выведется: " + test1); // т.к число <> 0, поэтому ответ true
+
+      //Задание №2
+      let test2 = Boolean(0);
+      alert("Задание №2. На экран выведется: " + test2); // т.к число равно 0, поэтому ответ false
+
+      //Задание №3
+      let test3 = Boolean(-1);
+      alert("Задание №3. На экран выведется: " + test3); // т.к число <> 0, поэтому ответ true
+
+      //Задание №4
+      let test4 = Boolean(-0);
+      alert("Задание №4. На экран выведется: " + test4); // т.к число равно 0, поэтому ответ false
+
+      //Задание №5
+      let test5 = Boolean(+0);
+      alert("Задание №5. На экран выведется: " + test5); // т.к число равно 0, поэтому ответ false
+
+      //Задание №6
+      let test6 = Boolean("abc");
+      alert("Задание №6. На экран выведется: " + test6); // т.к. строка не пустая, поэтому ответ true
+
+      //Задание №7
+      let test7 = Boolean("");
+      alert("Задание №7. На экран выведется: " + test7); // т.к. строка пустая, поэтому ответ false
+
+      //Задание №8
+      let test8 = Boolean("0");
+      alert("Задание №8. На экран выведется: " + test8); // т.к. строка не пустая, поэтому ответ true
+
+      //Задание №9
+      let test9 = Boolean(true);
+      alert("Задание №9. На экран выведется: " + test9); // т.к. true = 1, поэтому ответ true
+
+      //Задание №10
+      let test10 = Boolean(false);
+      alert("Задание №10. На экран выведется: " + test10); // т.к. false = 0, поэтому ответ false
+
+      //Задание №11
+      let test11 = Boolean("true");
+      alert("Задание №11. На экран выведется: " + test11); // т.к. строка не пустая, поэтому ответ true
+
+      //Задание №12
+      let test12 = Boolean("false");
+      alert("Задание №12. На экран выведется: " + test12); // т.к. строка не пустая, поэтому ответ true
+
+      //Задание №13
+      let test13 = Boolean(null);
+      alert("Задание №13. На экран выведется: " + test13); // т.к. в null ничего, поэтому ответ false
+
+      //Задание №14
+      let test14 = Boolean("null");
+      alert("Задание №14. На экран выведется: " + test14); // т.к. строка не пустая, поэтому ответ true
+
+      //Задание №15
+      let test15 = Boolean(undefined);
+      alert("Задание №15. На экран выведется: " + test15); // т.к. в undefined значение не было присвоено, поэтому ответ false
+
+      //Задание №16
+      let test16 = Boolean("undefined");
+      alert("Задание №16. На экран выведется: " + test16); // т.к. строка не пустая, поэтому ответ true
+
+      //Задание №17
+      let test17 = Boolean(NaN);
+      alert("Задание №17 На экран выведется: " + test17); // т.к NaN означает вычислительную ошибку, поэтому ответ false
+
+      //Задание №18
+      let test18 = Boolean("NaN");
+      alert("Задание №18. На экран выведется: " + test18); // т.к. строка не пустая, поэтому ответ true
+
+      //Задание №19
+      let test19 = Boolean(3 * "abc");
+      alert("Задание №19. На экран выведется: " + test19); // ответ false
+
+      //Задание №20
+      let test20 = Boolean(Infinity);
+      alert("Задание №20. На экран выведется: " + test20); // т.к. Infinity это бесконечность ∞, поэтому ответ true
+
+      //Задание №21
+      let test21 = Boolean(1 / 0);
+      alert("Задание №21. На экран выведется: " + test21); // ответ true
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №26</h1>
+    <p>Преобразование к логическому типу</p>
+  </body>
+</html>
