@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Преобразование к числу</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 50%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      ("use strict");
+      //Задание №1
+      let a = "10",
+        b = "20";
+      alert(
+        "Задание №1. Сложение переменных, преобразованных в числа: " +
+          (Number(a) + Number(b))
+      ); // ответ 30
+
+      //Задание №2
+      alert(
+        "Задание №2. На экран выведется число: " + (Number("2") + Number("3"))
+      ); //сложение строк, поэтому ответ 5
+
+      //Задание №3
+      alert("Задание №3. На экран выведется число: " + (2 + Number("3"))); // произошло преобразованние из строки в число, поэтому ответ 5
+
+      //Задание №4
+      alert("Задание №4. На экран выведется число: " + ("2" + Number("3"))); // всегда побеждает строка, поэтому ответ 23
+
+      //Задание №5
+      let a5 = +"2";
+      let b5 = +"3";
+      alert("Задание №5. На экран выведется число: " + (a5 + b5)); // Благодаря альтернативе Number (перед строкой ставят знак " + ") произошло преобразованние из строки в число, поэтому ответ 5
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №22</h1>
+    <p>Преобразование к числу</p>
+  </body>
+</html>
