@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Строки с цифрами</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 50%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      //Задание №1
+      let str1 = "12345";
+      alert(
+        `Задание №1. Сумма цифр в строке ${str1} равна ` +
+          (Number(str1[0]) +
+            Number(str1[1]) +
+            Number(str1[2]) +
+            Number(str1[3]) +
+            Number(str1[4]))
+      );
+
+      //Задание №2
+      let num1 = 12345;
+      let str2 = String(num1);
+      alert(
+        `Задание №2. Сумма цифр в числе ${str2} равна ` +
+          (Number(str2[0]) +
+            +Number(str2[1]) +
+            +Number(str2[2]) +
+            +Number(str2[3]) +
+            +Number(str2[4]))
+      );
+
+      //Задание №3
+      let num2 = 12345;
+      let str3 = String(num2);
+      alert(
+        `Задание №3. Произведение цифр в числе ${num2} равна ` +
+          str3[0] * str3[1] * str3[2] * str3[3] * str3[4]
+      );
+
+      //Задание №4
+      let num3 = 12345;
+      let str4 = String(num3);
+      alert(
+        `Задание №4. Перестановка числа ${num3} в обратном порядке: ` +
+          str4[4] +
+          str4[3] +
+          str4[2] +
+          str4[1] +
+          str4[0]
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №29</h1>
+    <p>Строки с цифрами</p>
+  </body>
+</html>
