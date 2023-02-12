@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Функция prompt</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 50%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      let age = prompt("Введите ваш возраст: ");
+      alert("Ваш возраст: " + age);
+
+      // Задание №2
+      let num1 = prompt("Введите первое число");
+      let num2 = prompt("Введите второе число");
+
+      alert(
+        `Задание №2. Сложение чисел ${num1} + ${num2} равно ` +
+          (Number(num1) + Number(num2))
+      );
+
+      // Задание №3
+      let a = prompt("Введите сторону квадрата: ");
+      let S = a ** 2;
+      alert(`Задание№3. Площадь квадарата со стороной ${a} равна ${S}`);
+
+      // Задание №4
+      let b = prompt("Введите большую сторону прямоугольника: ");
+      let c = prompt("Введите меньшую сторону прямоугольника: ");
+      let P = 2 * (Number(b) + Number(c));
+      alert(
+        `Задание№4. Периметр прямоугольника со сторонами ${b} и ${c} равен ` + P
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №33</h1>
+    <p>Функция prompt</p>
+  </body>
+</html>
