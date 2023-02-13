@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ключи массивов из переменных</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 70%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      let arr = ["a", "b", "c"];
+      let key = 2; // запишет ключ в переменную с
+
+      console.log(
+        `Задание №1. Выводим элемент, ключ которого равен ${key}: ` + arr[key]
+      );
+
+      // Задание №2
+      let arr2 = [1, 2, 3, 4, 5];
+      let key1 = 1; // запишет ключ в переменную 2
+      let key2 = 2; // запишет ключ в переменную 3
+
+      console.log(
+        `Задание №2. Сложение элементов, ключи которых равны ${key1} и ${key2}: ` +
+          (arr2[key1] + arr2[key2])
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №45</h1>
+    <p>Ключи массивов из переменных</p>
+  </body>
+</html>
