@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Практика на формулы в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 70%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      //Задание №1
+      let r = prompt("Задание №1. Введите радиус окружности: ");
+      let pi = 3.14;
+      let s1 = 2 * r * pi;
+
+      alert(`Задание №1. Площадь круга с радуисом ${r} равна: ${s1}`);
+
+      //Задание №2
+      let a = prompt("Задание №2. Введите сторону квадрата: ");
+      let s2 = a ** 2;
+      alert(`Задание №2. Площадь квадрата со стороной ${a} равна: ${s2}`);
+
+      //Задание №3
+      let a1 = prompt("Задание №3. Введите большую сторону прямоугольника: ");
+      let b1 = prompt("Задание №3. Введите меньшую сторону прямоугольника: ");
+      let s3 = a1 * b1;
+      alert(
+        `Задание №3. Площадь прямоугольника со сторонами ${a1} и ${b1} равна ${s3} `
+      );
+
+      //Задание №4
+      let a2 = prompt("Введите большую сторону прямоугольника: ");
+      let b2 = prompt("Введите меньшую сторону прямоугольника: ");
+      let p = 2 * (a2 * b2);
+      alert(
+        `Задание №4. Периметр прямоугольника со сторонами ${a2} и ${b2} равен ${p}`
+      );
+
+      //Задание №5
+      let tc = prompt("Введите температуру в градусах Цельсия: ");
+      let res1 = tc * 1.8 + 32;
+      alert(
+        `Задание №5. ${tc} градусов цельсия равняется ${res1} градусам по Фаренгейту`
+      );
+
+      //Задание №6
+      let tf = prompt("Введите температуру в градусах Фаренгейта: ");
+      let res2 = (tf - 32) / 1.8;
+      alert(`
+        "Задание №6. ${tf} градусов по Фаренгейту равняется ${res2} градусам по Цельсию`);
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №37</h1>
+    <p>Практика на формулы в JavaScript</p>
+  </body>
+</html>
