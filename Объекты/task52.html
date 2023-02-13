@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ограничения на ключи объектов</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 70%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      let obj1 = {
+        "1a": 1, // нужны кавычки
+        b2: 2, // можно обращаться с, так и без кавычек
+        "с-с": 3, // нужны кавычки
+        "d 4": 4, // нужны кавычки
+        e5: 5, // можно обращаться с, так и без кавычек
+      };
+      console.log(
+        "Задание №1. К ключу 1а при обращении нужны кавычки: " + obj1["1a"]
+      );
+      console.log(
+        "Задание №1. К ключу b2 можно обращаться с кавычками: " + obj1["b2"]
+      );
+      console.log(
+        "Задание №1. К ключу b2 можно обращаться без кавычек: " + obj1.b2
+      );
+      console.log(
+        "Задание №1. К ключу с-с при обращении нужны кавычки: " + obj1["с-с"]
+      );
+      console.log(
+        "Задание №1. К ключу d 4  при обращении нужны кавычки: " + obj1["d 4"]
+      );
+      console.log(
+        "Задание №1. К ключу e5 можно обращаться с кавычками: " + obj1["e5"]
+      );
+      console.log(
+        "Задание №1. К ключу e5 можно обращаться без кавычек: " + obj1.e5
+      );
+
+      // Задание №2
+      let obj2 = {
+        "1a": 1,
+        b2: 2,
+        "с-с": 3,
+        "d 4": 4,
+        e5: 5,
+      };
+
+      console.log("Задание №2. Исправлено: " + obj2["1a"]);
+      console.log("Задание №2. Результат: " + obj2.b2);
+      console.log("Задание №2. Исправлено: " + obj2["с-с"]);
+      console.log("Задание №2. Исправлено: " + obj2["d 4"]);
+      console.log("Задание №2. Результат: " + obj2.e5);
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №52</h1>
+    <p>Ограничения на ключи объектов</p>
+  </body>
+</html>
