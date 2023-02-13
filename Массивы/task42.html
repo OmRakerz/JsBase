@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Добавление элементов по ключам</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 70%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      let arr1 = [];
+
+      arr1[0] = 1;
+      arr1[1] = 2;
+      arr1[2] = 3;
+
+      console.log("Задание №1. Массив с элементами: " + arr1);
+
+      // Задание №2
+      let arr2 = [1, 2, 3];
+      console.log("Задание №2. Неизмененный массив: " + arr2);
+
+      arr2[3] = 4;
+      arr2[4] = 5;
+      console.log(
+        "Задание №2. В конец массива добавлены два элемента: " + arr2
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №42</h1>
+    <p>Добавление элементов по ключам</p>
+  </body>
+</html>
