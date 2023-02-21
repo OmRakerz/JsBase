@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Константы с массивами или объектами в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 70%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      // const arr1 = ["a", "b", "c"];
+      // arr1[1] = "!"; // перезапишется элемент с индексом 1, т.к. в константе можно изменять значения элементов массива"
+      // console.log(arr1);
+
+      console.log("Задание №1. Выведется массив ['a', '!', 'с']");
+
+      // Задание №2
+      // const arr2 = ["a", "b", "c"];
+      // arr2 = [1, 2, 3];
+      // console.log(arr2);
+
+      console.log(
+        "Задание №2. Выведется ошибка, т.к. константе присваивается новый массив"
+      );
+
+      // Задание №3
+      // const arr3 = ["a", "b", "c"];
+      // arr3 = ["a", "b", "c"];
+      // console.log(arr3);
+
+      console.log(
+        "Задание №3. Выведется ошибка, т.к. присваивать константе новые значения нельзя"
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №69</h1>
+    <p>Константы с массивами или объектами</p>
+  </body>
+</html>
