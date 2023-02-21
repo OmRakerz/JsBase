@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Группировка условий в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 70%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      let num1 = 3;
+
+      if ((num1 > 5 && num1 < 10) || num1 == 20) {
+        console.log("+++");
+      } else {
+        console.log("Задание №1. Выведется " + "---");
+      }
+
+      // Задание №2
+      let num2 = 3;
+
+      if (num2 > 5 || (num2 > 0 && num2 < 3)) {
+        console.log("+++");
+      } else {
+        console.log("Задание №2. Выведется " + "---");
+      }
+
+      // Задание №3
+      let num3 = 3;
+
+      if (num3 == 9 || (num3 > 10 && num3 < 20) || (num3 > 20 && num3 < 30)) {
+        console.log("+++");
+      } else {
+        console.log("Задание №3. Выведется " + "---");
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №84</h1>
+    <p>Группировка условий</p>
+  </body>
+</html>
