@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вычисляемые свойства</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 70%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      // let key = 'x';
+      // let obj = {
+      // 	key: 1,
+      // 	y: 2,
+      // 	z: 3
+      // };
+
+      let key = "x";
+
+      let obj1 = {
+        [key]: 1,
+        y: 2,
+        z: 3,
+      };
+      console.log(obj1[key]);
+
+      // Задание №2
+
+      let key1 = "x";
+      let key2 = "y";
+      let key3 = "z";
+
+      let obj2 = {
+        [key1]: 1,
+        [key2]: 2,
+        [key3]: 3,
+      };
+
+      console.log(obj2);
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №61</h1>
+    <p>Вычисляемые свойства</p>
+  </body>
+</html>
