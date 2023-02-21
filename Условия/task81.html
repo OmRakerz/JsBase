@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Логическое И в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 70%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      let num = prompt("Введите число для переменной num: ");
+
+      if (num > 0 && num < 5) {
+        console.log(
+          "Задание №1. Значение переменной num больше нуля и меньше 5"
+        );
+      } else {
+        console.log(
+          "Задание №1. Значение переменной num не удовлетворяет условию задания"
+        );
+      }
+
+      // Задание №2
+      if (num >= 10 && num <= 20) {
+        console.log(
+          "Задание №2. Значение переменной num больше или равно 10 и меньше или равно 20"
+        );
+      } else {
+        console.log(
+          "Задание №2. Значение переменной num не удовлетворяет условию задания"
+        );
+      }
+
+      // Задание №3
+      let num1 = prompt("Введите число для переменной num1: ");
+      let num2 = prompt("Введите число для переменной num2: ");
+      if (num1 <= 1 && num2 >= 3) {
+        console.log(
+          "Задание №3. Значение переменной num1 меньше или равно 1, а значение второй переменной num2 больше или равно 3"
+        );
+      } else {
+        console.log(
+          "Задание №3. Значения num1 или num2 не удовлетворяют условию задания"
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №81</h1>
+    <p>Логическое И(&&)</p>
+  </body>
+</html>
