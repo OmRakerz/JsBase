@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Конструкция else if в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 70%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+
+      let day = prompt("Задание №1. Введите число от 1 до 31: ");
+
+      if (day >= 1 && day <= 10) {
+        console.log(
+          "Задание №1. Введённое число попадает в первую декаду месяца"
+        );
+      } else if (day >= 11 && day <= 20) {
+        console.log(
+          "Задание №1. Введённое число попадает во вторую декаду месяца"
+        );
+      } else {
+        console.log(
+          "Задание №1. Введённое число попадает в третью декаду месяца"
+        );
+      }
+
+      // Задание №2
+
+      if (day >= 1 && day <= 10) {
+        console.log(
+          "Задание №2. Введённое число попадает в первую декаду месяца"
+        );
+      } else if (day >= 11 && day <= 20) {
+        console.log(
+          "Задание №2. Введённое число попадает во вторую декаду месяца"
+        );
+      } else if (day >= 21 && day <= 31) {
+        console.log(
+          "Задание №2. Введённое число попадает в третью декаду месяца"
+        );
+      } else {
+        console.log(
+          "Задание №2. Введённое число не попадает ни в одну декаду месяца"
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №94</h1>
+    <p>Конструкция else if</p>
+  </body>
+</html>
