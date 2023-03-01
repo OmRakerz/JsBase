@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вложенные конструкции if-else в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 70%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+
+      let num = prompt("Задание №1. Введите число от 10 до 99: ");
+
+      if (num >= 10 && num <= 99) {
+        sum = Number(num[0]) + Number(num[1]);
+        console.log("Задание №1. Сумма цифр введённого числа равно: " + sum);
+        if (sum <= 9) {
+          console.log("Сумма однозначна");
+        } else {
+          console.log("Сумма двухзначна");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №95</h1>
+    <p>Вложенные конструкции if-else</p>
+  </body>
+</html>
