@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Конструкция switch-case в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 70%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+
+      // let lang = 'ru';
+      // if (lang == 'ru') {
+      // 	console.log('рус');
+      // } else if (lang == 'en') {
+      // 	console.log('анг');
+      // } else if (lang == 'de') {
+      // 	console.log('нем');
+      // } else {
+      // 	console.log('язык не поддерживается');
+      // }
+
+      console.log("Задание №1. Переписан код через switch-case:");
+
+      let lang = "ru";
+
+      switch (lang) {
+        case "ru":
+          console.log("рус");
+          break;
+        case "en":
+          console.log("анг");
+          break;
+        case "de":
+          console.log("нем");
+          break;
+        default:
+          console.log("язык не поддерживается");
+          break;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №96</h1>
+    <p>Конструкция switch-case</p>
+  </body>
+</html>
