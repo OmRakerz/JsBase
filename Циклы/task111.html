@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for loop in JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      // Вывод в консоль чисел от 1 до 100
+      for (let i = 1; i <= 100; i++) {
+        console.log("Зад.1: " + i);
+      }
+
+      console.log("-------------------------");
+
+      // Задание №2
+      // Вывод в консоль чисел от 11 до 33
+      for (let i = 11; i <= 33; i++) {
+        console.log("Зад.2: " + i);
+      }
+
+      console.log("-------------------------");
+
+      // Задание №3
+      // Вывод в консоль чётных чисел в промежутке от 0 до 100
+      for (let i = 0; i <= 100; i += 2) {
+        console.log("Зад.3: " + i);
+      }
+
+      console.log("-------------------------");
+
+      // Задание №4
+      // Вывод в консоль нечетных чисел в промежутке от 1 до 99.
+      for (let i = 1; i <= 99; i++) {
+        if (i % 2 != 0) {
+          console.log("Зад.4: " + i);
+        }
+      }
+
+      console.log("-------------------------");
+
+      // Задание №5
+      // Вывод в консоль чисел от 100 до 0
+      for (let i = 100; i >= 0; i--) {
+        console.log("Зад.5: " + i);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №111</h1>
+    <p>for loop in JavaScript</p>
+  </body>
+</html>
