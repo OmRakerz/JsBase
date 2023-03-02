@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Практика на условия if-else в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      let month = 4;
+
+      if (month == 12 || month == 1 || month == 2) {
+        console.log("Задание №1. Зима");
+      } else if (month == 3 || month == 4 || month == 5) {
+        console.log("Задание №1. Весна");
+      } else if (month == 6 || month == 7 || month == 8) {
+        console.log("Задание №1. Лето");
+      } else if (month == 9 || month == 10 || month == 11) {
+        console.log("Задание №1. Осень");
+      }
+
+      // Задание №2
+      let str = "abcde";
+
+      if (str[0] == "a") {
+        console.log("Задание №2. да");
+      } else {
+        console.log("Задание №2. нет");
+      }
+
+      // Задание №3
+      let num3 = 12345;
+      let first = String(num3);
+
+      if (first[0] == 1 || first[0] == 2 || first[0] == 3) {
+        console.log("Задание №3. да");
+      } else {
+        console.log("Задание №3. нет");
+      }
+
+      // Задание №4
+      let num4 = 356;
+      let strnum4 = String(num4);
+      let sumnum4 =
+        Number(strnum4[0]) +
+        Number(strnum4[1]) +
+        Number(strnum4[strnum4.length - 1]);
+
+      console.log(`Задание №4. Сумма цифр числа ${num4} равно: ${sumnum4}`);
+
+      // Задание №5
+      let num5 = 123015;
+      let strnum5 = String(num5);
+
+      let sumfirst =
+        Number(strnum5[0]) + Number(strnum5[1]) + Number(strnum5[2]);
+      let sumlast =
+        Number(strnum5[3]) + Number(strnum5[4]) + Number(strnum5[5]);
+
+      if (sumfirst == sumlast) {
+        console.log("Задание №5. да");
+      } else {
+        console.log("Задание №5. нет");
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №109</h1>
+    <p>Практика на условия if-else</p>
+  </body>
+</html>
