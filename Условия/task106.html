@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Проверка цифр числа в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+
+      let num1 = 12340;
+      let last1 = String(num1);
+
+      if (last1[last1.length - 1] == 0) {
+        console.log(`Задание №1. Последняя цифра числа ${num1} равна 0`);
+      } else {
+        console.log(`Задание №1. Последняя цифра числа ${num1} не равна 0`);
+      }
+
+      // Задание №2
+
+      let num2 = 2048;
+      let last2 = String(num2);
+
+      if (
+        last2[last2.length - 1] == 0 ||
+        last2[last2.length - 1] == 2 ||
+        last2[last2.length - 1] == 4 ||
+        last2[last2.length - 1] == 6 ||
+        last2[last2.length - 1] == 8
+      ) {
+        console.log(`Задание №2. Число ${num2} чётное`);
+      } else {
+        console.log(`Задание №2. Число ${num2} не чётное`);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №106</h1>
+    <p>Проверка цифр числа в JavaScript</p>
+  </body>
+</html>
