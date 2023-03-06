@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Накопление элементов массивов в циклах JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+
+      let arr1 = [2, 5, 9, 3, 1, 4];
+      let sum1 = 0;
+
+      for (let i of arr1) {
+        sum1 += i;
+      }
+      console.log(
+        `Задание №1. Сумма элементов массива arr1: ${arr1} равна: ${sum1}`
+      );
+
+      console.log("-----------------");
+
+      // Задание №2
+      let arr2 = [2, 5, 9, 3, 1, 4];
+      let sum2 = 0;
+
+      for (let i of arr2) {
+        if (i % 2 == 0) {
+          sum2 += i;
+        }
+      }
+      console.log(
+        `Задание №2. Сумма элементов массива arr2: ${arr2}, которые являются чётными: ${sum2}`
+      );
+
+      console.log("-----------------");
+
+      // Задание №3
+      let arr3 = [2, 5, 9, 3, 1, 4];
+      let sum3 = 0;
+
+      for (let i of arr3) {
+        sum3 += i ** 2;
+      }
+      console.log(
+        `Задание №3. Сумма квадратов элементов массива arr3: ${arr3} равна: ${sum3}`
+      );
+
+      console.log("-----------------");
+
+      // Задание №4
+      let arr4 = [2, 5, 9, 3, 1, 4];
+      let mul = 1;
+
+      for (let i of arr4) {
+        mul *= i;
+      }
+      console.log(
+        `Задание №4. Произведение элементов массива arr4: ${arr4} равна: ${mul}`
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №118</h1>
+    <p>Накопление элементов массивов в циклах</p>
+  </body>
+</html>
