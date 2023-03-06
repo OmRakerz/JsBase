@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Цифры числа при переборе циклом JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+
+      for (let i = 10; i <= 1000; i++) {
+        let first = String(i);
+        console.log(
+          "Задание №1. Первая цифра каждого числа, находящаяся в промежутке от 10 до 1000: " +
+            first[0]
+        );
+      }
+
+      console.log(
+        "-----------------------------------------------------------------------"
+      );
+
+      // Задание №2
+      let sum1 = 0;
+
+      for (let i = 10; i <= 1000; i++) {
+        let str = String(i); // преобразуем число в строку
+        sum1 = Number(str[0]) + Number(str[1]);
+        console.log(
+          "Задание №2. Cумма первой и второй цифры каждого числа, находящаяся в промежутке от 10 до 1000:" +
+            sum1
+        );
+      }
+
+      console.log(
+        "-----------------------------------------------------------------------"
+      );
+
+      // Задание №3
+      for (let i = 10; i <= 1000; i++) {
+        let first1 = String(i); // преобразуем число в строку
+        if (first1[0] == 1) {
+          console.log(
+            "Задание №3. Числа, где первая цифра которых равна 1 на промежутке от 10 до 1000 " +
+              Number(first1)
+          );
+        } else {
+          continue;
+        }
+      }
+
+      console.log(
+        "-----------------------------------------------------------------------"
+      );
+
+      // Задание №4
+      for (let i = 10; i <= 1000; i++) {
+        let sum2 = String(i); // преобразуем число в строку
+        if (Number(sum2[0]) + Number(sum2[1]) == 5) {
+          console.log(
+            "Задание №4. Числа, где сумма двух первых цифр которых равна 5 на промежутке от 10 до 1000. " +
+              Number(sum2)
+          );
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №120</h1>
+    <p>Цифры числа при переборе циклом</p>
+  </body>
+</html>
