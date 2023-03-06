@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Формирование строк через циклы в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      let str1 = "";
+
+      for (let i = 0; i < 5; i++) {
+        str1 += "-";
+      }
+      console.log("Задание №1. Строка с 5-тью дефисами: " + str1);
+
+      console.log("-----------------");
+
+      // Задание №2
+      let str2 = "";
+
+      for (let i = 1; i <= 9; i++) {
+        str2 += i;
+      }
+      console.log("Задание №2. Строка из чисел: " + str2);
+
+      console.log("-----------------");
+
+      // Задание №3
+      let str3 = "";
+
+      for (let i = 9; i > 0; i--) {
+        str3 += i;
+      }
+      console.log("Задание №3. Строка из чисел в обратном порядке: " + str3);
+
+      console.log("-----------------");
+
+      // Задание №4
+      let str4 = "";
+
+      for (let i = 1; i <= 9; i++) {
+        str4 += "-" + i;
+      }
+      console.log("Задание №4. Строка из чисел и дефисов: " + str4);
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №119</h1>
+    <p>Формирование строк через циклы</p>
+  </body>
+</html>
