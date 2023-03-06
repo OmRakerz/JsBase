@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Цикл for для массивов в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      let arr1 = ["a", "b", "c", "d", "e"];
+
+      for (let i = 0; i < arr1.length; i++) {
+        console.log("Задание №1. Элемент массива arr1: " + arr1[i]);
+      }
+
+      console.log("-----------------");
+
+      // Задание №2
+      let arr2 = ["a", "b", "c", "d", "e"];
+
+      for (let i = 1; i < arr2.length - 1; i++) {
+        console.log("Задание №2. Элемент массива arr2: " + arr2[i]);
+      }
+
+      console.log("-----------------");
+
+      // Задание №3
+      let arr3 = ["a", "b", "c", "d", "e"];
+
+      for (let i = arr3.length - 1; i >= 0; i--) {
+        console.log("Задание №3. Элемент массива arr3: " + arr3[i]);
+      }
+
+      console.log("-----------------");
+
+      // Задание №4
+      let arr4 = ["a", "b", "c", "d", "e"];
+
+      for (let i = 0; i <= arr4.length - 1; i++) {
+        console.log("Задание №4. Исправлена ошибка в коде: " + arr4[i]);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №115</h1>
+    <p>Цикл for для массивов</p>
+  </body>
+</html>
