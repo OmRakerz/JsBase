@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Инструкция continue в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      // Инструкция continue, запускает новую итерацию цикла
+
+      let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+      for (let elem of arr) {
+        let result;
+
+        if (elem % 2 == 0) {
+          result = elem * elem;
+        } else if (elem % 3 == 0) {
+          result = elem * elem * elem;
+        } else {
+          continue; // перейдем на новую итерацию цикла
+        }
+
+        console.log(result); // выполнится, если делится на 2 или 3
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №122</h1>
+    <p>Инструкция continue</p>
+  </body>
+</html>
