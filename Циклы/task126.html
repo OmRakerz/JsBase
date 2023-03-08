@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Заполнение массива в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      let arr1 = [];
+
+      for (let i = 1; i <= 10; i++) {
+        arr1.push(i); // заполняет массив данными
+      }
+      console.log("Задание №1. Массив чисел от 1 до 10: " + arr1);
+
+      // Задание №2
+      let arr2 = [];
+
+      for (let i = 1; i <= 10; i++) {
+        arr2.push("x"); // заполняет массив данными
+      }
+      console.log("Задание №2. Массив, заполненный 10-ю буквами 'x': " + arr2);
+
+      // Задание №3
+      let arr31 = [1, -2, 3, -4, 5, -6, 7, -8, 9];
+      let arr32 = [];
+
+      for (let i = 0; i <= arr31.length - 1; i++) {
+        if (arr31[i] >= 0) {
+          arr32.push(arr31[i]); // заполняет массив данными arr32 из arr31
+        }
+      }
+      console.log(
+        "Задание №3. Перебор массива чисел и их запись, но только положительных чисел: " +
+          arr32
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №126</h1>
+    <p>Заполнение массива</p>
+  </body>
+</html>
