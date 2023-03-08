@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Отработка циклов JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      console.log(
+        "Задание №1. Вывести с помощью цикла столбец чисел от 1 до 100: "
+      );
+
+      for (let i = 1; i <= 100; i++) {
+        console.log(i);
+      }
+
+      console.log("-------------------------------------");
+
+      // Задание №2
+      console.log(
+        "Задание №2. Вывести с помощью цикла столбец чисел от 100 до 1: "
+      );
+
+      for (let i = 100; i >= 1; i--) {
+        console.log(i);
+      }
+
+      console.log("-------------------------------------");
+
+      // Задание №3
+      console.log(
+        "Задание №3. Вывести с помощью цикла столбец четных чисел от 1 до 100: "
+      );
+
+      for (let i = 1; i <= 100; i++) {
+        if (i % 2 == 0) {
+          console.log(i);
+        }
+      }
+
+      console.log("-------------------------------------");
+
+      // Задание №4
+      console.log("Задание №4. Заполнить массив 10-ю 'x' с помощью цикла: ");
+
+      let arr4 = [];
+
+      for (let i = 1; i <= 10; i++) {
+        arr4.push("x"); // заполняет массив данными
+      }
+
+      console.log(arr4);
+
+      console.log("-------------------------------------");
+
+      // Задание №5
+      console.log(
+        "Задание №5. Заполнить массив числами от 1 до 10 с помощью цикла: "
+      );
+
+      let arr5 = [];
+
+      for (i = 1; i <= 10; i++) {
+        arr5.push(i);
+      }
+
+      console.log(arr5);
+
+      console.log("-------------------------------------");
+
+      // Задание №6
+      console.log(
+        "Задание №6. С помощью цикла вывести только те элементы массива, которые больше нуля и меньше 10-ти: "
+      );
+
+      let arr6 = [1, 3, 32, 67, 123, 5, 9, 6, 2];
+
+      for (let elem of arr6) {
+        if (elem > 0 && elem < 10) {
+          console.log(elem);
+        }
+      }
+
+      console.log("-------------------------------------");
+
+      // Задание №7
+      console.log(
+        "Задание №7. С помощью цикла проверить, что в нем есть элемент со значением 5: "
+      );
+
+      let arr7 = [1, 3, 32, 67, 123, 5, 9, 6, 2];
+      let flag7 = false;
+
+      for (let elem of arr7) {
+        if (elem == 5) {
+          flag7 = true;
+          break;
+        }
+      }
+
+      console.log(flag7);
+
+      console.log("-------------------------------------");
+
+      // Задание №8
+      console.log(
+        "Задание №8. С помощью цикла найти сумму элементов этого массива: "
+      );
+
+      let arr8 = [1, 3, 32, 67, 123, 5, 9, 6, 2];
+      let res8 = 0;
+
+      for (let elem of arr8) {
+        res8 += elem;
+      }
+
+      console.log(res8);
+
+      console.log("-------------------------------------");
+
+      // Задание №9
+      console.log(
+        "Задание №9. С помощью цикла найти сумму квадратов элементов этого массива: "
+      );
+
+      let arr9 = [1, 3, 32, 67, 123, 5, 9, 6, 2];
+      let res9 = 0;
+
+      for (let elem of arr9) {
+        res9 += elem ** 2;
+      }
+
+      console.log(res9);
+
+      console.log("-------------------------------------");
+
+      // Задание №10
+      console.log(
+        "Задание №10. Найти среднее арифметическое элементов этого массива: "
+      );
+
+      let arr10 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      res10 = 0;
+
+      for (let elem of arr10) {
+        res10 += elem;
+      }
+
+      res10 = res10 / arr10.length;
+
+      console.log(res10);
+
+      console.log("-------------------------------------");
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №137</h1>
+    <p>Отработка циклов</p>
+  </body>
+</html>
