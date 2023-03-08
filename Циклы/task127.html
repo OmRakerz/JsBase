@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Изменение массива в цикле JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      let arr1 = [1, 2, 3, 4, 5];
+
+      for (let i = 0; i <= arr1.length - 1; i++) {
+        arr1[i] = arr1[i] ** 2;
+      }
+      console.log(
+        "Задание №1. Каждый элемент массива возведён в квадрат: " + arr1
+      );
+
+      // Задание №2
+      let arr2 = [5, 6, 7, 8, 9];
+
+      for (let i = 0; i <= arr2.length - 1; i++) {
+        arr2[i] -= 1;
+      }
+      console.log("Задание №2. Каждый элемент массива уменьшен на 1: " + arr2);
+
+      // Задание №3
+      let arr3 = [1, 2, 3, 4, 5];
+
+      for (let i = 0; i <= arr3.length - 1; i++) {
+        arr3[i] += 10;
+      }
+      console.log(
+        "Задание №3. К каждому элементу массива добавлено число 10: " + arr3
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №127</h1>
+    <p>Изменение массива в цикле</p>
+    <p>
+      Элементы массивов можно изменять в циклах. Для этого нужно перебирать
+      массивы обычным циклом <i>for</i>
+    </p>
+  </body>
+</html>
