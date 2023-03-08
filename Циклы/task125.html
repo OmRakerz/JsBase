@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вложенные циклы и область видимости в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+
+      // Если у нас есть цикл в цикле, то переменные, объявленные во внешнем цикле, будут доступны во внутреннем. В следующем примере переменная num доступна во внутреннем цикле:
+      for (let i = 0; i <= 9; i++) {
+        let num = 3;
+
+        for (let j = 0; j <= 9; j++) {
+          console.log(num); // выведет 3
+        }
+      }
+
+      // А вот снаружи внешнего цикла переменная num недоступна:
+      // for (let i = 0; i <= 9; i++) {
+      // 	let num = 3;
+
+      // 	for (let j = 0; j <= 9; j++) {
+
+      // 	}
+      // }
+      // console.log(num); // выдаст ошибку
+
+      // Переменные, объявленные во внутреннем цикле, недоступны снаружи:
+      // for (let i = 0; i <= 9; i++) {
+      // 	for (let j = 0; j <= 9; j++) {
+      // 		let num = 3;
+      // 	}
+
+      // 	console.log(num); // выдаст ошибку
+      // }
+      // console.log(num); // выдаст ошибку
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №125</h1>
+    <p>Вложенные циклы и область видимости</p>
+
+    <br />
+
+    <p>
+      Если у нас есть цикл в цикле, то переменные, объявленные во внешнем цикле,
+      будут доступны во внутреннем.
+    </p>
+
+    <p>Переменные, объявленные во внутреннем цикле, недоступны снаружи</p>
+  </body>
+</html>
