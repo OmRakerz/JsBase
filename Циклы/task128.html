@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Заполнение объектов через цикл в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      console.log(
+        "Задание №1. Создан объект ключами которого стали названия дней из массива arr1, а значениями - их номера из массива arr2: "
+      );
+
+      let arr1 = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"];
+      let arr2 = [1, 2, 3, 4, 5, 6, 7];
+      let obj1 = {};
+      for (let i = 0; i <= 8; i++) {
+        obj1[arr1[i]] = arr2[i];
+      }
+      console.log(obj1);
+
+      // Задание №2
+      console.log(
+        "Задание №2. Создан объект, в котором взяты элементы из obj21, которые в свою очередь являются четными числами:"
+      );
+
+      let obj21 = { a: 1, b: 2, c: 3, d: 4, e: 5 };
+      let obj22 = {};
+
+      for (let key in obj21) {
+        if (obj21[key] % 2 == 0) {
+          obj22[key] = obj21[key];
+        }
+      }
+      console.log(obj22);
+
+      // Задание №3
+      console.log(
+        "Задание №3. Создан объект, в котором его ключами стали элементы старого объекта, а значениями - ключи старого объекта. "
+      );
+
+      let oldObj = { a: 1, b: 2, c: 3, d: 4, e: 5 };
+      let newObj = {};
+
+      for (let key in oldObj) {
+        let newKey = oldObj[key];
+        let newValue = key;
+
+        newObj[newKey] = newValue;
+      }
+      console.log(" Старый объект: ");
+      console.log(oldObj);
+      console.log(" Новый объект: ");
+      console.log(newObj);
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №128</h1>
+    <p>Заполнение объектов через цикл</p>
+  </body>
+</html>
