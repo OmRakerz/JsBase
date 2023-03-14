@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Перебор многомерных структур JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      console.log("Задание №1.");
+
+      let data = {
+        1: ["data11", "data12", "data13"],
+        2: ["data21", "data22", "data23"],
+        3: ["data31", "data32", "data33"],
+        4: ["data41", "data42", "data43"],
+      };
+
+      //  первый цикл должен быть по объекту
+      for (let key in data) {
+        //  второй цикл должен быть по массиву
+        for (let value of data[key]) {
+          console.log(value);
+        }
+      }
+
+      console.log("-------------------------------------");
+
+      // Задание №2
+      console.log("Задание №2.");
+
+      let data2 = [
+        {
+          1: "data11",
+          2: "data12",
+          3: "data13",
+        },
+        {
+          1: "data21",
+          2: "data22",
+          3: "data33",
+        },
+        {
+          1: "data31",
+          2: "data32",
+          3: "data33",
+        },
+      ];
+
+      //  первый цикл должен быть по массиву
+      for (let key of data2) {
+        //  второй цикл должен быть по объекту
+        for (let item in key) {
+          console.log(key[item]);
+        }
+      }
+
+      console.log("-------------------------------------");
+
+      // Задание №3
+      console.log("Задание №3.");
+
+      let data3 = [
+        {
+          1: ["data111", "data112", "data113"],
+          2: ["data121", "data122", "data123"],
+        },
+        {
+          1: ["data211", "data212", "data213"],
+          2: ["data221", "data222", "data223"],
+        },
+        {
+          1: ["data411", "data412", "data413"],
+          2: ["data421", "data422", "data423"],
+        },
+      ];
+
+      //  первый цикл должен быть по массиву
+      for (let key of data3) {
+        //  второй цикл должен быть по объекту
+        for (let item in key) {
+          //  третий цикл должен быть по массиву
+          for (let key2 of key[item]) {
+            console.log(key2);
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №146</h1>
+    <p>Перебор многомерных структур</p>
+  </body>
+</html>
