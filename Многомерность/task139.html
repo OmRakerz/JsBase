@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Перебор многомерных массивов в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      let sum1 = 0;
+
+      let arr1 = [[1, 2, 3], [4, 5], [6]];
+
+      for (let subArr of arr1) {
+        for (let elem of subArr) {
+          sum1 += elem;
+        }
+      }
+      console.log("Задание №1. Сумма элементов двумерного массива: " + sum1);
+
+      // Задание №2
+      let sum2 = 0;
+
+      let arr2 = [
+        [
+          [1, 2],
+          [3, 4],
+        ],
+        [
+          [5, 6],
+          [7, 8],
+        ],
+      ];
+
+      for (let mainArr of arr2) {
+        for (let SubMainArr of mainArr) {
+          for (let SubSubMainArr of SubMainArr) {
+            sum2 += SubSubMainArr;
+          }
+        }
+      }
+
+      console.log("Задание №2. Сумма элементов трехмерного массива: " + sum2);
+
+      // Задание №3.1
+      let arr31 = [[1, 2, 3], [4, 5], [6]];
+
+      let sum31 = 0;
+
+      for (let i = 0; i <= arr31.length - 1; i++) {
+        for (let j = 0; j <= arr31[i].length - 1; j++) {
+          sum31 += arr31[i][j];
+        }
+      }
+
+      console.log("Задание №3.1. Сумма элементов двумерного массива: " + sum31);
+
+      // Задание №3.2
+      let arr32 = [
+        [
+          [1, 2],
+          [3, 4],
+        ],
+        [
+          [5, 6],
+          [7, 8],
+        ],
+      ];
+
+      let sum32 = 0;
+
+      for (let i = 0; i < arr32.length; i++) {
+        for (let j = 0; j < arr32[i].length; j++) {
+          for (let k = 0; k < arr32[i][j].length; k++) {
+            sum32 += arr32[i][j][k];
+          }
+        }
+      }
+
+      console.log(
+        "Задание №3.2. Сумма элементов трехмерного массива: " + sum32
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №139</h1>
+    <p>Перебор многомерных массивов</p>
+  </body>
+</html>
