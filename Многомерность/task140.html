@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Заполнение многомерных массивов JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      console.log(
+        "Задание №1. Сформировать следующий массив: [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]"
+      );
+
+      let arr1 = [];
+
+      for (let i = 0; i <= 2; i++) {
+        arr1[i] = []; // создаем подмассив
+        for (let j = 1; j <= 5; j++) {
+          arr1[i].push(j); // заполняем подмассив числами
+        }
+      }
+
+      console.log(arr1);
+
+      // Задание №2
+      console.log(
+        "Задание №2. Сформировать следующий массив: [ ['x', 'x', 'x', 'x'], ['x', 'x', 'x', 'x'], ['x', 'x', 'x', 'x']]"
+      );
+
+      let arr2 = [];
+
+      for (let i = 0; i <= 2; i++) {
+        arr2[i] = [];
+        for (let j = 1; j <= 4; j++) {
+          arr2[i].push("x");
+        }
+      }
+
+      console.log(arr2);
+
+      // Задание №3
+
+      console.log(
+        "Задание №3. Сформировать с помощью трех вложенных циклов массив: "
+      );
+
+      /* 
+    [
+	    [
+		    [1, 2, 3, 4, 5],
+		    [1, 2, 3, 4, 5],
+	    ],
+	    [
+		    [1, 2, 3, 4, 5],
+		    [1, 2, 3, 4, 5],
+	    ],
+	    [
+		    [1, 2, 3, 4, 5],
+		    [1, 2, 3, 4, 5],
+	    ],
+    ] 
+    
+    */
+
+      let arr3 = [];
+
+      for (let i = 0; i <= 2; i++) {
+        arr3[i] = []; // создаем подмассив
+        for (let j = 0; j <= 1; j++) {
+          arr3[i][j] = []; // создаем подмассив подмассива состоящий из 2 массивов
+          for (let k = 1; k <= 5; k++) {
+            arr3[i][j].push(k);
+          }
+        }
+      }
+
+      console.log(arr3);
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №140</h1>
+    <p>Заполнение многомерных массивов</p>
+  </body>
+</html>
