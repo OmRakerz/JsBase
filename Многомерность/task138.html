@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Многомерные массивы в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      console.log(
+        "Задание №1. Вывод следующих элементов:  'l', 'e', 'g' и 'a' "
+      );
+      let arr1 = [
+        ["a", "b", "c"],
+        ["d", "e", "f"],
+        ["g", "h", "i"],
+        ["j", "k", "l"],
+      ];
+
+      console.log(arr1[3][2]); // выведет 'l'
+      console.log(arr1[1][1]); // выведет 'e'
+      console.log(arr1[2][0]); // выведет 'g'
+      console.log(arr1[0][0]); // выведет 'a'
+
+      // Задание №2
+
+      let arr2 = [
+        [1, 2],
+        [3, 4],
+        [5, 6],
+      ];
+
+      let res2 =
+        arr2[0][0] +
+        arr2[0][1] +
+        arr2[1][0] +
+        arr2[1][1] +
+        arr2[2][0] +
+        arr2[2][1];
+
+      console.log("Задание №2. Сумма элементов двумерного массива: " + res2);
+
+      // Задание №3
+
+      let arr3 = [
+        [
+          [1, 2],
+          [3, 4],
+        ],
+        [
+          [5, 6],
+          [7, 8],
+        ],
+      ];
+
+      let res3 =
+        arr3[0][0][0] +
+        arr3[0][0][1] +
+        arr3[0][1][0] +
+        arr3[0][1][1] +
+        arr3[1][0][0] +
+        arr3[1][0][1] +
+        arr3[1][1][0] +
+        arr3[1][1][1];
+
+      console.log("Задание №3. Сумма элементов трехмерного массива: " + res3);
+
+      // Задание №4
+      let arr4 = [
+        [1, 2, 3, [4, 5, [6, 7]]],
+        [8, [9, 10]],
+      ];
+
+      let res41 =
+        arr4[0][0] +
+        arr4[0][1] +
+        arr4[0][2] +
+        arr4[0][3][0] +
+        arr4[0][3][1] +
+        arr4[0][3][2][0] +
+        arr4[0][3][2][1];
+
+      let res42 = arr4[1][0] + arr4[1][1][0] + arr4[1][1][1];
+
+      let result = res41 + res42;
+
+      console.log(
+        "Задание №4. Сумма элементов произвольного массива: " + result
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №138</h1>
+    <p>Многомерные массивы</p>
+  </body>
+</html>
