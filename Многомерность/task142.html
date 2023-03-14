@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Заполнение многомерных массивов по порядку в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      console.log(
+        "Задание №1. Сформировать следующий массив: [[1, 2], [3, 4], [5, 6], [7, 8]]"
+      );
+
+      let arr1 = [];
+      for (let i = 0, k = 1; i < 4; i++) {
+        arr1[i] = [];
+
+        for (let j = 0; j < 2; j++) {
+          arr1[i].push(k++);
+        }
+      }
+      console.log(arr1);
+
+      // Задание №2
+      console.log(
+        "Задание №2. Сформировать следующий массив: [[2, 4, 6], [8, 10, 12], [14, 16, 18], [20, 22, 24]]"
+      );
+
+      let arr2 = [];
+      let k = 0;
+      for (let i = 0; i < 4; i++) {
+        arr2[i] = [];
+
+        for (let j = 0; j < 3; j++) {
+          k += 2;
+          arr2[i].push(k);
+        }
+      }
+
+      console.log(arr2);
+
+      // Задание №3
+      console.log(
+        "Задание №3. Сформировать с помощью трех вложенных циклов следующий массив: [  [ [1, 2], [3, 4] ], [ [5, 6], [7, 8] ]  ] "
+      );
+
+      let arr3 = [];
+      for (let i = 0, p = 1; i < 2; i++) {
+        arr3[i] = [];
+
+        for (let j = 0; j < 2; j++) {
+          arr3[i][j] = [];
+
+          for (let k = 0; k < 2; k++) {
+            arr3[i][j].push(p++);
+          }
+        }
+      }
+      console.log(arr3);
+
+      // Задание №4
+      console.log(
+        "Задание №4. Должен вывести массив: [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ]"
+      );
+
+      //   let arr = [];
+      //   for (let i = 0; i < 3; i++) {
+      //     arr[i] = [];
+
+      //     for (let j = 0; j < 3; j++) {
+      //       arr[i][j] = k;
+      //       k++;
+      //     }
+      //   }
+      //   console.log(arr);
+
+      // Исправленный код:
+      let arr4 = [];
+
+      for (let i = 0, k = 1; i < 3; i++) {
+        arr4[i] = [];
+
+        for (let j = 0; j < 3; j++) {
+          arr4[i].push(k);
+          k++;
+        }
+      }
+      console.log(arr4);
+
+      // Задание №5
+      console.log(
+        "Задание №5. Должен вывести массив: [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ]"
+      );
+
+      //   let arr = [];
+      //   let k = 1;
+
+      //   for (let i = 0; i < 3; i++) {
+      //     arr[i] = [];
+
+      //     for (let j = 0; j < 3; j++) {
+      //       arr[i][j] = k;
+      //     }
+      //   }
+      //   console.log(arr);
+
+      // Исправленный код:
+      let arr5 = [];
+      let k5 = 1;
+
+      for (let i = 0; i < 3; i++) {
+        arr5[i] = [];
+
+        for (let j = 0; j < 3; j++) {
+          arr5[i].push(k5++);
+        }
+      }
+
+      console.log(arr5);
+      // Задание №6
+      console.log(
+        "Задание №6. Должен вывести массив: [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ]"
+      );
+
+      //   let arr = [];
+      //   let k = 1;
+
+      //   for (let i = 0; i < 3; i++) {
+      //     arr[i] = [];
+
+      //     for (let j = 0; j < 3; j++) {
+      //       arr[i][j] = k;
+      //       k--;
+      //     }
+      //   }
+      //   console.log(arr);
+
+      // Исправленный код:
+      let arr6 = [];
+      let k6 = 1;
+
+      for (let i = 0; i < 3; i++) {
+        arr6[i] = [];
+
+        for (let j = 0; j < 3; j++) {
+          arr6[i][j] = k6;
+          k6++;
+        }
+      }
+
+      console.log(arr6);
+      // Задание №7
+      console.log(
+        "Задание №7. Должен вывести массив: [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ]"
+      );
+
+      //   let arr = [];
+      //   let k;
+
+      //   for (let i = 0; i < 3; i++) {
+      //     arr[i] = [];
+
+      //     for (let j = 0; j < 3; j++) {
+      //       arr[i][j] = k;
+      //       k++;
+      //     }
+      //   }
+      //   console.log(arr);
+
+      // Исправленный код:
+      let arr7 = [];
+      let k7 = 1;
+
+      for (let i = 0; i < 3; i++) {
+        arr7[i] = [];
+
+        for (let j = 0; j < 3; j++) {
+          arr7[i].push(k7);
+          k7++;
+        }
+      }
+
+      console.log(arr7);
+
+      // Задание №8
+      console.log(
+        "Задание №8. Должен вывести массив: [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ]"
+      );
+
+      //   let arr = [];
+      //   for (let i = 0, k = 1; i < 3; i++) {
+      //     arr[i] = [];
+
+      //     for (let j = 0; j < 3; j++) {
+      //       arr[i][j] = k;
+      //     }
+      //   }
+      //   console.log(arr);
+
+      // Исправленный код:
+      let arr8 = [];
+
+      for (let i = 0, k = 1; i < 3; i++) {
+        arr8[i] = [];
+
+        for (let j = 0; j < 3; j++) {
+          arr8[i].push(k++);
+        }
+      }
+
+      console.log(arr8);
+
+      // Задание №9
+      console.log(
+        "Задание №9. Должен вывести массив: [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ]"
+      );
+
+      //   let arr = [];
+
+      //   for (let i = 0, k = 1; i < 3; i++) {
+      //   	arr[i] = [];
+
+      //   	for (let j = 0, k++; j < 3; j++) {
+      //   		arr[i][j] = k;
+      //   	}
+      //   }
+      //   console.log(arr);
+
+      // Исправленный код:
+      let arr9 = [];
+
+      for (let i = 0, k = 1; i < 3; i++) {
+        arr9[i] = [];
+
+        for (let j = 0; j < 3; j++) {
+          arr9[i].push(k++);
+        }
+      }
+
+      console.log(arr9);
+
+      // Задание №10
+      console.log(
+        "Задание №10. Должен вывести массив: [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ]"
+      );
+
+      //   let arr = [];
+
+      //   for (let i = 0, k = 1; i < 3; i++) {
+      //   	arr[i] = [];
+
+      //   	for (let j = 0; j < 3; j++; k++) {
+      //   		arr[i][j] = k;
+      //   	}
+      //   }
+      //   console.log(arr);
+
+      // Исправленный код:
+      let arr10 = [];
+
+      for (let i = 0, k = 1; i < 3; i++) {
+        arr10[i] = [];
+
+        for (let j = 0; j < 3; j++) {
+          arr10[i].push(k++);
+        }
+      }
+
+      console.log(arr10);
+
+      // Задание №11
+      console.log(
+        "Задание №11. Должен вывести массив: [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ]"
+      );
+
+      //   let arr = [];
+
+      //   for (let i = 0, k = 1; i < 3; i++) {
+      //     arr[i] = [];
+
+      //     for (let j = 0; j < 3; j++) {
+      //       arr[i][j] = ++k;
+      //     }
+      //   }
+      //   console.log(arr);
+
+      // Исправленный код:
+      let arr11 = [];
+
+      for (let i = 0, k = 1; i < 3; i++) {
+        arr11[i] = [];
+
+        for (let j = 0; j < 3; j++) {
+          arr11[i].push(k++);
+        }
+      }
+
+      console.log(arr11);
+
+      // Задание №12
+      console.log(
+        "Задание №12. Должен вывести массив: [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ]"
+      );
+
+      //   let arr = [];
+      //   let k = 1;
+
+      //   for (let i = 0; i < 3; i++) {
+      //     arr[k] = [];
+
+      //     for (let j = 0; j < 3; j++) {
+      //       arr[i][j] = k;
+      //       k++;
+      //     }
+      //   }
+      //   console.log(arr);
+
+      // Исправленный код:
+      let arr12 = [];
+      let k12 = 1;
+
+      for (let i = 0; i < 3; i++) {
+        arr12[i] = [];
+
+        for (let j = 0; j < 3; j++) {
+          arr12[i].push(k12++);
+        }
+      }
+
+      console.log(arr12);
+
+      // Задание №13
+      console.log(
+        "Задание №13. Должен вывести массив: [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ]"
+      );
+
+      //   let arr = [];
+
+      //   for (let i = 0, k = 1; i < 3; i++) {
+      //     arr[i] = [];
+
+      //     for (let j = 0; j < 3; k++) {
+      //       arr[i][j] = k;
+      //     }
+      //   }
+      //   console.log(arr);
+
+      // Исправленный код:
+      let arr13 = [];
+
+      for (let i = 0, k = 1; i < 3; i++) {
+        arr13[i] = [];
+
+        for (let j = 0; j < 3; j++) {
+          arr13[i].push(k++);
+        }
+      }
+
+      console.log(arr13);
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №142</h1>
+    <p>Заполнение многомерных массивов по порядку</p>
+  </body>
+</html>
