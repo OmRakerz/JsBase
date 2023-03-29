@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Строковые методы JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      console.log("Работа с регистром символов");
+      // Задание №1
+
+      // Метод toUpperCase производит преобразование строки в верхний регистр (из маленьких букв делает большие).
+      let str1 = "js";
+      console.log("Задание №1: " + str1.toUpperCase());
+
+      // Задание №2
+
+      // Метод toLowerCase производит преобразование строки в нижний регистр (из больших букв делает маленькие).
+      let str2 = "JS";
+      console.log("Задание №2: " + str2.toLowerCase());
+
+      // _______________________________________________________________________
+
+      console.log("Работа с substr, substring, slice");
+      // Задание №3
+
+      // Метод substr возвращает подстроку из строки (исходная строка при этом не изменяется).
+      let str3 = "я учу javascript!";
+      console.log(str3.substr(2, 3));
+      console.log(str3.substr(6, 10));
+
+      // Метод substring возвращает подстроку из строки (исходная строка при этом не изменяется).
+      console.log(str3.substring(2, 5));
+      console.log(str3.substring(6, 16));
+
+      // Метод slice возвращает подстроку из строки (исходная строка при этом не изменяется).
+      console.log(str3.slice(2, 5));
+      console.log(str3.slice(6, -1));
+
+      // _______________________________________________________________________
+
+      console.log("Работа с indexOf");
+
+      // Задание №4
+      // Метод indexOf осуществляет поиск подстроки (указывается первым параметром) в строке. Метод вернет позицию первого совпадения, а если оно не найдено, то вернет -1.
+
+      // строка.indexOf(что ищем, [откуда начинать поиск]);
+
+      let str4 = "abcde";
+      console.log(
+        `Задание №4. Позиция буквы 'c' в строке [${str4}]: ` + str4.indexOf("c")
+      );
+
+      // Задание №5
+      let str5 = "abcde";
+      if (str5.indexOf("a") != -1) {
+        console.log("Задание №5. Строка содержит символ 'a'");
+      } else {
+        console.log("Задание №5. Строка не содержит символ 'a'");
+      }
+
+      // Задание №6
+      let str6 = "abcde";
+      if (str6.indexOf("a") == 0) {
+        console.log("Задание №6. Строка начинается с символа 'a'");
+      } else {
+        console.log("Задание №6. Строка не начинается с символа 'a'");
+      }
+
+      // Задание №7
+      // Метод lastIndexOf осуществляет поиск подстроки (указывается первым параметром) в строке. Поиск ведется с конца строки. Метод вернет позицию первого совпадения, а если оно не найдено, то вернет -1.
+
+      // строка.lastIndexOf(что ищем, [откуда начинать поиск]);
+      let str7 = "abcde";
+      if (str7.lastIndexOf("a") == str7.length - 1) {
+        console.log("Задание №7. Строка заканчивается на символ 'a'");
+      } else {
+        console.log("Задание №7. Строка не заканчивается на символ 'a'");
+      }
+
+      // Задание №8
+      let str8 = "https://earthquaketrack.ru";
+      if (str8.indexOf("http://") == 0) {
+        console.log("Задание №8. Строка начинается на 'http://'");
+      } else {
+        console.log("Задание №8. Строка не начинается на 'http://'");
+      }
+
+      // Задание №9
+      let str9 = "task152.html";
+      if (str9.lastIndexOf(".html") == str9.length - 5) {
+        console.log("Задание №9. Строка заканчивается на '.html'");
+      } else {
+        console.log("Задание №9. Строка не заканчивается на '.html'");
+      }
+
+      // _______________________________________________________________________
+
+      console.log("Работа с startsWith, endsWith");
+
+      // Задание №10
+      // Метод startsWith() помогает определить, начинается ли строка с символов указанных в скобках, возвращая, соответственно, true или false.
+
+      //   str.startsWith(searchString[, position])
+
+      let str10 = "https://earthquaketrack.ru";
+      if (str10.startsWith("http://")) {
+        console.log("Задание №10. Строка начинается на 'http://'"); // false
+      } else {
+        console.log("Задание №10. Строка не начинается на 'http://'"); // true
+      }
+
+      // Задание №11
+      // Метод endsWith() позволяет определить, заканчивается ли строка символами указанными в скобках, возвращая, соответственно, true или false.
+
+      //   str.endsWith(searchString[, length])
+
+      let str11 = "task152.html";
+      if (str11.endsWith(".html")) {
+        console.log("Задание №11. Строка заканчивается на '.html'"); // true
+      } else {
+        console.log("Задание №11. Строка не заканчивается на '.html'"); // false
+      }
+
+      // _______________________________________________________________________
+
+      console.log("Работа с split");
+      // Метод split осуществляет разбиение строки в массив по указанному разделителю.
+
+      // Задание №12
+      let str12 = "1-2-3-4-5";
+      console.log("Задание №12: " + "[" + str12.split("-") + "]");
+
+      // Задание №13
+      let str13 = "12345";
+      let strarr13 = str13.split("");
+      console.log("Задание №13: " + "[" + strarr13 + "]");
+      // _______________________________________________________________________
+
+      console.log("Работа с join");
+      //  Метод join объединяет элементы массива в строку с указанным разделителем (он будет вставлен между элементами массива).
+
+      // Задание №14
+      let arr14 = [1, 2, 3, 4, 5];
+      let strarr14 = arr14.join("-");
+      console.log("Задание №14: " + strarr14);
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №152</h1>
+    <p>Строковые методы</p>
+  </body>
+</html>
