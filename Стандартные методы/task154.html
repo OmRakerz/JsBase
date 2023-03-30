@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Практика на использования изученных методов</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      console.log("Регистр символов");
+
+      // Задание №1
+      let str1 = "lorem ipsum";
+      let result1 = str1.slice(0, 10) + str1.slice(10).toUpperCase();
+      console.log(
+        "Задание №1. Преобразована последняя буква строки в верхний регистр: " +
+          result1
+      );
+
+      // Задание №2
+      let str2 = "lorem ipsum";
+      let result2 = str2.slice(0, 2).toUpperCase() + str2.slice(2);
+      console.log(
+        "Задание №2. Преобразованы первые 2 буквы строки в верхний регистр: " +
+          result2
+      );
+
+      // Задание №3
+      let str3 = "London";
+      let result3 = str3.slice(0, 1).toLowerCase() + str3.slice(1);
+      console.log(
+        "Задание №3. Преобразована первая буква строки в нижний регистр: " +
+          result3
+      );
+
+      // _______________________________________________________________________
+
+      console.log("Слова в строке");
+
+      // Задание №4
+      let str4 = "word1 word2 word3";
+      // Разобьем строку в массив слов:
+      let words = str4.split(" ");
+
+      for (let i = 0; i < words.length; i++) {
+        // Увеличим регистр каждого слова:
+        words[i] = words[i].slice(0, 1).toUpperCase() + words[i].slice(1);
+      }
+      // Сольем массив обратно в строку:
+      let result4 = words.join(" ");
+      console.log("Задание №4: " + result4);
+
+      // Задание №5
+      let str5 = "var_test_text";
+      let words5 = str5.split("_");
+
+      for (let i = 0; i <= words5.length - 1; i++) {
+        words5[i] = words5[i].slice(0, 1).toUpperCase() + words5[i].slice(1);
+      }
+
+      let result5 = words5.join("");
+      console.log(
+        "Задание №5. Преобразовали строку 'var_test_text' в 'VarTestText': " +
+          result5
+      );
+
+      // Задание №6
+      let str6 = "var_test_text";
+      let words6Upp = str6.split("_");
+
+      for (let i = 0; i <= words6Upp.length - 1; i++) {
+        words6Upp[i] =
+          words6Upp[i].slice(0, 1).toUpperCase() + words6Upp[i].slice(1);
+      }
+
+      let str6Low = words6Upp.join("");
+      let result6 = str6Low.slice(0, 1).toLowerCase() + str6Low.slice(1);
+      console.log(
+        "Задание №6. Первая буква новой строки в нижнем регистре: " + result6
+      );
+
+      // _______________________________________________________________________
+
+      console.log("Переворот строки");
+
+      // Задание №7
+      let str7 = "word1 word2 word3 word4";
+      let result7 = str7.split(" ").reverse().join(" ");
+
+      console.log(
+        "Задание №7. Перестановка слов в строке в обратном порядке: " + result7
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №154</h1>
+    <p>Практика на использования изученных методов</p>
+  </body>
+</html>
