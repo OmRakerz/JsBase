@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Последовательный вызов функций в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      function sqrt(num) {
+        return Math.sqrt(num);
+      }
+
+      function round1(num) {
+        return num.toFixed(3);
+      }
+
+      let res1 = round1(sqrt(2));
+      console.log(
+        "Задание №1. Квадратный корень из числа 2, округленный до трех знаков в дробной части равен: " +
+          res1
+      );
+
+      // Задание №2
+      function sqrt(num) {
+        return Math.sqrt(num);
+      }
+
+      function sum(num1, num2, num3) {
+        return num1 + num2 + num3;
+      }
+      let res2 = sum(sqrt(2), sqrt(3), sqrt(4));
+      console.log("Задание №2. Сумма корней чисел 2, 3 и 4 равна: " + res2);
+
+      // Задание №3
+      function round3(num) {
+        return num.toFixed(3);
+      }
+
+      let res3 = round3(sum(sqrt(2), sqrt(3), sqrt(4)));
+      console.log(
+        "Задание №3. Дробь, округленная до 3-х знаков в дробной части равна: " +
+          res3
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №162</h1>
+    <p>Последовательный вызов функций</p>
+  </body>
+</html>
