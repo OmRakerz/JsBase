@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тонкое место return в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      console.log(
+        "Задание №1. В результате выполнения кода выведется число 3, т.к. функция возвращает всегда только одно значение return (первое по расположению в функции): "
+      );
+
+      function func(num) {
+        return num;
+
+        let res = num ** 2;
+        return res;
+      }
+
+      console.log(func(3));
+
+      // Задание №2
+      console.log(
+        "Задание №2. В результате выполнения кода выведется: число 100 а потом число 5. Функция выводит только один return, а т.к. в функции есть проверка условия, то в зависимости от значения параметра выполнится сначала второй (для числа 10), а лишь потом первый return (для числа -5): "
+      );
+
+      function func(num) {
+        if (num <= 0) {
+          return Math.abs(num);
+        } else {
+          return num ** 2;
+        }
+      }
+
+      console.log(func(10));
+      console.log(func(-5));
+
+      // Задание №3
+      console.log(
+        "Задание №3. В результате выполнения кода выведется: число 100 а потом число 5. Функция возвращает только одно значение, но данная функция содержит в себе проверку условия, и если значение не удовлетворяет первому условию, то выполняется условие по умолчанию (аналог else). В зависимости от выполнения условия, вернётся либо первый, либо второй return: "
+      );
+
+      function func(num) {
+        if (num <= 0) {
+          return Math.abs(num);
+        }
+
+        return num ** 2;
+      }
+
+      console.log(func(10));
+      console.log(func(-5));
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №163</h1>
+    <p>Тонкое место return</p>
+  </body>
+</html>
