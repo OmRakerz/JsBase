@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Поиск ошибок в коде с функциями JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+
+      //   function func1() {
+      //     console.log(3);
+      //   }
+      //   function func2() {
+      //     console.log(5);
+      //   }
+
+      //   console.log(func1() + func2());
+
+      console.log("Задание №1. Сумма результатов работы двух функций равна: ");
+      // Исправленный код:
+      function func11() {
+        return 3;
+      }
+      function func12() {
+        return 5;
+      }
+
+      console.log(func11() + func12());
+
+      // Задание №2
+
+      //   function sum(arr) {
+      //     let res = 0;
+
+      //     for (let elem of arr) {
+      //       res += elem;
+      //       return res;
+      //     }
+      //   }
+
+      //   console.log(sum([1, 2, 3, 4, 5]));
+
+      console.log("Задание №2. Сумма элементов массива равна:");
+      // Исправленный код:
+      function sum1(arr) {
+        let res = 0;
+
+        for (let elem of arr) {
+          res += elem;
+        }
+        return res;
+      }
+
+      console.log(sum1([1, 2, 3, 4, 5]));
+
+      // Задание №3
+
+      //   let arr = [1, 2, 3, 4, 5];
+
+      //   function func(arr) {
+      //     let res = 0;
+
+      //     for (let elem of arr) {
+      //       res += elem;
+      //     }
+
+      //     console.log(res);
+      //   }
+
+      console.log("Задание №3. Сумма элементов массива равна: ");
+      // Исправленный код:
+      let arr1 = [1, 2, 3, 4, 5];
+
+      function func(arr) {
+        let res = 0;
+
+        for (let elem of arr) {
+          res += elem;
+        }
+
+        console.log(res);
+      }
+      func(arr1);
+
+      // Задание №4
+
+      //   function func1() {
+      //     return 3;
+      //   }
+      //   function func2() {
+      //     return 5;
+      //   }
+
+      //   console.log(func1 + func2);
+
+      console.log("Задание №4. Сумма результатов работы двух функций равна: ");
+      // Исправленный код:
+      function func41() {
+        return 3;
+      }
+      function func42() {
+        return 5;
+      }
+
+      console.log(func41() + func42());
+
+      // Задание №5
+
+      //   let sum = sum([1, 2, 3, 4, 5]);
+      //   console.log(sum);
+
+      //   function sum(arr) {
+      //     let sum = 0;
+
+      //     for (let elem of arr) {
+      //       sum += elem;
+      //     }
+
+      //     return elem;
+      //   }
+
+      console.log("Задание №5. Сумма элементов массива равна: ");
+      // Исправленный код:
+      let summ1 = sum5([1, 2, 3, 4, 5]);
+      console.log(summ1);
+
+      function sum5(arr) {
+        let sum = 0;
+
+        for (let elem of arr) {
+          sum += elem;
+        }
+
+        return sum;
+      }
+
+      // Задание №6
+
+      //   let res = sum([1, 2, 3, 4, 5]);
+      //   console.log(res);
+
+      //   function sum(arr) {
+      //     let sum = 0;
+
+      //     for (let elem of arr) {
+      //       sum += elem;
+      //     }
+      //   }
+
+      console.log("Задание №6. Сумма элементов массива равна: ");
+      // Исправленный код:
+      let res1 = sum6([1, 2, 3, 4, 5]);
+      console.log(res1);
+
+      function sum6(arr) {
+        let sum = 0;
+
+        for (let elem of arr) {
+          sum += elem;
+        }
+        return sum;
+      }
+
+      // Задание №7
+
+      //   function add(num) {
+      //     if (num <= 9) {
+      //       return "0" + num;
+      //     }
+      //   }
+
+      console.log(
+        "Задание №7. Функция добавляет ноль к числу от 1 до 9, а числа больше 9 возвращает без изменений: "
+      );
+      // Исправленный код:
+      function add(num) {
+        if (num <= 9) {
+          return "0" + num;
+        } else {
+          return num;
+        }
+      }
+      console.log(add(21));
+
+      // Задание №8
+
+      //   let arr = [1, 2, 3, 4, 5];
+      //   let sum = sum(arr);
+      //   console.log(sum);
+
+      //   function sum(arr) {
+      //     let res = 0;
+
+      //     for (let elem of arr) {
+      //       res += elem;
+      //     }
+
+      //     return res;
+      //   }
+
+      console.log("Задание №8. Сумма элементов массива равна:");
+      // Исправленный код:
+      let arr2 = [1, 2, 3, 4, 5];
+      let summ2 = sum8(arr2);
+      console.log(summ2);
+
+      function sum8(arr) {
+        let res = 0;
+
+        for (let elem of arr) {
+          res += elem;
+        }
+
+        return res;
+      }
+
+      // Задание №9
+
+      //   let num = 12345;
+      //   let res = getDigitsSum(num);
+      //   console.log(res);
+
+      //   function getDigitsSum(num) {
+      //     let arr = num.split("");
+      //     let sum = 0;
+
+      //     for (let elem of arr) {
+      //       sum += elem;
+      //     }
+
+      //     return sum;
+      //   }
+
+      console.log("Задание №9. Сумма цифр числа равна:");
+      // Исправленный код:
+      let num = 12345;
+      let res2 = getDigitsSum(num);
+      console.log(res2);
+
+      function getDigitsSum(num) {
+        let arr = String(num).split("");
+        let sum = 0;
+
+        for (let elem of arr) {
+          sum += Number(elem);
+        }
+
+        return sum;
+      }
+
+      // Задание №10
+
+      //   console.log(isPrime(13)); // должен вывести true
+
+      //   function isPrime(num) {
+      //     for (let i = 2; i < num; i++) {
+      //       if (num % i !== 0) {
+      //         return true;
+      //       } else {
+      //         return false;
+      //       }
+      //     }
+      //   }
+
+      console.log(
+        "Задание №10. Проверить число на то, что оно является простым: "
+      );
+      // Исправленный код:
+      console.log(isPrime(13)); // должен вывести true
+
+      function isPrime(num) {
+        for (let i = 2; i < num - 1; i++) {
+          if (num % i !== 0) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №170</h1>
+    <p>Поиск ошибок в коде с функциями</p>
+  </body>
+</html>
