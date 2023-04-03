@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Флаги в функциях JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      function even(arr) {
+        for (let i of arr) {
+          if (i % 2 != 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      let arr1 = [1, 2, 3, 4, 5];
+      if (even(arr1)) {
+        console.log("Задание №1. Все элементы в массиве чётные числа");
+      } else {
+        console.log("Задание №1. Не все элементы массива являются четными");
+      }
+
+      // Задание №2
+      function oddnum(num) {
+        for (let i of String(num)) {
+          if (i % 2 == 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      let number = 153;
+      if (oddnum(number)) {
+        console.log("Задание №2. Все цифры числа являются нечётными");
+      } else {
+        console.log("Задание №2. В числе содержатся четные цифры");
+      }
+
+      // Задание №3
+      function identical(arr) {
+        for (let i = 0; i <= arr.length - 1; i++) {
+          if (arr[i] == arr[i + 1]) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      let arr2 = [6, 7, 7, 8, 9, 10];
+      if (identical(arr2)) {
+        console.log(
+          "Задание №3. В массиве есть два одинаковых элемента подряд"
+        );
+      } else {
+        console.log("Задание №3. В массиве нет подряд одинаковых элементов");
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №167</h1>
+    <p>Флаги в функциях</p>
+  </body>
+</html>
