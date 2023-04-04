@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Одинаковые имена переменных в функциях в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+
+      // Выведется число 2, т.к. мы внутри функции не объявили локальную переменную через let. Поэтому  произошло изменение глобальной переменной.
+      let num1 = 1;
+
+      function func1() {
+        num1 = 2; // забыли написать let - меняем внешнюю переменную
+      }
+      func1();
+
+      console.log(num1); // выведет 2 - переменная поменялась
+
+      // Задание №2
+
+      // Выведется цифра 1, т.к. внутри функции хоть и есть локальная переменная с таким же именем, как и глобальная, но на значение глобальной переменной num2 это никак не повлияют.
+
+      let num2 = 1; // глобальная переменная
+
+      function func2() {
+        let num2 = 2; // локальная переменная
+      }
+      func2();
+
+      console.log(num2); // выведет 1 - глобальная переменная не поменялась
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №174</h1>
+    <p>Одинаковые имена переменных в функциях</p>
+  </body>
+</html>
