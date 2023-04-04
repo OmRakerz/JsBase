@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Локальные переменные в функциях в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+
+      //Выведется ошибка, т.к. переменная, которая обьявлена внутри функции, является локальной, а область видимости локальной переменной не распространяется дальше функции.
+      function func() {
+        let num = 5; // локальная переменная
+        return num;
+      }
+
+      console.log(num); // ничего не выведет, а выдаст ошибку в консоль
+
+      // Задание №2
+
+      // Выведется число 5. В функцию не передаются параметры, но внутри неё расположена переменная и действие с этой переменной.
+      function func() {
+        let num = 5;
+        return num;
+      }
+
+      console.log(func());
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №173</h1>
+    <p>Локальные переменные в функциях</p>
+  </body>
+</html>
