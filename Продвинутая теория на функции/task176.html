@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Глобальные переменные и параметры функций в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      console.log(
+        "Задание №1. Выведется цифра 1, т.к. в параметр функции передаётся значение 1."
+      );
+
+      function func1(localNum) {
+        console.log(localNum);
+      }
+
+      func1(1);
+
+      // Задание №2
+      console.log(
+        "Задание №2. Выведется цифра 1, т.к. в параметр функции передаётся глобальная переменная с её значением 1."
+      );
+
+      function func2(localNum) {
+        console.log(localNum);
+      }
+
+      let num2 = 1;
+      func2(num2);
+
+      // Задание №3
+      console.log(
+        "Задание №3. Выведется цифра 1, т.к. в параметр функции передаётся глобальная переменная с значением 1. После вызова функции значение глобальной переменной перезаписывается, но это никак не повлияет на то, что выведет функция, потому что функция вызвана в после перезаписывании переменной."
+      );
+
+      function func3(localNum) {
+        console.log(localNum);
+      }
+
+      let num3 = 1;
+      func3(num3);
+      num3 = 2;
+
+      // Задание №4
+      console.log(
+        "Задание №4. Выведется цифра 2, т.к. в параметр функции передаётся глобальная переменная с значением, которая перезаписывает впереди вызова функции, то получается, что в функцию передастся уже перезаписанная переменная с новым значением"
+      );
+
+      let num4 = 1;
+
+      function func4(localNum) {
+        console.log(localNum);
+      }
+
+      num4 = 2;
+      func4(num4);
+
+      // Задание №5
+      console.log(
+        "Задание №5. Выведется цифра 1, т.к. в парметр функции передаётся глобальная переменная и её значение, но сама функция не взаимодействует с глобальной переменной, а меняет значение параметра, поэтому в консоль выведется не изменённая глобальная переменная."
+      );
+
+      function func5(localNum) {
+        localNum = 2;
+      }
+
+      let num5 = 1;
+      func5(num5);
+      console.log(num5);
+
+      // Задание №6
+      console.log(
+        "Задание №6. Выведется цифра 2, т.к. в параметр функции передаётся глобальная переменная с её значением, значение параметра становится равным глобальной переменной, однако в функции идёт прямое обращение к глобальной переменной с переопределением её параметра, поэтому в консоль выведется переопределённая глобальная переменная."
+      );
+
+      function func6(localNum) {
+        num6 = 2; // забыли написать let - меняем внешнюю переменную
+      }
+
+      let num6 = 1;
+      func6(num6);
+      console.log(num6);
+
+      // Задание №7
+      console.log(
+        "Задание №7. Выведется  цифра 1, т.к. внутри функции мы объявили переменную num через let, то мы тем самым создали локальную переменную num, никак не влияющую на внешнюю переменную"
+      );
+
+      function func7(localNum) {
+        let num7 = 2; // объявим через let
+      }
+
+      let num7 = 1;
+      func7(num7);
+      console.log(num7); // выведет 1 - ничего не поменялось
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №176</h1>
+    <p>Глобальные переменные и параметры функций</p>
+  </body>
+</html>
