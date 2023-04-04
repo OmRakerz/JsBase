@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Совпадение имен с параметрами в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      console.log(
+        "Задание №1. Выведется цифра 1, т.к. имя параметра функции совпадает с именем глобальной переменной, то передав значение глобальной переменной в параметр функции, мы сможем использовать внутри функции только локальную переменную (параметр), поэтому вызов функции никак не повлияет на значение глобальной переменной."
+      );
+
+      function func1(num1) {
+        num1 = 2;
+      }
+
+      let num1 = 1;
+      func(num1);
+      console.log(num1);
+
+      // Задание №2
+      console.log(
+        "Задание №2. Выведется цифра 2, т.к. параметры функции не заданы в явном виде, и именно поэтому функция будет использовать глобальную переменную и её значение, а следовательно значение глобальной переменной поменяется."
+      );
+
+      function func2() {
+        num2 = 2; // меняем локальную переменную
+      }
+
+      let num2 = 1;
+      func2();
+      console.log(num2);
+
+      // Задание №3
+      console.log(
+        "Задание №3. Выведется цифра 1, т.к. в функцию не передаётся никакое значение, и она не использует глобальную переменную, а создаёт локальную переменную с таким же именем, как и глобальная переменная. Поэтому значение глобальной переменной никак не поменяется."
+      );
+
+      function func3() {
+        let num3 = 2; // объявим через let
+      }
+
+      let num3 = 1;
+      func3();
+      console.log(num3); // выведет 1 - ничего не поменялось
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №177</h1>
+    <p>Совпадение имен с параметрами</p>
+  </body>
+</html>
