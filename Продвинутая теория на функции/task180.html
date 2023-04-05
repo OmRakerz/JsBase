@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Функция как переменная в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      function func() {
+        let str = "string";
+        return str;
+      }
+
+      // Задание №2
+      console.log("Задание №2. Выводит результат работы функции: " + func());
+
+      // Задание №3
+      console.log("Задание №3. Выводит исходный код функции:\n " + func);
+
+      // Задание №4
+      func = 123; // затрем переменную func
+      console.log("Задание №4. Выводит новое значение: " + func);
+
+      // Задание №5
+      function func1() {
+        return 3;
+      }
+
+      // Задание №6
+      let func2 = func1; // Скопировали исходный код функции func1, в переменную func2
+
+      // Задание №7. Cумма результатов работы функций func1 и func2
+      console.log(func1() + func2());
+
+      // Задание №8
+      let func21 = function () {
+        return 1;
+      };
+
+      // Задание №9
+      let func22 = function () {
+        return 2;
+      };
+
+      // Задание №10. Cумма результатов работы функций func1 и func2
+      let summfunc = func21() + func22();
+      console.log(summfunc);
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №180</h1>
+    <p>Функция как переменная</p>
+  </body>
+</html>
