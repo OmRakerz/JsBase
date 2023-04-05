@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Параметры-объекты JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      console.log("Задание №1. Выведет '!', 2, 3");
+
+      function func1(obj1) {
+        obj1.a = "!";
+      }
+
+      let obj1 = { a: 1, b: 2, c: 3 };
+      func1(obj1);
+      console.log(obj1);
+
+      // Задание №2
+      console.log("Задание №2. Выведет 1, 2, 3");
+
+      function func2(arg2) {
+        arg2 = "!"; // локальная переменная
+      }
+
+      let obj2 = { a: 1, b: 2, c: 3 };
+      func2(obj2.a);
+      console.log(obj2);
+
+      // Задание №3
+      console.log("Задание №3. Выведет 1, 2, 3");
+
+      function func3(obj3) {
+        obj3 = "!";
+      }
+
+      let obj3 = { a: 1, b: 2, c: 3 };
+      func3(obj3.a);
+      console.log(obj3);
+
+      // Задание №4
+      console.log(
+        "Задание №4. Выведет [1, 3], т.к. внутри функции используется метод splice, который удаляет определенное значение из массива"
+      );
+
+      function func4(arr4) {
+        arr4.splice(1, 1);
+      }
+
+      let arr4 = [1, 2, 3];
+      func4(arr4);
+      console.log(arr4);
+
+      // Задание №5
+      console.log(
+        "Задание №5. Выведет [1, 2, 3], т.к. метод slice не меняет исходный массив, а возвращает значения в зависимости от указанных параметров, то глобальный массив не изменит своих значений."
+      );
+
+      function func5(arr5) {
+        arr5.slice(1, 1);
+      }
+
+      let arr5 = [1, 2, 3];
+      func5(arr5);
+      console.log(arr5);
+
+      // Задание №6
+      console.log(
+        "Задание №6. Выведет ['!', 2, 3]. т.к. массив передаётся по адресу, то в локальную переменную записывается адрес глобального массива, и соотвественно, меняя значение локальной переменной, меняется и значение глобального массива."
+      );
+
+      function func6(arr6) {
+        let newArr = arr6;
+        newArr[0] = "!";
+      }
+
+      let arr6 = [1, 2, 3];
+      func6(arr6);
+      console.log(arr6);
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №178</h1>
+    <p>Параметры-объекты</p>
+  </body>
+</html>
