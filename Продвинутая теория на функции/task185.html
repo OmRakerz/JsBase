@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Передача функций параметрами в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      console.log("Задание №1. Сумма результатов функций равна: ");
+
+      test1(
+        function () {
+          return 1;
+        },
+
+        function () {
+          return 2;
+        },
+
+        function () {
+          return 3;
+        }
+      );
+
+      function test1(func11, func12, func13) {
+        console.log(func11() + func12() + func13());
+      }
+
+      // Задание №2
+      let func21 = function () {
+        return 1;
+      };
+
+      let func22 = function () {
+        return 2;
+      };
+
+      let func23 = function () {
+        return 3;
+      };
+
+      let test2 = (func21, func22, func23) => {
+        return func21 + func22 + func23;
+      };
+
+      console.log(
+        "Задание №2. Сумма результатов функций равна: " +
+          test2(func21(), func22(), func23())
+      );
+
+      // Задание №3
+      console.log("Задание №3. Функция объявлена как Function Declaration: ");
+
+      function func31() {
+        return 1;
+      }
+
+      function func32() {
+        return 2;
+      }
+
+      function func33() {
+        return 3;
+      }
+      console.log(test2(func31, func32, func33));
+
+      // Задание №4
+      console.log("Задание №4. Функция объявлена как Function Expression: ");
+
+      let func41 = function () {
+        return 1;
+      };
+
+      let func42 = function () {
+        return 2;
+      };
+
+      let func43 = function () {
+        return 3;
+      };
+      console.log(test2(func41, func42, func43));
+
+      // Задание №5
+      console.log("Задание №5: ");
+
+      function test5(func5) {
+        console.log(func5(3));
+      }
+
+      test5(function (num) {
+        return num * num * num;
+      });
+
+      // Задание №6
+      console.log("Задание №6. Function Declaration");
+
+      test5(function func6(num) {
+        return num ** 3;
+      });
+
+      // Задание №7
+      console.log("Задание №7. Function Expression");
+
+      let func7 = function (num) {
+        return num ** 3;
+      };
+      test5(func7);
+
+      // Задание №8
+      console.log("Задание №8.");
+
+      function test8(func8) {
+        console.log(func8(2, 3));
+      }
+
+      test8(function (num1, num2) {
+        return num1 + num2;
+      });
+
+      // Задание №9
+      console.log("Задание №9.");
+
+      function test9(num9, func91, func92) {
+        return func91(num9) + func92(num9);
+      }
+
+      console.log(
+        test9(
+          3,
+          function (num9) {
+            return num9 ** 2; // возвращает квадрат
+          },
+
+          function (num9) {
+            return num9 ** 3; // возвращает куб
+          }
+        )
+      );
+
+      // Задание №10
+      console.log("Задание №10.");
+
+      function test10(arr10, func10) {
+        for (let i = 0; i < arr10.length; i++) {
+          arr10[i] = func10(arr10[i]);
+        }
+
+        return arr10;
+      }
+
+      let res10 = test10([1, 2, 3], function (num) {
+        return num * num;
+      });
+
+      console.log(res10); // выведет [1, 4, 9]
+
+      // Задание №11
+      console.log("Задание №11.");
+
+      let res11 = test10([1, 2, 3, 4], function (num) {
+        return num ** 3;
+      });
+
+      console.log(res11); // выведет [1, 8, 27, 64]
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №185</h1>
+    <p>Передача функций параметрами</p>
+  </body>
+</html>
