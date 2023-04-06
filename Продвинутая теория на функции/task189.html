@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Функция, возвращающая функцию в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      function func11() {
+        return function () {
+          return 1;
+        };
+      }
+
+      function func12() {
+        return function () {
+          return 2;
+        };
+      }
+
+      let result = func11()() + func12()();
+      console.log(
+        "Задание №1. Сумма результатов функций будет равна: " + result
+      );
+
+      // Задание №2
+      function func2() {
+        return function () {
+          return function () {
+            return function () {
+              return function () {
+                return "!"; // выведет '!'
+              };
+            };
+          };
+        };
+      }
+
+      console.log(func2()()()()());
+
+      // Задание №3
+      function func3(num1) {
+        return function (num2) {
+          return function (num3) {
+            return num1 + num2 + num3; // выведет 9
+          };
+        };
+      }
+
+      console.log(func3(2)(3)(4));
+
+      // Задание №4
+      function func4(num1) {
+        return function (num2) {
+          return function (num3) {
+            return function (num4) {
+              return function () {
+                return [num1, num2, num3, num4]; // выведет [2, 3, 4, 5]
+              };
+            };
+          };
+        };
+      }
+
+      console.log(func4(2)(3)(4)(5)());
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №189</h1>
+    <p>Функция, возвращающая функцию</p>
+  </body>
+</html>
