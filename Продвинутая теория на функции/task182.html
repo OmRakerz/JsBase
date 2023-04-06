@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Нюансы функциональных выражений в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      console.log("Задание №1. Это Function Declaration (объявление функции)");
+
+      function func1() {
+        console.log("!");
+      }
+
+      // Задание №2
+      console.log(
+        "Задание №2. Это Function Expression (функциональное выражение)"
+      );
+
+      let func2 = function () {
+        console.log("!");
+      };
+
+      // Задание №3
+      console.log(
+        "Задание №3. Это Function Expression (функциональное выражение)"
+      );
+
+      +function () {
+        console.log("!");
+      };
+
+      // Задание №4
+      console.log(
+        "Задание №4. Это Function Expression (функциональное выражение)"
+      );
+
+      !function func4() {
+        console.log("!");
+      };
+
+      // Задание №5
+      console.log(
+        "Задание №5. Это Function Expression (функциональное выражение)"
+      );
+
+      function func5() {
+        console.log("!");
+      }
+
+      // Задание №6
+      console.log(
+        "Задание №6. Это Function Expression (функциональное выражение)"
+      );
+
+      1 +
+        function func6() {
+          console.log("!");
+        };
+
+      // Задание №7
+      console.log(
+        "Задание №7. Это Function Expression (функциональное выражение)"
+      );
+
+      (function func7() {
+        console.log("!");
+      });
+
+      // Задание №8
+      console.log(
+        "Задание №8. Это Function Expression (функциональное выражение)"
+      );
+
+      console.log(function () {
+        console.log("!");
+      });
+
+      // Задание №9
+      // Функция, являющаяся функциональным выражением (Function Expression) не может быть вызвана по ее имени. Такая функция может быть вызвана только с использованием переменной, в которую была записана эта функция.
+
+      // Но тем не менее, функциональное выражение может иметь имя функции, это будет синтаксически корректно.
+
+      console.log(
+        "Задание №9. Это Function Expression (функциональное выражение)"
+      );
+
+      let test9 = function func9() {
+        console.log("!");
+      };
+
+      // Задание №10
+      console.log(
+        "Задание №10. Это Function Expression (функциональное выражение)"
+      );
+
+      console.log(function func10() {
+        console.log("!");
+      });
+
+      // Задание №11
+      console.log(
+        "Задание №11. Это Function Expression (функциональное выражение)"
+      );
+
+      +function func11() {
+        console.log("!");
+      };
+
+      // Задание №12
+      console.log("Задание №12. Это Function Declaration (объявление функции)");
+
+      function func12() {
+        console.log("!");
+      }
+
+      // Задание №13
+      console.log(
+        "Задание №13. Это Function Expression (функциональное выражение)"
+      );
+
+      -function func13() {
+        console.log("!");
+      } -
+        // Задание №14
+        console.log(
+          "Задание №14. Это Function Declaration (объявление функции)"
+        );
+
+      1;
+      function func14() {
+        console.log("!");
+      }
+
+      // Задание №15
+      console.log("Задание №15. Это Function Declaration (объявление функции)");
+
+      -1;
+      function func15() {
+        console.log("!");
+      }
+
+      // Задание №16
+      console.log("Задание №16. Это Function Declaration (объявление функции)");
+
+      1;
+      function func16() {
+        console.log("!");
+      }
+
+      // Задание №17
+      console.log(
+        "Задание №17. Это Function Expression (функциональное выражение)"
+      );
+
+      -1 -
+        function func17() {
+          console.log("!");
+        };
+
+      // Задание №18
+      console.log("Задание №18. Это Function Declaration (объявление функции)");
+
+      function func18() {
+        console.log("!");
+      }
+      +1;
+
+      // Задание №19
+      console.log("Задание №19. Это Function Declaration (объявление функции)");
+
+      function func19() {
+        console.log("!");
+      }
+      +1;
+
+      // Задание №20
+      console.log(
+        "Задание №20. Это Function Expression (функциональное выражение)"
+      );
+
+      +function func20() {
+        console.log("!");
+      } + 1;
+
+      // Задание №21
+      console.log(
+        "Задание №21. Это Function Expression (функциональное выражение)"
+      );
+
+      +function func21() {
+        console.log("!");
+      } + 1;
+
+      // Задание №22
+      console.log("Задание №22. Это Function Declaration (объявление функции)");
+
+      +1;
+      function func22() {
+        console.log("!");
+      }
+      +1;
+
+      // Задание №23
+      console.log("Задание №23. Это Function Declaration (объявление функции)");
+
+      function func23() {
+        console.log("!");
+      }
+      +console.log("!");
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №182</h1>
+    <p>Нюансы функциональных выражений</p>
+  </body>
+</html>
