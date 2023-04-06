@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Область видимости вложенных функций в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      //Задание № 1.
+      console.log("Задание №1. Выведется цифра 1");
+      function test1() {
+        let num = 1;
+
+        function func() {
+          console.log(num);
+        }
+
+        func();
+      }
+
+      test1();
+
+      //Задание № 2.
+      console.log("Задание №2. Ничего не выведется");
+      function test2() {
+        let num = 1;
+
+        function func() {
+          console.log(num);
+        }
+      }
+
+      test2();
+
+      //Задание № 3.
+      console.log("Задание №3. Ничего не выведется");
+      function test3() {
+        let num = 1;
+
+        function func() {
+          console.log(num);
+        }
+
+        func();
+      }
+
+      //Задание № 4.
+      console.log("Задание №4. Сначала выведется цифра 1, а потом число 2");
+      function test4() {
+        let num;
+
+        function func() {
+          console.log(num);
+        }
+
+        num = 1;
+        func();
+
+        num = 2;
+        func();
+      }
+
+      test4();
+
+      //Задание № 5.
+      console.log("Задание №5. Выведется цифра 3");
+      function test5(num1, num2) {
+        function func() {
+          console.log(num1 + num2);
+        }
+
+        func();
+      }
+
+      test5(1, 2);
+
+      //Задание № 6.
+      console.log(" Задание №6. Выведется цифра 4 ");
+      function test6(num1, num2) {
+        function func() {
+          console.log(num1 + num2);
+        }
+
+        num1 = 2;
+        func();
+      }
+
+      test6(1, 2);
+
+      //Задание № 7.
+      console.log("Задание №7. Выведется цифра 1");
+      function test7(num) {
+        function func(localNum) {
+          console.log(localNum);
+        }
+
+        func(num);
+      }
+
+      test7(1);
+
+      //Задание № 8.
+      console.log("Задание №8. Выведется цифра 2");
+      function test8(num) {
+        function func(localNum) {
+          console.log(localNum);
+        }
+
+        func(num + 1);
+      }
+
+      test8(1);
+
+      //Задание № 9.
+      console.log("Задание №9. Выведется цифра 1");
+      function test9(num) {
+        function func(localNum) {
+          console.log(num);
+        }
+
+        func(num + 1);
+      }
+
+      test9(1);
+
+      // Задание №10.
+      console.log(" Задание №10. Выведется цифра 1");
+      function test10(num) {
+        function func(localNum) {
+          localNum = 2;
+        }
+
+        func(num);
+        console.log(num);
+      }
+
+      test10(1);
+
+      // Задание №11.
+      console.log("Задание №11. Ничего не выведется, будет ошибка");
+      function test11(num) {
+        function func(localNum) {
+          localNum = 2;
+        }
+
+        func(num);
+        console.log(localNum);
+      }
+
+      test11(1);
+
+      // Задание №12.
+      console.log("Задание №12. Выведется цифра 2");
+      function test12(num) {
+        function func(localNum) {
+          num = 2;
+        }
+
+        func(num);
+        console.log(num);
+      }
+
+      test12(1);
+
+      // Задание №13.
+      console.log("Задание №13. Выведется цифра 1 ");
+      function test13(num) {
+        function func(num) {
+          console.log(num);
+        }
+
+        func(num);
+      }
+
+      test13(1);
+
+      // Задание №14.
+      console.log("Задание №14. Выведется цифра 1");
+      function test14(num) {
+        function func(num) {
+          num = 2;
+        }
+
+        func(num);
+        console.log(num);
+      }
+
+      test14(1);
+
+      // Задание №15.
+      console.log("Задание №15. Выведется цифра 2");
+      function test15(num) {
+        function func(num) {
+          console.log(num);
+        }
+
+        num = 2;
+        func(num);
+      }
+
+      test15(1);
+
+      // Задание №16.
+      console.log("Задание №16. Выведется цифра 1");
+      function test16(num) {
+        function func(num) {
+          console.log(num);
+        }
+
+        func(num);
+        num = 2;
+      }
+
+      test16(1);
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №188</h1>
+    <p>Область видимости вложенных функций</p>
+  </body>
+</html>
