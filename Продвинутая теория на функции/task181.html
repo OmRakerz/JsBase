@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function expression и Function declaration в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Function Declaration (объявление функции), Function Expression (функциональное выражение).
+
+      // Задание №1
+      console.log("Задание №1. Это Function Declaration (объявление функции)");
+
+      function func1() {
+        console.log("!");
+      }
+
+      // Задание №2
+      console.log(
+        "Задание №2. Это Function Expression (функциональное выражение)"
+      );
+
+      let func2 = function () {
+        console.log("!");
+      };
+
+      // Задание №3
+
+      // Обращаемся к функции до ее объявления:
+      func3(); //выведет '!'
+      function func3() {
+        console.log("!");
+      }
+
+      // Задание №4
+      func4(); //ошибка, такой функции еще нет!
+
+      let func4 = function () {
+        console.log("Привет");
+      };
+
+      // Задание №5
+
+      // Мы при объявлении функции как Function Expression (функциональное выражение) после фигурной скобки } ставится ; точка с зяпятой, т.к. в JavaScript любое выражение должно заканчиваться точкой с запятой, а в данном случае у нас как раз-таки выражение. Эта точка с запятой не обязательна, так как JavaScript вообще разрешает их не ставить, но желательна.
+
+      let func51 = function () {
+        console.log("!");
+      };
+
+      let func52 = function () {
+        console.log("!");
+      };
+
+      function func53() {
+        console.log("!");
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №181</h1>
+    <p>Function expression и Function declaration</p>
+  </body>
+</html>
