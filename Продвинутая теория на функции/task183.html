@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Массив с анонимными функциями в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      let arr = [
+        function () {
+          return 1;
+        },
+        function () {
+          return 2;
+        },
+        function () {
+          return 3;
+        },
+      ];
+
+      // Задание №2
+      console.log("Задание №2. Выводим число 3, вызвав 2-ю функцию:");
+
+      console.log(arr[2]());
+
+      // Задание №3
+      let sum = arr[0]() + arr[1]() + arr[2]();
+
+      console.log(
+        "Задание №3. Сумма результатов функций (без цикла) равна: " + sum
+      );
+
+      // Задание №4
+      console.log("Задание №4. Вывод результата работы всех функций: ");
+
+      for (let func of arr) {
+        console.log(func()); // вызываем и выводим наши функции в цикле
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №183</h1>
+    <p>Массив с анонимными функциями</p>
+  </body>
+</html>
