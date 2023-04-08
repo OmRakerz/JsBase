@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Функции-коллбэки в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      function each1(arr, callback) {
+        let result1 = [];
+
+        for (let elem of arr) {
+          result1.push(callback(elem)); // вызываем функцию-коллбэк
+        }
+
+        return result1;
+      }
+
+      let result1 = each1([1, 2, 3, 4, 5], function (num) {
+        return num * 2;
+      });
+      console.log("Задание №1. Увеличен каждый элемент в два раза: " + result1);
+
+      // Задание №2
+      function each2(arr, callback) {
+        let result = [];
+
+        for (let elem of arr.reverse()) {
+          result.push(callback(elem));
+        }
+
+        return result;
+      }
+
+      let result2 = each2(["a", "b", "c", "d", "e"], function (str) {
+        return str;
+      });
+
+      console.log(
+        "Задание №2. Перевернули символы каждой строки в обратном порядке: " +
+          result2
+      );
+
+      // Задание №3
+
+      function each3(arr, callback) {
+        let result3 = [];
+
+        for (let elem of arr) {
+          result3.push(
+            callback(elem.slice(0, 1).toUpperCase() + elem.slice(1))
+          );
+        }
+
+        return result3;
+      }
+
+      let result3 = each3(["apple", "cucumber", "pear"], function (str) {
+        return str;
+      });
+
+      console.log(
+        "Задание №3. Заглавный каждый первый символ каждой строки: " + result3
+      );
+
+      // Задание №4
+      function each4(arr, callback) {
+        let result4 = [];
+
+        for (let elem of arr) {
+          result4.push(callback(elem)); // вызываем функцию-коллбэк
+        }
+
+        return result4;
+      }
+
+      function square(num) {
+        return num ** 3;
+      }
+
+      let result4 = each4([1, 2, 3, 4, 5], square);
+      console.log(
+        "Задание №4. Возведены все элементы массива в куб: " + result4
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №194</h1>
+    <p>Функции-коллбэки</p>
+  </body>
+</html>
