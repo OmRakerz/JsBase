@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Замыкания в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      console.log("Задание №1. Выведит: !");
+
+      !(function () {
+        console.log("!");
+      })();
+
+      // Задание №2
+      console.log(
+        "Задание №2. Выведит ошибку, т.к. наличие любого знака в данном случае является обязательным условием, так как без него функция станет Function Declaration, а их на месте (да еще без имени) вызывать нельзя."
+      );
+
+      // function() {
+      //    console.log('!');
+      // }();
+
+      // Задание №3
+      console.log("Задание №3. Выведит: !");
+
+      let result3 = (function () {
+        return "!";
+      })();
+
+      console.log(result3);
+
+      // Задание №4
+      console.log(
+        "Задание №4. Выведит: сам код функции, т.к. мы не добавили скобки()"
+      );
+
+      let result4 = function () {
+        return "!";
+      };
+
+      console.log(result4);
+
+      // Задание №5
+      console.log("Задание №5. Выведит: !");
+
+      let result5 = function () {
+        return "!";
+      };
+
+      console.log(result5());
+
+      // Задание №6
+      console.log("Задание №6. Выведит: 3");
+
+      let result6 =
+        (function () {
+          return 1;
+        })() +
+        (function () {
+          return 2;
+        })();
+      console.log(result6);
+
+      // Задание №7
+      console.log("Задание №7. Выведит: !");
+
+      let result7 = (function () {
+        return "!";
+      })();
+
+      console.log(result7);
+
+      // Задание №8
+      console.log("Задание №8. Выведит: !");
+
+      let result8 = (function () {
+        return "!";
+      })();
+
+      console.log(result8);
+
+      // Задание №9
+      console.log("Задание №9. Выведит сам код функции");
+
+      let result9 = function () {
+        return "!";
+      };
+
+      console.log(result9);
+
+      // Задание №10
+      console.log("Задание №10. Выведит: !");
+
+      let result10 = function () {
+        return "!";
+      };
+
+      console.log(result10());
+
+      // Задание №11
+      console.log("Задание №11. Выведит: 3");
+
+      (function (num1, num2) {
+        console.log(num1 + num2);
+      })(1, 2);
+
+      // Задание №12
+      console.log("Задание №12. Выведит: !");
+
+      (function () {
+        return function () {
+          return function () {
+            console.log("!");
+          };
+        };
+      })()()();
+
+      // Задание №13
+      console.log(
+        "Задание №13. Выведит сумму переданных параметрами чисел 1 и 2: 3"
+      );
+
+      (function (num1) {
+        return function (num2) {
+          console.log(num1 + num2);
+        };
+      })(1)(2);
+
+      // Задание №14
+      console.log(
+        "Задание №14.  Выведит сумму переданных параметрами чисел 1 и 2 и 3: 6"
+      );
+
+      (function (num1) {
+        return function (num2) {
+          return function (num3) {
+            console.log(num1 + num2 + num3);
+          };
+        };
+      })(1)(2)(3);
+
+      // Задание №15
+      console.log("Задание №15. Выведит: 1");
+
+      let str15 = "str";
+
+      (function () {
+        console.log(1);
+      })();
+
+      // Задание №16
+      console.log("Задание №16. Выведит: ошибку");
+
+      let str16 = "str"(function () {
+        console.log(1); // выдаст ошибку
+      })();
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №192</h1>
+    <p>Вызов функции на месте</p>
+  </body>
+</html>
