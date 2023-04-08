@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Рекурсия и многомерные структуры в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      console.log(
+        "Задание №1. С помощью рекурсии вывели все примитивные элементы этого объекта: "
+      );
+
+      let obj1 = {
+        a: 1,
+        b: { c: 2, d: 3, e: 4 },
+        f: { g: 5, j: 6, k: { l: 7, m: { n: 8, o: 9 } } },
+      };
+
+      function func(obj) {
+        for (let elem in obj) {
+          if (typeof obj[elem] == "object") {
+            // элемент - массив
+            func(obj[elem]);
+          } else {
+            // элемент - примитив
+            console.log(obj[elem]);
+          }
+        }
+      }
+
+      func(obj1);
+
+      // Задание №2
+      console.log(
+        "Задание №2. Развернули наш многомерный массив в одномерный: "
+      );
+
+      let arr2 = [1, [2, 7, 8], [3, 4, [5, [6, 7]]]];
+      let arr21 = [];
+
+      function func2(arr) {
+        for (let elem of arr) {
+          if (typeof elem == "object") {
+            // элемент - массив
+            func2(elem);
+          } else {
+            // элемент - примитив
+            arr21.push(elem);
+          }
+        }
+        return arr21;
+      }
+
+      console.log(func2(arr2));
+
+      // Задание №3
+      console.log(
+        "Задание №3. С помощью рекурсии нашли сумму элементов этого объекта: "
+      );
+
+      let obj3 = {
+        a: 1,
+        b: { c: 2, d: 3, e: 4 },
+        f: { g: 5, j: 6, k: { l: 7, m: { n: 8, o: 9 } } },
+      };
+
+      function func3(obj) {
+        let sum3 = 0;
+
+        for (let elem in obj) {
+          if (typeof obj[elem] == "object") {
+            // элемент - массив
+            sum3 += func3(obj[elem]);
+          } else {
+            // элемент - примитив
+            sum3 += obj[elem];
+          }
+        }
+        return sum3;
+      }
+
+      console.log(func3(obj3));
+
+      // Задание №4
+      console.log(
+        "Задание №4. С помощью рекурсии слили элементы этого массива в одну строку: "
+      );
+
+      let str4 = ["a", ["b", "c", "d"], ["e", "f", ["g", ["j", "k"]]]];
+
+      function func4(str) {
+        let sum4 = "";
+
+        for (let elem of str) {
+          if (typeof elem == "object") {
+            // элемент - массив
+            sum4 += func4(elem);
+          } else {
+            // элемент - примитив
+            sum4 += elem;
+          }
+        }
+        return sum4;
+      }
+
+      console.log(func4(str4));
+
+      // Задание №5
+      console.log(
+        "Задание №5. Возвели все элементы-числа этого массива в квадрат: "
+      );
+
+      let arr5 = [1, [2, 7, 8], [3, 4], [5, [6, 7]]];
+
+      function func5(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          if (typeof arr[i] == "object") {
+            // элемент - массив
+            func5(arr[i]);
+          } else {
+            // элемент - примитив
+            arr[i] = arr[i] ** 2;
+          }
+        }
+        return arr;
+      }
+
+      console.log(func5(arr5));
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №197</h1>
+    <p>Рекурсия и многомерные структуры</p>
+  </body>
+</html>
