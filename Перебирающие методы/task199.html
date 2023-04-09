@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Метод forEach для перебора массива в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Метод forEach работает также, как и метод map, только не возвращает измененный массив, а просто вызывает функцию-коллбэк для каждого элемента массива.
+
+      // Задание №1
+      let arr = [1, 2, 3, 4, 5];
+      let sum = 0; // внешняя переменная
+
+      arr.forEach(function (elem) {
+        // тут доступна переменная sum
+        sum += elem ** 2;
+      });
+
+      console.log(
+        "Используя метод forEach нашли сумму квадратов элементов массива: " +
+          sum
+      );
+
+      // Метод forEach появился в JavaScript раньше, чем новый цикл for-of. По сути, эти два способа перебора похожи, но цикл for-of имеет более простой синтаксис, поэтому, скорее всего, чаще вы будете пользоваться именно им.
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №199</h1>
+    <p>Метод forEach для перебора массива</p>
+  </body>
+</html>
