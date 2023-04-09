@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Применение операторов rest и spread в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Функция, находящая сумму чисел
+
+      // Задание №1
+      function func(...nums) {
+        let sum = 0;
+
+        for (let num of nums) {
+          sum += num;
+        }
+
+        return sum / 2;
+      }
+      console.log(
+        "Задание №1. Среднее арифметическое переданных чисел: " +
+          func(1, 2, 3, 4)
+      );
+
+      // Функция, сливающая массивы в двухмерный
+      let result2 = unite([1, 2, 3], [4, 5, 6], [7, 8, 9]);
+      console.log(result2); // выведет [ [1, 2, 3,] [4, 5, 6], [7, 8, 9] ]
+
+      function unite(...arrs) {
+        return arrs;
+      }
+
+      // Функция, сливающая массивы в один
+      function merge(...arrs) {
+        return [].concat(...arrs);
+      }
+
+      let result3 = merge([1, 2, 3], [4, 5, 6], [7, 8, 9]);
+      console.log(result3); // выведет [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №207</h1>
+    <p>Применение операторов rest и spread</p>
+  </body>
+</html>
