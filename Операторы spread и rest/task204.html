@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Оператор spread и слияние массивов</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      console.log(
+        "Задание №1. Выведется массив ['a', 1, 2, 3, 'b', 'c', 4, 5, 6]"
+      );
+
+      let arr11 = [1, 2, 3];
+      let arr12 = [4, 5, 6];
+
+      let arr1 = ["a", ...arr11, "b", "c", ...arr12];
+      console.log(arr1);
+
+      // Задание №2
+      console.log(
+        "Задание №2. Выведется массив ['a', 1, 2, 3, 1, 2, 3, 'b', 'c'] "
+      );
+
+      let arr21 = [1, 2, 3];
+      let arr22 = [4, 5, 6];
+
+      let arr2 = ["a", ...arr21, ...arr21, "b", "c"];
+      console.log(arr2);
+
+      // Задание №3
+      console.log(
+        "Задание №3. Выведется массив ['a', 'b', 'c', 1, 2, 3, 4, 5, 6] "
+      );
+
+      let arr31 = [1, 2, 3];
+      let arr32 = [...arr31, 4, 5, 6];
+
+      let arr3 = ["a", "b", "c", ...arr32];
+      console.log(arr3);
+
+      // Задание №4
+      console.log(
+        "Задание №4. Выведется массив [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  "
+      );
+
+      let arr41 = [1, 2, 3];
+      let arr42 = [...arr41, 4, 5, 6];
+      let arr43 = [...arr42, 7, 8, 9];
+
+      let arr4 = [0, ...arr43];
+      console.log(arr4);
+
+      // Задание №5
+      console.log("Задание №5. Выведется массив [1, 2, 3]");
+
+      let arr51 = [1, 2, 3];
+      let arr52 = [...arr51];
+
+      console.log(arr52);
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №204</h1>
+    <p>Оператор spread и слияние массивов</p>
+  </body>
+</html>
