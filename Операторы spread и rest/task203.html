@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Оператор spread в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // ...  spread. Когда оператор spread стоит перед массивом, он разделяет этот массив на отдельные значения, превращая массив в набор параметров, необходимых для вызова функции.
+
+      // Задание №1
+      let arr1 = [1, 2, 3, 4, 5];
+      function func1(num1, num2, num3, num4, num5) {
+        return num1 + num2 + num3 + num4 + num5;
+      }
+      console.log(
+        "Задание №1. Сумма элементов массива равна: " + func1(...arr1)
+      );
+
+      // Задание №2
+      console.log("Задание №2. Выведется число 260");
+
+      function func(n1, n2, n3, n4, n5, n6, n7, n8) {
+        return (n1 + n2 + n3 + n4) * (n5 + n6 + n7 + n8);
+      }
+
+      console.log(func(1, ...[2, 3, 4], 5, ...[6], ...[7, 8])); // (1+2+3+4)*(5+6+7+8)
+
+      // Задание №3
+      console.log(
+        "Задание №3. Используя Math.min и spread вывели на экран минимальное значение массива:"
+      );
+
+      let arr3 = [1, 2, 3, 4, 5];
+      console.log(Math.min(...arr3));
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №203</h1>
+    <p>Оператор spread</p>
+  </body>
+</html>
