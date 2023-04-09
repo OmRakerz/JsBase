@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Объявление переменных при деструктуризации массива в JavaScript
+    </title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Не обязательно объявлять переменные при деструктуризации. Они могут быть объявлены заранее и тогда при присваивании не нужно будет писать команду let:
+      let arr = [2025, 12, 31];
+      let year;
+      let month;
+      let day;
+
+      [year, month, day] = arr;
+
+      // Есть, однако, нюансы:
+      let arr2 = [2025, 12, 31];
+      let year2; // объявлена в первый раз
+
+      let [year2, month2, day2] = arr; // объявлена year2 во второй раз
+
+      // переменная year была объявлена заранее, но переменные month и day - нет. Поэтому автор кода решил написать let перед деструктуризирующим присваиванием.
+
+      // Это, однако, приведет к ошибке, так как нельзя одну и туже переменную объявлять два раза через let (получится, что year объявлена два раза).
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №215</h1>
+    <p>Объявление переменных при деструктуризации массива</p>
+  </body>
+</html>
