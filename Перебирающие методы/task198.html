@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Метод map для перебора массива в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      let arr1 = [1, 2, 3, 4, 5];
+
+      let result1 = arr1.map(function (elem) {
+        return Math.sqrt(elem);
+      });
+
+      console.log(
+        `Задание №1. Используя метод map извлекли из каждого элемента массива квадратный корень: [${result1}]`
+      );
+
+      // Задание №2
+      let arr2 = [
+        "nurofen",
+        "menovazin",
+        "vibrocil",
+        "chlorhexidine",
+        "citramon",
+      ];
+
+      let result2 = arr2.map(function (elem) {
+        return (elem += "!");
+      });
+
+      console.log(
+        `Задание №2. Используя метод map в конец значению каждого элемента массива добавили символ '!': [${result2}]`
+      );
+
+      // Задание №3
+      let arr3 = [
+        "nurofen",
+        "menovazin",
+        "vibrocil",
+        "chlorhexidine",
+        "citramon",
+      ];
+
+      let result3 = arr3.map(function (elem) {
+        return elem.split("").reverse().join("");
+      });
+
+      console.log(
+        `Задание №3. Используя метод map перевернули символы каждой строки в обратном порядке: [${result3}]`
+      );
+
+      // Задание №4
+      let arr4 = ["123", "456", "789"];
+      let arr41 = [];
+
+      let result4 = arr4.map(function (elem) {
+        arr41 = elem.split("");
+
+        for (let i = 0; i <= arr41.length - 1; i++) {
+          arr41[i] = Number(arr41[i]);
+        }
+
+        return arr41;
+      });
+      console.log(result4);
+
+      // Задание №5
+      let arr5 = [1, 2, 3, 4, 5];
+
+      let result5 = arr5.map(function (elem, index) {
+        return elem * index;
+      });
+
+      console.log(
+        `Используя метод map записали в каждый элемент массива значение этого элемента, умноженное на его порядковый номер в массиве: [${result5}]`
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №198</h1>
+    <p>Метод map для перебора массива</p>
+  </body>
+</html>
