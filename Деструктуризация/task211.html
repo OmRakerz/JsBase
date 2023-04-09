@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Лишние значения при деструктуризации массива в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Если в массиве меньше элементов, чем переменных, то в "лишние" переменные запишется undefined:
+      let arr1 = [2025, 12];
+      let [year1, month1, day1] = arr1;
+
+      console.log(year1); // выведет 2025
+      console.log(month1); // выведет 12
+      console.log(day1); // выведет undefined
+
+      console.log("____________________________________");
+
+      // Если в массиве больше элементов, чем переменных - лишние элементы никуда не запишутся и ничего страшного не произойдет:
+      let arr2 = [2025, 12, 31, 23, 59, 59];
+      let [year2, month2, day2] = arr2;
+
+      console.log(year2); // выведет 2025
+      console.log(month2); // выведет 12
+      console.log(day2); // выведет 31
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №211</h1>
+    <p>Лишние значения при деструктуризации массива</p>
+  </body>
+</html>
