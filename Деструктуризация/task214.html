@@ -39,17 +39,23 @@
       // В качестве значения по умолчанию можно также указывать функцию.
 
       // Задание №1
-      function func() {
-        return (
-          new Date().getFullYear() +
-          " " +
-          (new Date().getMonth() + 1) +
-          " " +
-          new Date().getDate()
-        );
+      let arr = [, , 9];
+
+      function func1() {
+        return new Date().getFullYear();
       }
 
-      console.log(func());
+      function func2() {
+        return new Date().getMonth() + 1;
+      }
+
+      function func3() {
+        return new Date().getDate();
+      }
+
+      let [year = func1(), month = func2(), day] = arr;
+
+      console.log(year, month, day);
     </script>
   </head>
   <body>
