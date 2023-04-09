@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Оператор rest в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Оператор rest позволяет получить все лишние параметры в виде массива. Для этого в функцию добавляется еще один параметр (обязательно последним), перед которым пишутся 3 точки:
+
+      // Эти три точки и есть оператор rest, а имя переменной может иметь любое название, но обычно также принято называть его rest.
+
+      func(1, 2, 3, 4, 5);
+
+      function func(a, b, ...rest) {
+        console.log(a); // выведет 1
+        console.log(b); // выведет 2
+        console.log(rest); // выведет [3, 4, 5]
+      }
+
+      // Если лишних параметров не будет, то в переменную rest запишется пустой массив:
+      func(1, 2);
+      function func(a, b, ...rest) {
+        console.log(a); // выведет 1
+        console.log(b); // выведет 2
+        console.log(rest); // выведет []
+      }
+
+      // В функции вообще может не быть параметров, но при этом в нее можно добавить rest. В этом случае функцию можно будет вызвать с любым количеством параметров и все они будут попадать в массив rest:
+
+      function func(...rest) {
+        console.log(rest);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №206</h1>
+    <p>Оператор rest</p>
+  </body>
+</html>
