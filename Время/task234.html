@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Проверка корректности даты в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      function checkDate(year, month, day) {
+        if (
+          new Date(year, month, day).getFullYear() == year &&
+          new Date(year, month, day).getMonth() == month &&
+          new Date(year, month, day).getDate() == day
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      console.log(checkDate(2025, 0, 31)); // выведет true
+      console.log(checkDate(2025, 0, 32)); // выведет false
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №234</h1>
+    <p>Проверка корректности даты</p>
+  </body>
+</html>
