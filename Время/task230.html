@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Разница между объектами с датой в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      let now = new Date(); // показывает текущую дату и время
+
+      // Задание №1
+      let date1 = new Date(2000, 9, 1, 0, 0, 0);
+      let date2 = new Date(2010, 2, 15, 23, 59, 59); // вычитаем два объекта с датами друг от друга
+
+      let diff = date2 - date1; // увидим разницу в миллисекундах
+      console.log(
+        "Задание №1. Количество миллисекунд, прошедшее между 1 сентября 2000 года и 15 февраля 2010 года: " +
+          diff
+      );
+
+      // Задание №2
+      console.log(
+        "Задание №2. Количество дней, прошедшее между 1 сентября 2000 года и 15 февраля 2010 года: " +
+          diff / (1000 * 3600 * 24)
+      );
+
+      // Задание №3
+      console.log(
+        "Задание №3. Количество месяцев, прошедшее между 1 сентября 2000 года и 15 февраля 2010 года: " +
+          diff / (1000 * 60 * 60 * 24 * 31)
+      );
+
+      // Задание №4
+      console.log(
+        "Задание №4. Количество лет, прошедшее между 1 сентября 2000 года и 15 февраля 2010 года: " +
+          diff / (1000 * 60 * 60 * 24 * 31 * 12)
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №230</h1>
+    <p>Разница между объектами с датой</p>
+  </body>
+</html>
