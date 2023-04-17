@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Получение моментов времени в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // 0 (воскресенье) до 6 (суббота)
+
+      console.log("День текущего года: ");
+
+      // Задание №1
+      let now = new Date(); // получаем текущий момент
+      //   let date = new Date(now1.getFullYear(), 11, 31); // получаем нашу дату
+      //   console.log(date.getDay());
+
+      function getWeekDay(date) {
+        let days = ["ВС", "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ"];
+
+        return days[date.getDay()];
+      }
+
+      let date1 = new Date(now.getFullYear(), 11, 31);
+      console.log(
+        "Задание №1. День недели 31 декабря текущего года - это " +
+          getWeekDay(date1)
+      );
+
+      // ___________________________________________________________________
+
+      console.log("День текущего месяца:");
+
+      // Задание №2
+      //   let now2 = new Date();
+      //   let date2 = new Date(now2.getFullYear(), now2.getMonth(), 1);
+      //   console.log(date2.getDay());
+
+      let date2 = new Date(now.getFullYear(), now.getMonth(), 1);
+      console.log(
+        "Задание №2. День недели 1 числа текущего месяца - это " +
+          getWeekDay(date2)
+      );
+
+      // ___________________________________________________________________
+
+      console.log("День следующего или предыдущего года: ");
+
+      // Задание №3
+      //   let now3 = new Date();
+      //   let date3 = new Date(now3.getFullYear() + 1, 11, 31);
+      //   console.log(date3.getDay());
+
+      let date3 = new Date(now.getFullYear() + 1, 11, 31);
+      console.log(
+        "Задание №3. День недели 31 декабря следующего года - это " +
+          getWeekDay(date3)
+      );
+
+      // Задание №4
+      //   let now4 = new Date();
+      //   let date4 = new Date(now4.getFullYear() + 1, now4.getMonth(), 17);
+      //   console.log(date4.getDay());
+
+      let date4 = new Date(now.getFullYear() + 1, now.getMonth(), 17);
+      console.log(
+        "Задание №4. День недели будет через год в такую же дату, как сегодня - это " +
+          getWeekDay(date4)
+      );
+
+      // Задание №5
+      //   let now5 = new Date();
+      //   let date5 = new Date(now5.getFullYear() - 1, now5.getMonth(), 17);
+      //   console.log(date5.getDay());
+
+      let date5 = new Date(now.getFullYear() - 1, now.getMonth(), 17);
+      console.log(
+        "Задание №5. День недели был год назад в такую же дату, как сегодня - это " +
+          getWeekDay(date5)
+      );
+
+      // ___________________________________________________________________
+
+      console.log("День следующего или предыдущего месяца: ");
+
+      // Задание №6
+      //  Проблем не будет
+
+      //   let now6 = new Date();
+      //   let date6 = new Date(now6.getFullYear(), 0 - 1, 1);
+      //   console.log(date6.getDay());
+
+      let date6 = new Date(now.getFullYear(), 0 - 1, 1);
+      console.log(
+        "Задание №6. День недели первого числа предыдущего месяца - это " +
+          getWeekDay(date6)
+      );
+
+      // Задание №7
+      //   let now6 = new Date();
+      //   let date7 = new Date(now.getFullYear(), now.getMonth() - 1, now.getDay());
+      //   console.log(date7.getDay());
+
+      let date7 = new Date(now.getFullYear(), now.getMonth() - 1, now.getDay());
+      console.log(
+        "Задание №7. День недели был месяц назад в такой же день месяца, как сегодня - это " +
+          getWeekDay(date7)
+      );
+
+      // ___________________________________________________________________
+
+      console.log("Разность моментов: ");
+
+      // Задание №8
+      let date81 = new Date(now.getFullYear(), 0, 1);
+      let date82 = new Date(now.getFullYear(), 8, 10);
+
+      diff = date82 - date81;
+      console.log(
+        `Задание №8. Между 1 января и 10 сентября текущего года - ${
+          diff / (1000 * 3600 * 24)
+        } дня`
+      );
+
+      // Задание №9
+      let date91 = new Date(now.getFullYear(), now.getMonth(), 20);
+      let date92 = new Date(now.getFullYear(), now.getMonth() + 1, 10);
+
+      diff = date92 - date91;
+      console.log(
+        `Задание №9. Между 20 числом текущего месяца и 10 числом следующего - ${
+          diff / (1000 * 3600 * 24)
+        } дней`
+      );
+
+      // ___________________________________________________________________
+
+      console.log("Момент времени дня: ");
+
+      // Задание №10
+      let date10 = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate() - 1,
+        12
+      );
+
+      diff = now - date10;
+      console.log(
+        `Задание №10. Между вчерашним полднем и текущим моментом времени прошло ${
+          diff / (1000 * 60 * 60)
+        } часa`
+      );
+
+      // ___________________________________________________________________
+
+      console.log("Начало дня: ");
+
+      // Задание №11
+      let date11 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+      diff = now - date11;
+      console.log(
+        `Задание №11. Между началом дня и текущим моментом времени ${
+          diff / (1000 * 60 * 60)
+        } часa`
+      );
+
+      // ___________________________________________________________________
+
+      console.log("Конец дня: ");
+
+      // Задание №12
+      let date12 = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate(),
+        24
+      );
+      // равносильно: let date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59)
+
+      diff = date12 - now;
+      console.log(
+        `Задание №12. До конца дня осталось ${diff / (1000 * 60 * 60)} часa`
+      );
+
+      // ___________________________________________________________________
+
+      console.log("Циклическая проверка: ");
+
+      // Задание №13
+      let counter = 0;
+
+      for (let year = 2000; year <= new Date().getFullYear(); year++) {
+        let date = new Date(year, 0, 1);
+        if (date.getDay() === 0 || date.getDay() === 6) {
+          counter++;
+        }
+      }
+      console.log(
+        `Задание №13. ${counter} раз 1 января от 2000 года до текущего года попадало на выходной день, т.е. на субботу или на воскресенье`
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №235</h1>
+    <p>Получение моментов времени</p>
+  </body>
+</html>
