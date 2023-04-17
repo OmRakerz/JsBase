@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Практика на получение моментов времени в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      let now = new Date(); // получаем текущий момент
+
+      let date1 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+      diff = now - date1;
+      console.log(
+        `Задание №1. Прошло ${
+          diff / 1000
+        } секунд с начала дня до настоящего момента времени`
+      );
+
+      // Задание №2
+      let date2 = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate(),
+        24
+      );
+      // равносильно: let date = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59)
+
+      diff = date2 - now;
+      console.log(`Задание №2. До конца дня осталось ${diff / 1000} секунд`);
+
+      // Задание №3
+      let ng = new Date(now.getFullYear(), 11, 31, 24);
+      let diff3 = ng - now;
+
+      console.log(
+        `Задание №3. До НГ осталось ${diff3 / 1000 / 60 / 60 / 24} дней`
+      );
+
+      // Задание №7
+      function isLeap() {
+        if (new Date().getFullYear() == 12) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      if (isLeap == true) {
+        console.log("Високосный");
+      } else {
+        console.log("Обычный");
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №236</h1>
+    <p>Практика на получение моментов времени</p>
+  </body>
+</html>
