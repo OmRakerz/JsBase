@@ -57,6 +57,14 @@
       console.log(
         `Задание №2. Кол-во дней в марте 2025 года: ${date.getDate()} `
       );
+
+      lastDay = new Date(2025, 5, 0);
+      daysOfWeek = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
+
+      dayOfWeek = daysOfWeek[lastDay.getDay()];
+      console.log(
+        `Задание №2. Последний день мая 2025 года - это ${dayOfWeek}`
+      );
     </script>
   </head>
   <body>
