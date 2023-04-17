@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Автоматическая корректировка дат в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      let now = new Date(); // показывает текущую дату и время
+
+      console.log("Задание №1. Преобразует в 07.03.2018");
+
+      let date1 = new Date(2018, 1, 35);
+      console.log(date1);
+
+      // Задание №2
+      console.log("Задание №2. Преобразует в 01.04.2019");
+
+      let date2 = new Date(2018, 15, 1);
+      console.log(date2);
+
+      // Задание №3
+      console.log("Задание №3. Преобразует в 01.05.2018");
+
+      let date3 = new Date(2018, 3, 31);
+      console.log(date3);
+
+      // Задание №4
+      console.log("Задание №4. Преобразует в 03.03.2018");
+
+      let date4 = new Date(2018, 1, 31);
+      console.log(date4);
+
+      // Задание №5
+      console.log("Задание №5. Преобразует в 02.02.2019");
+
+      let date5 = new Date(2018, 12, 33);
+      console.log(date5);
+
+      // Задание №6
+      console.log("Задание №6. Преобразует в 02.11.2020");
+
+      let date6 = new Date(2018, 33, 33);
+      console.log(date6);
+
+      // Задание №7
+      console.log("Задание №7. Преобразует в 31.05.2018");
+
+      let date7 = new Date(2018, 5, 0);
+      console.log(date7);
+
+      // Задание №8
+      console.log("Задание №8. Преобразует в 31.12.2017");
+
+      let date8 = new Date(2018, 0, 0);
+      console.log(date8);
+
+      // Задание №9
+      console.log("Задание №9. Преобразует в 29.11.2016");
+
+      let date9 = new Date(2018, -12, -33);
+      console.log(date9);
+
+      // Задание №10
+      console.log("Задание №10. Преобразует в 01.01.2018 23:01:00");
+
+      let date10 = new Date(2018, 0, 1, 23, 0, 60);
+      console.log(date10);
+
+      // Задание №11
+      console.log("Задание №11. Преобразует в 02.01.2018 00:00:00");
+
+      let date11 = new Date(2018, 0, 1, 23, 60, 0);
+      console.log(date11);
+
+      // Задание №12
+      console.log("Задание №12. Преобразует в 05.01.2018 05:41:40");
+
+      let date12 = new Date(2018, 0, 1, 100, 100, 100);
+      console.log(date12);
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №231</h1>
+    <p>Автоматическая корректировка дат</p>
+  </body>
+</html>
