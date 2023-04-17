@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Нахождение последнего дня месяца в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      function getLastDayOfMonth(month, year) {
+        let date = new Date(year, month, 1);
+
+        // Вычитаем один день из даты, чтобы получить последний день текущего месяца
+        date.setDate(date.getDate() - 1);
+        return date.getDate();
+      }
+      console.log(
+        "Задание №1. Последний день февраля: " + getLastDayOfMonth(2, 2023)
+      ); // выведет 28
+      console.log(
+        "Задание №1. Последний день апреля: " + getLastDayOfMonth(4, 2023)
+      ); // выведет 30
+      console.log(
+        "Задание №1. Последний день января: " + getLastDayOfMonth(1, 2023)
+      ); // выведет 31
+
+      // Задание №2
+      let date = new Date(2025, 4, 0);
+      console.log(
+        `Задание №2. Кол-во дней в марте 2025 года: ${date.getDate()} `
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №232</h1>
+    <p>Нахождение последнего дня месяца</p>
+  </body>
+</html>
