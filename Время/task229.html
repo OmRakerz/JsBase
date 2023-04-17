@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Разность между датами в формате timestamp в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      let now = new Date(); // показывает текущую дату и время
+
+      let date1 = new Date(1988, 1, 4, 23, 59, 59);
+      let date2 = new Date(2000, 1, 10, 23, 59, 59);
+
+      let diff1 = date2.getTime() - date1.getTime();
+      console.log(
+        `Задание №1. Кол-во дней, прошедшее между 1 марта 1988 года и 10 января 2000 года: ${
+          diff1 / (1000 * 3600 * 24)
+        }`
+      ); // кол-во дней (1 000мс * 3600сек * 24ч)
+
+      // Задание №2
+      let now1 = new Date();
+
+      let date3 = new Date(2003, 9, 5, 19, 00, 00);
+
+      let diff2 = now.getTime() - date3.getTime();
+      console.log(
+        `Задание №2. Кол-во месяцев, прошедшее между моим рождением и текущим моментом времени: ${
+          diff2 / (1000 * 60 * 60 * 24 * 30)
+        }`
+      ); // кол-во месяцев (1 000мс * 60сек * 60мин * 24ч * 30 дней)
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №229</h1>
+    <p>Разность между датами в формате timestamp</p>
+  </body>
+</html>
