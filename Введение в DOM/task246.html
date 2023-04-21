@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Обработчики разных событий в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 35px;
+        margin-top: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №246</h1>
+    <p>Обработчики разных событий</p>
+
+    <!-- Задание №1 -->
+    <h2>Задание №1</h2>
+
+    <button id="button1">button1</button>
+
+    <!-- Задание №2 -->
+    <h2>Задание №2</h2>
+
+    <button id="button2">button2</button>
+
+    <!-- Задание №3 -->
+    <h2>Задание №3</h2>
+
+    <button id="button3">button3</button>
+
+    <!-- Задание №4 -->
+    <h2>Задание №4</h2>
+
+    <button id="button4">button4</button>
+
+    <script>
+      // Задание №1
+      let button1 = document.querySelector("#button1");
+
+      button1.addEventListener("dblclick", func1);
+      // C помощью события dblclick можно отловить двойной клик по элементу
+      function func1() {
+        console.log("Вы нажали по кнопке 2 раза");
+      }
+
+      // Задание №2
+      let button2 = document.querySelector("#button2");
+      // C помощью события mouseover - наведение курсора на элемент
+      button2.addEventListener("mouseover", () => {
+        console.log("Вы навели курсор на кнопку");
+      });
+
+      // Задание №3
+      let button3 = document.querySelector("#button3");
+      // С помощью события mouseout - уход курсора с элемента.
+      button3.addEventListener("mouseout", () => {
+        console.log("Вы увели курсор с кнопки");
+      });
+
+      // Задание №4
+      let button4 = document.querySelector("#button4");
+
+      button4.addEventListener("mouseover", () => {
+        console.log("Вы навели курсор на кнопку");
+      });
+
+      button4.addEventListener("mouseout", () => {
+        console.log("Вы увели курсор с кнопки");
+      });
+    </script>
+  </body>
+</html>
