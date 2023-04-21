@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Работа с текстовыми полями в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 30px;
+        margin-top: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №249</h1>
+    <p>Работа с текстовыми полями</p>
+
+    <!-- Задание №1 -->
+    <h2>Задание №1</h2>
+
+    <input id="elem1" type="email" />
+    <button id="btn1">button</button>
+
+    <!-- Задание №2 -->
+    <h2>Задание №2</h2>
+    <input id="elem2" type="email" />
+    <button id="btn2">button</button>
+    <p id="p1"></p>
+
+    <!-- Задание №3 -->
+    <h2>Задание №3</h2>
+
+    <input id="elem31" type="email" /><br /><br />
+    <input id="elem32" type="email" />
+    <button id="btn3">button</button>
+
+    <script>
+      // Задание №1
+      let input1 = document.querySelector("#elem1");
+      let button1 = document.querySelector("#btn1");
+
+      button1.addEventListener("click", function () {
+        input1.value = "text";
+      });
+
+      // Задание №2
+      let input2 = document.querySelector("#elem2");
+      let button2 = document.querySelector("#btn2");
+      let p1 = document.querySelector("#p1");
+
+      button2.addEventListener("click", function () {
+        p1.textContent = input2.value;
+      });
+
+      // Задание №3
+      let input31 = document.querySelector("#elem31");
+      let input32 = document.querySelector("#elem32");
+
+      let button3 = document.querySelector("#btn3");
+
+      button3.addEventListener("click", function () {
+        input32.value = input31.value ** 2;
+      });
+    </script>
+  </body>
+</html>
