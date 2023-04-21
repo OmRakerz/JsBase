@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Именованные обработчики событий в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 35px;
+        margin-top: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+    </style>
+
+    <script>
+      // Задание №1
+      let button1 = document.querySelector("#button1");
+      button1.addEventListener("click", func1);
+
+      let button2 = document.querySelector("#button2");
+      button2.addEventListener("click", func2);
+
+      function func1() {
+        console.log(1);
+      }
+
+      function func2() {
+        console.log(2);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Упражнение №243</h1>
+    <p>Именованные обработчики событий</p>
+
+    <!-- Задание №1 -->
+    <h2>Задание №1</h2>
+
+    <input id="button1" type="submit" value="button1" />
+    <input id="button2" type="submit" value="button2" />
+  </body>
+</html>
