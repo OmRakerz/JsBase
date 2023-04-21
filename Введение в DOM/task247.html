@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Работа с текстом элементов на JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 35px;
+        margin-top: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      #result1 {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: #ff6347;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №246</h1>
+    <p>Работа с текстом элементов</p>
+
+    <!-- Задание №1 -->
+    <h2>Задание №1</h2>
+
+    <p id="p1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, nihil?
+    </p>
+    <button id="btn1">button</button>
+
+    <!-- Задание №2 -->
+    <h2>Задание №2</h2>
+
+    <p id="p2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, nihil?
+    </p>
+    <button id="btn2">button</button>
+
+    <!-- Задание №3 -->
+    <h2>Задание №3</h2>
+
+    <p id="num31">1</p>
+    <p id="num32">2</p>
+    <button id="btn3">button</button>
+
+    <!-- Задание №4 -->
+    <h2>Задание №4</h2>
+
+    <p id="num41">3</p>
+    <p id="num42">4</p>
+    <p id="num43">5</p>
+    <div id="result1"></div>
+    <button id="btn4">button</button>
+
+    <!-- Задание №5 -->
+    <h2>Задание №5</h2>
+
+    <p id="num5">4</p>
+    <button id="btn5">button</button>
+
+    <!-- Задание №6 -->
+    <h2>Задание №6</h2>
+
+    <p id="p6">Hello, world</p>
+    <button id="btn6">button</button>
+
+    <script>
+      // Задание №1
+      let p1 = document.querySelector("#p1");
+      let button1 = document.querySelector("#btn1");
+      // textContent прочитывает текст этих элементов
+      let elem1 = p1.textContent;
+
+      button1.addEventListener("click", function () {
+        console.log(elem1);
+      });
+
+      // Задание №2
+      let p2 = document.querySelector("#p2");
+      let button2 = document.querySelector("#btn2");
+
+      button2.addEventListener("click", function () {
+        p2.textContent =
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id modi ullam doloribus necessitatibus cumque reprehenderit voluptates vel voluptas officia doloremque!";
+      });
+
+      // Задание №3
+      let num31 = document.querySelector("#num31");
+      let num32 = document.querySelector("#num32");
+      let button3 = document.querySelector("#btn3");
+
+      button3.addEventListener("click", function () {
+        console.log(Number(num31.textContent) + Number(num32.textContent));
+      });
+
+      // Задание №4
+      let num41 = document.querySelector("#num41");
+      let num42 = document.querySelector("#num42");
+      let num43 = document.querySelector("#num43");
+      let result1 = document.querySelector("#result1");
+      let button4 = document.querySelector("#btn4");
+
+      button4.addEventListener("click", function () {
+        result1.textContent =
+          Number(num41.textContent) +
+          Number(num42.textContent) +
+          Number(num43.textContent);
+      });
+
+      // Задание №5
+      let num5 = document.querySelector("#num5");
+      let button5 = document.querySelector("#btn5");
+
+      button5.addEventListener("click", function () {
+        num5.textContent = Number(num5.textContent) + 1;
+      });
+
+      // Задание №6
+      let p6 = document.querySelector("#p6");
+      let button6 = document.querySelector("#btn6");
+
+      button6.addEventListener("click", function () {
+        p6.textContent += "!";
+      });
+    </script>
+  </body>
+</html>
