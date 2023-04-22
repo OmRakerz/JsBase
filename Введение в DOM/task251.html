@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Фокус текстовых полей в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 30px;
+        margin-top: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №251</h1>
+    <p>Фокус текстовых полей</p>
+
+    <!-- Задание №1 -->
+    <h2>Задание №1</h2>
+
+    <input id="elem" value="text" />
+
+    <!-- Задание №2 -->
+    <h2>Задание №2</h2>
+
+    <input id="elem2" value="" />
+
+    <!-- Задание №3 -->
+    <h2>Задание №3</h2>
+
+    <input id="elem3" value="text" />
+
+    <script>
+      // Задание №1
+      let input = document.querySelector("#elem");
+      // focus позволяет отловить получение фокуса инпутом
+      input.addEventListener("focus", function () {
+        input.value = 1;
+      });
+
+      // blur - потерю фокуса инпутом
+      input.addEventListener("blur", function () {
+        input.value = 2;
+      });
+
+      // Задание №2
+      let input2 = document.querySelector("#elem2");
+      input2.addEventListener("focus", function () {
+        input2.value = "";
+      });
+
+      input2.addEventListener("blur", function () {
+        input2.value = input2.value ** 2;
+      });
+
+      // Задание №3
+      let input3 = document.querySelector("#elem3");
+      input3.addEventListener("focus", function () {
+        input3.value = "";
+      });
+    </script>
+  </body>
+</html>
