@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Преимущество this в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 30px;
+        margin-top: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №255</h1>
+    <p>Преимущество this</p>
+
+    <!-- Задание №1 -->
+    <h2>Задание №1</h2>
+
+    <p id="p1">Hello, world</p>
+    <p id="p2">Hello, world</p>
+    <p id="p3">Hello, world</p>
+    <p id="p4">Hello, world</p>
+    <p id="p5">Hello, world</p>
+
+    <!-- Задание №2 -->
+    <h2>Задание №2</h2>
+
+    <input id="input1" type="text" value="6" /> <br /><br />
+    <input id="input2" type="text" value="7" /> <br /><br />
+    <input id="input3" type="text" value="8" />
+
+    <script>
+      // При каждом клике this будет выводить в консоль value той кнопки, на которой произошло нажатие, но делать это будет одна и та же функция func!
+
+      // Задание №1
+      let p1 = document.querySelector("#p1");
+      let p2 = document.querySelector("#p2");
+      let p3 = document.querySelector("#p3");
+      let p4 = document.querySelector("#p4");
+      let p5 = document.querySelector("#p5");
+
+      p1.addEventListener("click", func1);
+      p2.addEventListener("click", func1);
+      p3.addEventListener("click", func1);
+      p4.addEventListener("click", func1);
+      p5.addEventListener("click", func1);
+
+      function func1() {
+        this.textContent += "!";
+      }
+
+      // Задание №2
+      let input1 = document.querySelector("#input1");
+      let input2 = document.querySelector("#input2");
+      let input3 = document.querySelector("#input3");
+
+      input1.addEventListener("blur", func2);
+      input2.addEventListener("blur", func2);
+      input3.addEventListener("blur", func2);
+
+      function func2() {
+        this.value = this.value ** 2;
+      }
+    </script>
+  </body>
+</html>
