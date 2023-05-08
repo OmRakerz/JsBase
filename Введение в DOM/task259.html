@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Отвязывание событий в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 30px;
+        margin-top: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №258</h1>
+    <p>Отвязывание событий</p>
+
+    <!-- Задание №1 -->
+    <h2>Задание №1</h2>
+
+    <a
+      class="link"
+      href="https://code.mu/ru/javascript/book/prime/dom/basis/handlers-unbinding/"
+      >Ссылка
+    </a>
+    <button id="btn1">Кнопка</button>
+
+    <!-- Задание №2 -->
+    <h2>Задание №2</h2>
+
+    <button id="btn2">1</button>
+
+    <script>
+      // Метод removeEventListener первым параметром принимает тип события, а вторым - ссылку на функцию, которую нужно отвязать.
+
+      // Задание №1
+      let link = document.querySelector(".link");
+      let btn1 = document.querySelector("#btn1");
+
+      btn1.addEventListener("click", func1);
+
+      function func1() {
+        link.textContent += link.href;
+        btn1.removeEventListener("click", func1);
+      }
+
+      // Задание №2
+      let btn2 = document.querySelector("#btn2");
+
+      btn2.addEventListener("click", func2);
+
+      function func2() {
+        if (this.textContent < 10) {
+          this.textContent = Number(this.textContent) + 1;
+        } else {
+          this.removeEventListener("click", func2);
+        }
+      }
+    </script>
+  </body>
+</html>
