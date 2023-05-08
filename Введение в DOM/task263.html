@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Манипулирование CSS классами в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №263</h1>
+    <p>Манипулирование CSS классами</p>
+
+    <h2>Массив классов</h2>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+    <p id="elem1" class="www ggg zzz"></p>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+    <p id="elem2" class="www ggg zzz"></p>
+
+    <h2>Добавление классов</h2>
+
+    <!-- Задание №3 -->
+    <h3>Задание №3</h3>
+    <p id="elem3" class="www ggg zzz"></p>
+
+    <h2>Удаление классов</h2>
+
+    <!-- Задание №4 -->
+    <h3>Задание №4</h3>
+    <p id="elem4" class="www ggg zzz"></p>
+
+    <h2>Проверка классов</h2>
+
+    <!-- Задание №5 -->
+    <h3>Задание №5</h3>
+    <p id="elem5" class="www ggg zzz"></p>
+
+    <h2>Чередование классов</h2>
+
+    <!-- Задание №6 -->
+    <h3>Задание №6</h3>
+    <p id="elem6" class="www zzz"></p>
+
+    <script>
+      // Свойство classList позволяет добавлять и удалять классы элемента, проверять наличие определенного класса среди классов элемента.
+
+      // Задание №1
+      let elem1 = document.querySelector("#elem1");
+      let length = elem1.classList.length;
+
+      console.log(length);
+
+      // Задание №2
+      let elem2 = document.querySelector("#elem2");
+      let class1 = elem2.classList;
+
+      for (let classItem of class1) {
+        console.log(classItem);
+      }
+
+      // Метод add объекта classList позволяет добавлять CSS классы элементу.
+      // Задание №3
+      let elem3 = document.querySelector("#elem3");
+      elem3.classList.add("xxx");
+      let class2 = elem3.classList;
+
+      console.log(class2);
+
+      // Метод remove объекта classList удаляет заданный CSS класс элемента.
+      // Задание №4
+      let elem4 = document.querySelector("#elem4");
+      elem4.classList.remove("www", "zzz");
+      let class3 = elem4.classList;
+
+      console.log(class3);
+
+      // Метод contains объекта classList проверяет наличие CSS класса элемента.
+      // Задание №5
+      let elem5 = document.querySelector("#elem5");
+      let contains = elem5.classList.contains("ggg");
+      console.log(contains);
+
+      // Метод toggle объекта classList чередует заданный CSS класс элемента: добавляет класс, если его нет и удаляет, если есть.
+
+      // Задание №6
+      let elem6 = document.querySelector("#elem6");
+      elem6.classList.toggle("www");
+      let class4 = elem6.classList;
+
+      console.log(class4);
+    </script>
+  </body>
+</html>
