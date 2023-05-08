@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Добавление обработчиков в цикле в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 30px;
+        margin-top: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №257</h1>
+    <p>Добавление обработчиков в цикле</p>
+
+    <!-- Задание №1 -->
+    <h2>Задание №1</h2>
+
+    <input type="text" value="0" />
+    <input type="text" value="0" />
+
+    <!-- Задание №2 -->
+    <h2>Задание №2</h2>
+
+    <p class="sqr">3</p>
+    <p class="sqr">4</p>
+
+    <script>
+      // Объект this - при вызове функции в момент события этот объект будет указывать на тот элемент, где это событие случилось.
+
+      // Задание №1
+      let inputs = document.querySelectorAll("input");
+
+      for (let input of inputs) {
+        input.addEventListener("blur", func1);
+      }
+
+      function func1() {
+        this.value = Number(this.value) + 1;
+      }
+
+      // Задание №2
+      let text = document.querySelectorAll(".sqr");
+
+      for (let elem of text) {
+        elem.addEventListener("click", func2);
+      }
+
+      function func2() {
+        this.textContent = Math.pow(Number(this.textContent), 2);
+      }
+    </script>
+  </body>
+</html>
