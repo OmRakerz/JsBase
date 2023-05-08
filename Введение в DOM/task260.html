@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Отвязывание обработчиков событий в цикле в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 30px;
+        margin-top: 50px;
+        color: #4682b4;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №260</h1>
+    <p>Отвязывание обработчиков событий в цикле</p>
+
+    <!-- Задание №1 -->
+    <h2>Задание №1</h2>
+
+    <p>text1</p>
+    <p>text2</p>
+    <p>text3</p>
+
+    <script>
+      // Метод removeEventListener первым параметром принимает тип события, а вторым - ссылку на функцию, которую нужно отвязать.
+
+      // Задание №1
+      let elems = document.querySelectorAll("p");
+
+      for (let elem of elems) {
+        elem.addEventListener("click", func);
+      }
+
+      function func() {
+        this.textContent += "!";
+        this.removeEventListener("click", func);
+      }
+    </script>
+  </body>
+</html>
