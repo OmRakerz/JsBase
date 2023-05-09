@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Отработка изученного материала на работу с DOM</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №273</h1>
+    <p>Отработка изученного материала на работу с DOM</p>
+
+    <input class="cls" type="text" value="" placeholder="число" />
+    <input class="cls" type="text" value="" placeholder="число" />
+    <input class="cls" type="text" value="" placeholder="число" />
+    <button id="task">Click</button>
+    <input id="sum" type="text" value="" />
+
+    <script>
+      var elem = document.getElementById("task");
+      elem.addEventListener("click", func);
+      var elem1 = document.getElementsByClassName("cls");
+
+      function func() {
+        var sum = 0;
+        for (var i = 0; i < elem1.length; i++) {
+          sum += +elem1[i].value;
+        }
+        var newElem = document.getElementById("sum");
+        newElem.value = sum;
+      }
+    </script>
+  </body>
+</html>
