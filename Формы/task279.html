@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Событие change в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №279</h1>
+    <p>Событие change</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <input id="elem1" value="text" />
+    <p class="p1"></p>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <input type="checkbox" id="elem2" />
+    <br />
+    <p class="p2"></p>
+
+    <!-- Задание №3 -->
+    <h3>Задание №3</h3>
+
+    <p>
+      Событие <i>blur</i> вызывается тогда, когда фокус исчезает, например
+      посетитель кликает на другом месте экрана. А событие
+      <i>change</i> происходит <u>при изменении значения элемента</u>, но уже
+      после того как элемент потерял фокус.
+    </p>
+
+    <!-- Задание №4-->
+    <h3>Задание №4</h3>
+
+    <input id="elem4" value="text" />
+
+    <script>
+      // Задание №1
+      let elem1 = document.querySelector("#elem1");
+      let p1 = document.querySelector(".p1");
+
+      elem1.addEventListener("change", function () {
+        p1.textContent = this.value;
+      });
+
+      // Задание №2
+      let elem2 = document.querySelector("#elem2");
+      let p2 = document.querySelector(".p2");
+
+      elem2.addEventListener("change", function () {
+        p2.textContent = this.value;
+      });
+
+      // Задание №4
+      let elem4 = document.querySelector("#elem4");
+
+      elem4.addEventListener("change", function () {
+        if (elem4.value.length < 5) {
+          elem4.style.border = "solid 5px green";
+        } else {
+          elem4.style.border = "solid 5px red";
+        }
+      });
+    </script>
+  </body>
+</html>
