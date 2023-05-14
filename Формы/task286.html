@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Работа с пунктами выпадающего списка на JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №286</h1>
+    <p>Работа с пунктами выпадающего списка</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <select id="select1">
+      <option value="1">Пункт №1</option>
+      <option value="2">Пункт №2</option>
+      <option value="3">Пункт №3</option>
+      <option value="4" selected>Пункт №4</option>
+      <option value="5">Пункт №5</option>
+    </select>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <select id="select2">
+      <option value="1">Пункт №1</option>
+      <option value="2">Пункт №2</option>
+      <option value="3">Пункт №3</option>
+      <option value="4">Пункт №4</option>
+      <option value="5">Пункт №5</option>
+    </select>
+    <button id="btn2">Отметить последний пункт</button>
+
+    <!-- Задание №3 -->
+    <h3>Задание №3</h3>
+
+    <select id="select3">
+      <option value="1">Пункт №1</option>
+      <option value="2">Пункт №2</option>
+      <option value="3">Пункт №3</option>
+      <option value="4" selected>Пункт №4</option>
+      <option value="5">Пункт №5</option>
+    </select>
+
+    <button id="btn3">Получить текст</button>
+    <p id="p3"></p>
+
+    <!-- Задание №4 -->
+    <h3>Задание №4</h3>
+
+    <select id="select4">
+      <option value="1">Пункт №1</option>
+      <option value="2">Пункт №2</option>
+      <option value="3">Пункт №3</option>
+      <option value="4">Пункт №4</option>
+      <option value="5">Пункт №5</option>
+    </select>
+
+    <button id="btn4">Добавить восклицательный знак</button>
+
+    <script>
+      // Задание №1
+      let MySelect1 = document.querySelector("#select1");
+
+      for (let option of MySelect1) {
+        if (option.selected) {
+          option.textContent += "!";
+        } else {
+          option.textContent += "?";
+        }
+      }
+
+      // Задание №2
+      let MySelect2 = document.querySelector("#select2");
+      let button2 = document.querySelector("#btn2");
+
+      button2.addEventListener("click", function () {
+        MySelect2.selectedIndex = MySelect2.options.length - 1;
+      });
+
+      // Задание №3
+      let MySelect3 = document.querySelector("#select3");
+      let button3 = document.querySelector("#btn3");
+      let p3 = document.querySelector("#p3");
+
+      button3.addEventListener("click", function () {
+        selectedOption = MySelect3.options[MySelect3.selectedIndex]; // находим выбранный пункт
+        selectedText = selectedOption.text; // находим его текст
+        p3.textContent = selectedText; // выводим его в абзац
+      });
+
+      // Задание №4
+      let MySelect4 = document.querySelector("#select4");
+      let button4 = document.querySelector("#btn4");
+
+      button4.addEventListener("click", function () {
+        selectedOption = MySelect4.options[MySelect4.selectedIndex]; // получаем выбранную опцию
+
+        selectedText = selectedOption.text; // получаем текст выбранной опции
+        selectedOption.text = selectedText + "!";
+      });
+    </script>
+  </body>
+</html>
