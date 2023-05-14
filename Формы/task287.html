@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Поиск ошибок в коде с формами в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №287</h1>
+    <p>Поиск ошибок в коде с формами</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <textarea></textarea>
+    <div></div>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <input type="checkbox" />
+    <div id="div2"></div>
+    <button id="btn2">button</button>
+
+    <!-- Задание №3 -->
+    <h3>Задание №3</h3>
+
+    <input type="checkbox" />
+    <button id="btn3">button</button>
+
+    <script>
+      // Задание №1
+      let textarea = document.querySelector("textarea");
+      let div1 = document.querySelector("div");
+
+      textarea.addEventListener("input", function () {
+        div1.textContent = textarea.value;
+      });
+
+      // Задание №2
+      let checkbox = document.querySelector("input[type=checkbox]");
+      let button2 = document.querySelector("#btn2");
+      let div2 = document.querySelector("#div2");
+
+      button2.addEventListener("click", function () {
+        if (checkbox.checked) {
+          div2.textContent = "111";
+        } else {
+          div2.textContent = "222";
+        }
+      });
+
+      // Задание №3
+      let checkbox2 = document.querySelector('[type="checkbox"]');
+      let button3 = document.querySelector("#btn3");
+
+      button3.addEventListener("click", function () {
+        if ((checkbox2.checked = true)) {
+          console.log("+++");
+        } else {
+          console.log("---");
+        }
+      });
+    </script>
+  </body>
+</html>
