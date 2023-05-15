@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Элемент события в объекте Event в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ul {
+        padding: 30px;
+        border: 1px solid red;
+      }
+      li {
+        list-style-type: none;
+        margin-bottom: 20px;
+        border: 1px dashed gray;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №291</h1>
+    <p>Элемент события в объекте Event</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <ul id="elem">
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+
+    <script>
+      // Объект this всегда содержит элемент, к которому было привязано событие, а свойство target - элемент, по которому реально был клик. Этот реальный элемент может совпадать с this, а может не совпадать.
+
+      // Задание №1
+      let ul = document.querySelector("#elem");
+
+      ul.addEventListener("click", function (event) {
+        let target = event.target;
+        if (target.tagName === "LI") {
+          target.textContent += "!";
+        } else if (target.tagName === "UL") {
+          let li = document.createElement("li"); // создание нового элемента списка
+          li.textContent = "new item";
+          ul.appendChild(li); // добавление элемента в конец списка
+        }
+      });
+    </script>
+  </body>
+</html>
