@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Получение нажатых клавиш в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №292</h1>
+    <p>Получение нажатых клавиш</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1 - №4</h3>
+
+    <input />
+    <p id="p1"></p>
+    <p id="p2"></p>
+
+    <!-- Задание №5 -->
+    <h3>Задание №5</h3>
+
+    <input type="text" id="input2" />
+    <p id="p3"></p>
+
+    <script>
+      // Задание №1, №2, №3, №4
+      let elem = document.querySelector("input");
+      let p1 = document.querySelector("#p1");
+      let p2 = document.querySelector("#p2");
+
+      elem.addEventListener("keypress", function (event) {
+        p1.textContent = event.code;
+        p2.textContent = event.key;
+      });
+
+      // Задание №5
+      let input = document.querySelector("#input2");
+      let p3 = document.querySelector("#p3");
+
+      input.addEventListener("keypress", function (event) {
+        if (event.code == "Enter") {
+          p3.textContent = input.value;
+          input.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>
