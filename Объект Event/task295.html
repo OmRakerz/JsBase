@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Всплытие событий в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+
+      /* Задание №1 */
+      #elem1 {
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+        padding: 1px;
+        background: #97ff97;
+      }
+      #elem2,
+      #inner {
+        width: 140px;
+        height: 140px;
+        margin: 30px;
+        padding: 1px;
+        background: #7777ff;
+      }
+      #elem3,
+      #btn {
+        width: 80px;
+        height: 80px;
+        margin: 30px;
+        padding: 1px;
+        background: #ff7d7d;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №295</h1>
+    <p>Всплытие событий</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <div id="elem1">
+      <div id="elem2">
+        <div id="elem3"></div>
+      </div>
+    </div>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <p>
+      Когда происходит событие на вложенном элементе, оно не будет всплывать на
+      внешний элемент
+    </p>
+
+    <div id="outer">
+      <div id="inner">
+        <button id="btn">Кнопка</button>
+      </div>
+    </div>
+
+    <script>
+      // Задание №1
+      let elem1 = document.querySelector("#elem1");
+      let elem2 = document.querySelector("#elem2");
+      let elem3 = document.querySelector("#elem3");
+
+      elem1.addEventListener("click", function () {
+        console.log("зеленый");
+      });
+      elem2.addEventListener("click", function () {
+        console.log("голубой");
+      });
+      elem3.addEventListener("click", function () {
+        console.log("красный");
+      });
+
+      // Задание №2
+
+      // Если нажать на кнопку, то будут вызваны оба обработчика событий, так как клик произошел на ней. Однако если нажать на вложенный элемент, то будет вызван только обработчик для вложенного элемента, так как событие не будет всплывать на внешний элемент.
+      let inner = document.querySelector("#inner");
+      let button = document.querySelector("#btn");
+
+      inner.addEventListener("click", function (event) {
+        console.log("Обработчик вложенного элемента");
+      });
+
+      button.addEventListener("click", function (event) {
+        console.log("Обработчик кнопки");
+      });
+    </script>
+  </body>
+</html>
