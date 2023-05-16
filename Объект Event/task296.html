@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Получение целевого элемента при всплытии событий</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div,
+      ul,
+      li {
+        padding: 20px;
+      }
+
+      div {
+        border: 1px solid red;
+
+        font-size: 25px;
+        color: white;
+      }
+
+      ul {
+        border: 1px solid orange;
+      }
+
+      li {
+        border: 1px solid green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №296</h1>
+    <p>Получение целевого элемента при всплытии событий</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <div id="div1">
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </div>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <div id="div2">
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </div>
+
+    <script>
+      // Задание №1
+      let div = document.querySelector("#div1");
+
+      div.addEventListener("click", function (event) {
+        if (event.target.matches("div")) {
+          console.log("Клик произошел на div");
+        } else if (event.target.matches("ul")) {
+          console.log("Клик произошел на ul");
+        } else if (event.target.matches("li")) {
+          console.log("Клик произошел на li");
+        }
+      });
+
+      // Задание №2
+      let div2 = document.querySelector("#div2");
+
+      div2.addEventListener("click", function (event) {
+        if (event.target.matches("div")) {
+          console.log("Клик произошел на div");
+        } else if (event.target.matches("ul")) {
+          console.log("Клик произошел на ul");
+
+          let newLi = document.createElement("li");
+          newLi.textContent = "Новая li!";
+
+          event.target.appendChild(newLi);
+        } else if (event.target.matches("li")) {
+          console.log("Клик произошел на li");
+
+          event.target.textContent += "!";
+        }
+      });
+    </script>
+  </body>
+</html>
