@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Делегирование событий в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      /* Задание №1, №2 */
+      ul {
+        padding: 30px;
+        border: 1px solid red;
+      }
+      li {
+        list-style-type: none;
+        margin-bottom: 20px;
+        border: 1px dashed gray;
+        color: white;
+      }
+
+      #elem1,
+      #elem2 {
+        color: white;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №300</h1>
+    <p>Делегирование событий</p>
+
+    <!-- Задание №1 -->
+    <h2>Задание №1</h2>
+
+    <ul id="elem1">
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+
+    <!-- Задание №2 -->
+    <h2>Задание №2</h2>
+    <h3>Универсальное делегирование событий</h3>
+
+    <ul id="elem2">
+      <li>item <i>italic</i> item</li>
+      <li>item <i>italic</i> item</li>
+      <li>item <i>italic</i> item</li>
+      <li>item <i>italic</i> item</li>
+      <li>item <i>italic</i> item</li>
+    </ul>
+
+    <script>
+      // Навесим событие не на каждую li, а на их родителя ul:
+
+      // Задание №1
+      let list1 = document.querySelector("#elem1");
+
+      list1.addEventListener("click", function (event) {
+        event.target.innerHTML = event.target.innerHTML + "!"; // пункт списка
+      });
+
+      // Метод closest ищет ближайший родительский элемент, подходящий под указанный CSS селектор, при этом сам элемент тоже включается в поиск.
+
+      // Задание №2
+      let list2 = document.querySelector("#elem2");
+
+      list2.addEventListener("click", function (event) {
+        let li = event.target.closest("li");
+
+        if (li) {
+          li.innerHTML = li.innerHTML + "!";
+        }
+      });
+    </script>
+  </body>
+</html>
