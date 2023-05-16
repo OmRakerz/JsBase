@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Прекращение всплытия событий в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+
+      #elem1,
+      #elem4 {
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+        padding: 1px;
+        background: #97ff97;
+      }
+
+      #elem2,
+      #elem5 {
+        width: 140px;
+        height: 140px;
+        margin: 30px;
+        padding: 1px;
+        background: #7777ff;
+      }
+      #elem3,
+      #elem6 {
+        width: 80px;
+        height: 80px;
+        margin: 30px;
+        padding: 1px;
+        background: #ff7d7d;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №297</h1>
+    <p>Прекращение всплытия событий</p>
+
+    <!-- Задание №1 -->
+    <h2>Задание №1</h2>
+
+    <h3>Несколько обработчиков на элементе</h3>
+
+    <div id="elem1">
+      <div id="elem2">
+        <div id="elem3"></div>
+      </div>
+    </div>
+
+    <h3>Немедленное прекращение всплытия</h3>
+
+    <div id="elem4">
+      <div id="elem5">
+        <div id="elem6"></div>
+      </div>
+    </div>
+
+    <script>
+      // Для остановления всплытие события на любой элемент, вызывается метод stopPropagation объекта Event
+      // stopPropagation препятствует продвижению события дальше, но на текущем элементе все обработчики отработают
+
+      // Несколько обработчиков на элементе
+      let elem1 = document.querySelector("#elem1");
+      let elem2 = document.querySelector("#elem2");
+      let elem3 = document.querySelector("#elem3");
+
+      elem1.addEventListener("click", function () {
+        console.log("зеленый");
+      });
+      elem2.addEventListener("click", function (event) {
+        console.log("голубой - первый обработчик");
+        event.stopPropagation(); // остановим всплытие
+      });
+      elem2.addEventListener("click", function () {
+        console.log("голубой - второй обработчик"); // все равно сработает
+      });
+      elem3.addEventListener("click", function () {
+        console.log("красный");
+      });
+
+      // Немедленное прекращение всплытия
+      let elem4 = document.querySelector("#elem4");
+      let elem5 = document.querySelector("#elem5");
+      let elem6 = document.querySelector("#elem6");
+
+      elem4.addEventListener("click", function () {
+        console.log("зеленый");
+      });
+      elem5.addEventListener("click", function (event) {
+        console.log("голубой - первый обработчик");
+        event.stopImmediatePropagation(); // остановим всплытие
+      });
+      elem5.addEventListener("click", function () {
+        console.log("голубой - второй обработчик"); // уже не сработает
+      });
+      elem6.addEventListener("click", function () {
+        console.log("красный");
+      });
+    </script>
+  </body>
+</html>
