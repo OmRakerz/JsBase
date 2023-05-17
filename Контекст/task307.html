@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Привязывание контекста через метод bind в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №307</h1>
+    <p>Привязывание контекста через метод bind</p>
+
+    <p>
+      Метод <i>bind</i> позволяет навсегда привязать контекст к функции. Своим
+      результатом этот метод возвращает новую функцию, внутри которой
+      <i>this</i> будет иметь жестко заданное значение.
+    </p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <input id="elem" value="привет" />
+
+    <script>
+      // Задание №1
+      let elem = document.getElementById("elem");
+
+      function func(name, surname) {
+        console.log(this.value + ", " + name + " " + surname);
+      }
+
+      let boundFunc = func.bind(elem);
+      boundFunc("John", "Smit"); // выведет "привет, John Smit"
+      boundFunc("Eric", "Luis"); // выведет "привет, Eric Luis"
+    </script>
+  </body>
+</html>
