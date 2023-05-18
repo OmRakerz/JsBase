@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Таймеры и потеря контекста в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №314</h1>
+    <p>Таймеры и потеря контекста</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <input type="button" id="elem" value="1" />
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <input type="button" id="elem2" value="1" />
+
+    <!-- Задание №3 -->
+    <h3>Задание №3</h3>
+
+    <ol>
+      <li>
+        Получает элемент со страницы с помощью
+        <i>document.queryselector('#elem')</i> и сохраняет его в переменную
+        <i>elem</i>.
+      </li>
+      <li>
+        Добавляет обработчик события клика на элемент <i>elem</i> с помощью
+        <i>addeventlistener('click', function() {...})</i>.
+      </li>
+      <li>
+        Внутри обработчика определяется функция <i>func</i>, которая возвращает
+        другую функцию.
+      </li>
+      <li>
+        Функция <i>func</i> получает в качестве аргумента текущий контекст
+        <i>(self)</i> и возвращает новую функцию, которая выводит значение
+        свойства <i>value</i>
+        этого контекста в консоль.
+      </li>
+      <li>
+        При каждом клике на элемент <i>elem</i> запускается функция
+        <i>func(this)</i>, которая создает новую функцию с доступом к текущему
+        значению <i>self</i> (значению this на момент клика) и передает ее в
+        <i>setinterval</i>, который запускает ее выполнение каждые 1000
+        миллисекунд.
+      </li>
+    </ol>
+    <p>
+      Таким образом, код создает замыкание – функцию <i>func</i> сохранила
+      значение <i>self</i> на момент создания и имеет доступ к нему в
+      дальнейшем. При каждом клике на элемент <i>elem</i> создается новое
+      замыкание с новым значением <i>self</i>, которое передается в
+      <i>setinterval</i> и используется внутри запущенной функции.
+    </p>
+
+    <input type="button" id="elem3" value="1" />
+
+    <!-- Задание №3.1 -->
+    <h3>Задание №3.1</h3>
+
+    <ol>
+      <li>
+        Получаем элемент из документа с помощью метода <i>querySelector</i>.
+      </li>
+      <li>
+        На этом элементе вызываем метод <i>addEventListener</i> с аргументами
+        <i>'click'</i> и функцией-обработчиком события.
+      </li>
+      <li>
+        Внутри функции-обработчика мы вызываем функцию <i>setInterval</i> с
+        двумя аргументами: функцией-колбэком и интервалом в миллисекундах.
+      </li>
+      <li>
+        Функция-колбэк создаёт замыкание, которое захватывает значение
+        <i>this</i> (текущего элемента) и возвращает функцию, которая выводит в
+        консоль значение свойства <i>value</i> текущего элемента.
+      </li>
+
+      <li>
+        Функция, возвращённая функцией-колбэком, вызывается каждый раз через
+        заданный интервал времени, и при каждом вызове выводит в консоль текущее
+        значение свойства <i>value</i> элемента, на котором было запущено
+        событие <i>'click'</i>.
+      </li>
+    </ol>
+
+    <input type="button" id="elem31" value="1" />
+
+    <script>
+      // Задание №1
+      // Ошибка в том, что контекст 'this' в функции setInterval не ссылается на объект elem, так как 'this' в данном случае относится к глобальному объекту Window. Поэтому необходимо заменить 'this.value' на 'elem.value'.
+      let elem = document.querySelector("#elem");
+
+      elem.addEventListener("click", function () {
+        setInterval(function () {
+          elem.value = Number(elem.value) + 1;
+        }, 1000);
+      });
+
+      // Задание №2
+      // Здесь мы заменили обычные функции на стрелочные функции, чтобы сохранить контекст this внутри функции setInterval.
+      let elem2 = document.querySelector("#elem2");
+      elem2.addEventListener("click", () => {
+        setInterval(() => {
+          elem2.value = Number(elem2.value) + 1;
+        }, 1000);
+      });
+
+      // Задание №3
+      let elem3 = document.querySelector("#elem3");
+
+      elem3.addEventListener("click", function () {
+        setInterval(
+          (function (self) {
+            return function () {
+              console.log(self.value);
+            };
+          })(this),
+          1000
+        );
+      });
+
+      // Задание №3.1
+      let elem31 = document.querySelector("#elem31");
+
+      elem31.addEventListener("click", function () {
+        setInterval(
+          (function (self) {
+            return function () {
+              console.log(self.value);
+            };
+          })(this),
+          1000
+        );
+      });
+    </script>
+  </body>
+</html>
