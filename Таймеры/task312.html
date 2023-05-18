@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Кнопки для запуска и остановки таймера на JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №312</h1>
+    <p>Кнопки для запуска и остановки таймера</p>
+
+    <p>См. в консоль =></p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <button id="start1">start</button>
+    <button id="stop1">stop</button>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <input type="submit" id="start2" value="start" />
+    <input type="submit" id="stop2" value="stop" />
+
+    <!-- Задание №3 -->
+    <h3>Задание №3</h3>
+
+    <input type="submit" id="start3" value="start" />
+    <input type="submit" id="stop3" value="stop" />
+
+    <!-- Задание №4 -->
+    <h3>Задание №4</h3>
+
+    <input type="submit" id="start4" value="start" />
+    <input type="submit" id="stop4" value="stop" />
+
+    <!-- Задание №5 -->
+    <h3>Задание №5</h3>
+
+    <input type="submit" id="start5" value="start" />
+    <input type="submit" id="stop5" value="stop" />
+
+    <!-- Задание №6 -->
+    <h3>Задание №6</h3>
+
+    <button id="start6">start</button>
+    <button id="stop6">stop</button>
+
+    <script>
+      // Задание №1
+      let i = 100;
+      let timerId1;
+      let start1 = document.querySelector("#start1");
+      let stop1 = document.querySelector("#stop1");
+
+      start1.addEventListener("click", startTimer);
+
+      function startTimer() {
+        start1.removeEventListener("click", startTimer);
+        timerId1 = setInterval(function () {
+          console.log(i--);
+
+          if (i == 0) {
+            clearInterval(timerId1); // Останавливаем таймер
+          }
+        }, 1000);
+
+        stop1.addEventListener("click", stopTimer);
+      }
+
+      function stopTimer() {
+        clearInterval(timerId1); // Останавливаем таймер
+        stop1.removeEventListener("click", stopTimer);
+        start1.addEventListener("click", startTimer);
+      }
+
+      // Задание №2
+      let start2 = document.querySelector("#start2");
+      let stop2 = document.querySelector("#stop2");
+      let timerId2; // сделаем переменную глобальной
+
+      start2.addEventListener("click", function () {
+        timerid2 = setInterval(function () {
+          let date = new Date();
+          console.log(date.getMinutes() + " " + date.getSeconds());
+        }, 1000);
+      });
+
+      stop2.addEventListener("click", function () {
+        clearInterval(timerid2);
+      });
+
+      // Задание №3
+      let start3 = document.querySelector("#start3");
+      let stop3 = document.querySelector("#stop3");
+
+      let timerId3;
+
+      start3.addEventListener("click", function () {
+        timerId3 = setInterval(function () {
+          let date = new Date();
+          console.log(date.getMinutes() + " " + date.getSeconds());
+        }, 1000);
+      });
+
+      stop3.addEventListener("click", function () {
+        clearInterval(timerId3);
+      });
+
+      // Задание №4
+      let start4 = document.querySelector("#start4");
+      let stop4 = document.querySelector("#stop4");
+
+      let timerid4;
+
+      start4.addEventListener("click", function () {
+        timerid4 = setInterval(function () {
+          let date = new Date();
+          console.log(date.getMinutes() + " " + date.getSeconds());
+        }, 1000);
+      });
+
+      stop4.addEventListener("click", function () {
+        clearInterval(timerid4);
+      });
+
+      // Задание №5
+      let start5 = document.querySelector("#start5");
+      let stop5 = document.querySelector("#stop5");
+
+      let timerid5;
+
+      start5.addEventListener("click", function () {
+        timerid5 = setInterval(function () {
+          let date = new Date();
+          console.log(date.getMinutes() + " " + date.getSeconds());
+        }, 1000);
+      });
+
+      stop5.addEventListener("click", function () {
+        clearInterval(timerid5);
+      });
+
+      // Задание №6
+      let start6 = document.querySelector("#start6");
+      let stop6 = document.querySelector("#stop6");
+      let timerId6;
+
+      start6.addEventListener("click", startTimer2);
+
+      function startTimer2() {
+        start6.removeEventListener("click", startTimer2);
+        timerId6 = setInterval(function () {
+          console.log("!");
+        }, 1000);
+        stop6.addEventListener("click", stopTimer2);
+      }
+
+      function stopTimer2() {
+        clearInterval(timerId6);
+        stop6.removeEventListener("click", stopTimer2);
+        start6.addEventListener("click", startTimer2);
+      }
+    </script>
+  </body>
+</html>
