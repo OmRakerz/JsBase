@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вставка элементов в начало или в конец на JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №323</h1>
+    <p>Вставка элементов в начало или в конец</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <ul id="elem1">
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <ul id="parent1">
+      <li>text</li>
+      <li>text</li>
+      <li id="elem2">text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+
+    <!-- Задание №3 -->
+    <h3>Задание №3</h3>
+
+    <ul id="parent2">
+      <li>text</li>
+      <li>text</li>
+      <li id="elem3">text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+
+    <script>
+      // Метод append позволяет вставить в конец какого-либо элемента другой элемент. Параметром метод принимает элемент, как правило созданный через createElement, либо строку. Можно добавить сразу несколько элементов или строк, перечислив их через запятую.
+      // родитель.append(элемент или строка)
+
+      // Метод prepend позволяет вставить в начало какого-либо элемента другой элемент. Параметром метод принимает элемент, как правило созданный через createElement, либо строку. Можно добавить сразу несколько элементов или строк, перечислив их через запятую.
+      // родитель.prepend(элемент или строка)
+
+      // Задание №1
+      let elem1 = document.querySelector("#elem1");
+
+      // создание нового элемента "start" и добавление его в начало списка
+      let startElem = document.createElement("li");
+      startElem.textContent = "start";
+      elem1.prepend(startElem);
+
+      // создание нового элемента 'finish' и добавление его в конец списка
+      let finishElem = document.createElement("li");
+      finishElem.textContent = "finish";
+      elem1.append(finishElem);
+
+      // Метод insertBefore позволяет вставить элемент перед другим элементом. Чаще всего используется после создания элемента с помощью createElement. Метод применяется к родителю того элемента, перед которым произойдет вставка.
+      // родитель.insertBefore(элемент, перед кем вставить)
+
+      // Задание №2
+      let parent1 = document.querySelector("#parent1");
+
+      // создаем новый элемент
+      let newLi1 = document.createElement("li");
+      newLi1.textContent = "new";
+
+      let elem2 = document.querySelector("#elem2");
+      parent1.insertBefore(newLi1, elem2);
+
+      // Задание №3
+      let parent2 = document.querySelector("#parent2");
+      let newLi2 = document.createElement("li");
+      newLi2.textContent = "new";
+
+      // Находим элемент li, перед которым нужно вставить новый элемент
+      let elem3 = document.querySelector("#elem3");
+
+      // Вставляем новый элемент перед найденным элементом
+      parent2.insertBefore(newLi2, elem3);
+
+      newLi2.addEventListener("click", function () {
+        this.textContent += "!";
+      });
+    </script>
+  </body>
+</html>
