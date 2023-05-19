@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Практика на таймеры и работу с DOM в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №316</h1>
+    <p>Практика на таймеры и работу с DOM</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <button id="start1">start</button>
+    <p id="number1">1</p>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <button id="start2">start</button>
+    <p id="number2">10</p>
+
+    <!-- Задание №3 -->
+    <h3>Задание №3</h3>
+
+    <input id="elem" value="2" />
+
+    <!-- Задание №4 -->
+    <h3>Задание №4</h3>
+
+    <input type="text" id="elem2" />
+    <p id="countdown"></p>
+
+    <!-- Задание №5 -->
+    <h3>Задание №5</h3>
+
+    <input type="text" id="elem3" />
+    <p id="countdown2"></p>
+    <button id="start5">start</button>
+
+    <!-- Задание №6 -->
+    <h3>Задание №6</h3>
+
+    <p id="counter2">0</p>
+
+    <button id="startBtn3">Start</button>
+    <button id="stopBtn3">Stop</button>
+
+    <!-- Задание №7 -->
+    <h3>Задание №7</h3>
+
+    <p id="p7">Привет</p>
+
+    <!-- Задание №8 -->
+    <h3>Задание №8</h3>
+
+    <div id="clock"></div>
+
+    <script>
+      // Задание №1
+      let numberP = document.querySelector("#number1");
+      let startBtn = document.querySelector("#start1");
+      let number = Number(numberP.textContent);
+
+      startBtn.addEventListener("click", function () {
+        let intervalId = setInterval(function () {
+          number++;
+          numberP.textContent = number;
+        }, 1000);
+      });
+
+      // Задание №2
+      let startBtn2 = document.querySelector("#start2");
+      let numberP2 = document.querySelector("#number2");
+      let counter = Number(numberP2.textContent);
+      let TimerId;
+
+      startBtn2.addEventListener("click", function () {
+        TimerId = setInterval(function () {
+          counter--;
+          numberP2.textContent = counter;
+          if (counter == 0) {
+            clearInterval(TimerId);
+          }
+        }, 1000);
+      });
+
+      // Задание №3
+      let elem = document.querySelector("#elem");
+
+      elem.addEventListener("click", function () {
+        setInterval(function () {
+          elem.value = Number(elem.value) ** 2;
+        }, 1000);
+      });
+
+      // Задание №4
+      let elem2 = document.querySelector("#elem2");
+      let countdownP = document.querySelector("#countdown");
+      let TimerId2;
+
+      elem2.addEventListener("blur", function () {
+        let number = Number(elem2.value);
+
+        let countdownNumber = number;
+        countdownP.textContent = countdownNumber;
+
+        TimerId2 = setInterval(function () {
+          countdownNumber--;
+
+          if (countdownNumber < 0) {
+            clearInterval(TimerId2);
+            countdownP.textContent = "Отсчет завершен";
+          } else {
+            countdownP.textContent = countdownNumber;
+          }
+        }, 1000);
+      });
+
+      // Задание №5
+      let elem3 = document.querySelector("#elem3");
+      let countdownP2 = document.querySelector("#countdown2");
+      const startBtn5 = document.getElementById("start5");
+      let TimerId3;
+
+      startBtn5.addEventListener("click", function () {
+        let number2 = Number(elem3.value);
+
+        let countdownNumber2 = number2;
+        countdownP2.textContent = countdownNumber2;
+
+        TimerId3 = setInterval(function () {
+          countdownNumber2--;
+          countdownP2.textContent = countdownNumber2;
+
+          if (countdownNumber2 < 0) {
+            clearInterval(TimerId3);
+            countdownP2.textContent = "Отсчет завершен";
+          }
+        }, 1000);
+      });
+
+      // Задание №6
+      let counter2 = document.querySelector("#counter2");
+      let startBtn3 = document.querySelector("#startBtn3");
+      let stopBtn3 = document.querySelector("#stopBtn3");
+
+      let timerId4;
+
+      startBtn3.addEventListener("click", function () {
+        timerId4 = setInterval(function () {
+          let currentValue = Number(counter2.textContent);
+          currentValue++;
+          counter2.textContent = currentValue;
+        }, 1000);
+      });
+
+      stopBtn3.addEventListener("click", function () {
+        clearInterval(timerId4);
+      });
+
+      // Задание №7
+      let p7 = document.querySelector("#p7");
+      // задаем начальный цвет
+      let color = "red";
+
+      // каждую секунду меняем цвет
+      setInterval(function () {
+        if (color === "red") {
+          p7.style.color = "green";
+
+          color = "green";
+        } else {
+          p7.style.color = "red";
+
+          color = "red";
+        }
+      }, 1000);
+
+      // Задание №8
+      let clock = document.querySelector("#clock");
+
+      setInterval(function () {
+        let date = new Date();
+
+        let h = addZero(date.getHours());
+        let m = addZero(date.getMinutes());
+        let s = addZero(date.getSeconds());
+
+        clock.innerHTML = h + ":" + m + ":" + s;
+      }, 1000);
+
+      function addZero(num) {
+        if (num <= 9) {
+          return "0" + num;
+        } else {
+          return num;
+        }
+      }
+    </script>
+  </body>
+</html>
