@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Привязывание событий при вставке элементов</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №319</h1>
+    <p>Привязывание событий при вставке элементов</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <ol id="parent">
+      <li>Первый элемент</li>
+    </ol>
+    <button id="button">Добавить</button>
+
+    <script>
+      // Задание №1
+      let ol = document.querySelector("#parent");
+      let btn = document.querySelector("#button");
+
+      btn.addEventListener("click", function () {
+        let newLi = document.createElement("li");
+        newLi.innerText = "Новый элемент";
+        ol.appendChild(newLi);
+
+        newLi.addEventListener("click", function () {
+          newLi.innerText += "!";
+        });
+      });
+    </script>
+  </body>
+</html>
