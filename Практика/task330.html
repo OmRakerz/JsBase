@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Последовательное заполнение HTML таблиц</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+
+      table {
+        border: 2px solid white;
+        border-collapse: collapse;
+      }
+      td {
+        font-size: 25px;
+        border: 1px solid white;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №330</h1>
+    <p>Последовательное заполнение HTML таблиц</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <table id="table1"></table>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <table id="table2"></table>
+
+    <script>
+      // Задание №1
+      let table1 = document.querySelector("#table1");
+      let count1 = 1;
+
+      for (let i = 0; i < 5; i++) {
+        // Создаем ряд
+        let row1 = document.createElement("tr");
+
+        for (let j = 0; j < 5; j++) {
+          // Создаем ячейку и добавляем ее в ряд
+          let cell1 = document.createElement("td");
+          cell1.textContent = count1;
+          count1++;
+          row1.appendChild(cell1);
+        }
+
+        // Добавляем ряд в таблицу
+        table1.appendChild(row1);
+      }
+
+      // Задание №2
+      let table2 = document.querySelector("#table2");
+      let count2 = 2; //изменяем начальное значение на 2, чтобы начать с четного числа
+
+      for (let i = 0; i < 5; i++) {
+        // Создаем ряд
+        let row2 = document.createElement("tr");
+
+        for (let j = 0; j < 5; j++) {
+          // Создаем ячейку и добавляем ее в ряд
+          let cell2 = document.createElement("td");
+          cell2.textContent = count2; //записываем текущее четное число в ячейку
+          count2 += 2; //увеличиваем счетчик на 2, чтобы получить следующее четное число
+          row2.appendChild(cell2);
+        }
+
+        // Добавляем ряд в таблицу
+        table2.appendChild(row2);
+      }
+    </script>
+  </body>
+</html>
