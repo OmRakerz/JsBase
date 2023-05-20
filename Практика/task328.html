@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Практика на создание списков ul на JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №328</h1>
+    <p>Практика на создание списков ul</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <ul id="elem1"></ul>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <ul id="elem2"></ul>
+
+    <!-- Задание №3 -->
+    <h3>Задание №3</h3>
+
+    <ul id="elem3"></ul>
+
+    <!-- Задание №4 -->
+    <h3>Задание №4</h3>
+
+    <ul id="elem4"></ul>
+
+    <script>
+      // Задание №1
+      let arr1 = [1, 2, 3, 4, 5];
+      let ul1 = document.querySelector("#elem1");
+
+      for (let i = 0; i < arr1.length; i++) {
+        let li1 = document.createElement("li");
+        li1.textContent = arr1[i];
+        ul1.appendChild(li1);
+      }
+
+      // Задание №2
+      let arr2 = [1, 2, 3, 4, 5];
+      let ul2 = document.querySelector("#elem2");
+
+      for (let i = 0; i < arr2.length; i++) {
+        let li2 = document.createElement("li");
+        li2.textContent = arr2[i];
+
+        // добавляем обработчик события на каждый элемент li
+        li2.addEventListener("click", function () {
+          alert(this.textContent);
+        });
+
+        ul2.appendChild(li2);
+      }
+
+      // Задание №3
+      let arr3 = [1, 2, 3, 4, 5];
+      let ul3 = document.querySelector("#elem3");
+      for (let i = 0; i < arr3.length; i++) {
+        let li3 = document.createElement("li");
+        li3.textContent = arr3[i];
+
+        // добавляем обработчик события на каждый элемент li
+        li3.addEventListener("click", function () {
+          this.textContent += "!"; // добавляем в конец восклицательный знак
+          alert(this.textContent);
+        });
+
+        ul3.appendChild(li3);
+      }
+
+      // Задание №4
+      let arr4 = [1, 2, 3, 4, 5];
+      let ul4 = document.querySelector("#elem4");
+
+      for (let i = 0; i < arr4.length; i++) {
+        let li4 = document.createElement("li");
+        li4.textContent = arr4[i];
+
+        let clicked = false; // переменная, отслеживающая нажатие на элемент списка
+
+        li4.addEventListener("click", function () {
+          if (!clicked) {
+            // если элемент списка не был еще нажат
+            this.textContent += "!";
+            alert(this.textContent);
+            clicked = true; // помечаем, что элемент был нажат
+          }
+        });
+
+        ul4.appendChild(li4);
+      }
+    </script>
+  </body>
+</html>
