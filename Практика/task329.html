@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Создание HTML таблиц на JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+
+      table {
+        border: 2px solid white;
+        border-collapse: collapse;
+      }
+      td {
+        font-size: 25px;
+        border: 1px solid white;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №329</h1>
+    <p>Создание HTML таблиц</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <table id="table1"></table>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <table id="table2"></table>
+
+    <!-- Задание №3 -->
+    <h3>Задание №3</h3>
+
+    <table id="table3"></table>
+
+    <!-- Задание №4 -->
+    <h3>Задание №4</h3>
+
+    <input type="number" id="width" placeholder="Ширина таблицы" />
+    <br /><br />
+    <input type="number" id="height" placeholder="Высота таблицы" />
+    <br /><br />
+    <button onclick="generateTable()">Создать таблицу</button>
+
+    <div id="table"></div>
+
+    <script>
+      // Задание №1
+      let table1 = document.querySelector("#table1");
+      // Создаём 5 строк и 5 столбцов в таблице с помощью вложенных циклов
+      for (let i = 0; i < 5; i++) {
+        // Создаём новый ряд
+        var row1 = document.createElement("tr");
+
+        for (let j = 0; j < 5; j++) {
+          // Создаём новую ячейку в текущем ряду
+          let cell1 = document.createElement("td");
+          cell1.textContent = "Ряд №" + (i + 1) + " Колонка №" + (j + 1);
+          row1.appendChild(cell1);
+        }
+        table1.appendChild(row1);
+      }
+
+      // Задание №2
+      let table2 = document.querySelector("#table2");
+      // Создаём 10 строк и 5 столбцов в таблице с помощью вложенных циклов
+      for (let i = 0; i < 10; i++) {
+        // Создаём новый ряд
+        let row2 = document.createElement("tr");
+
+        for (let j = 0; j < 5; j++) {
+          // Создаём новую ячейку в текущем ряду
+          let cell2 = document.createElement("td");
+          cell2.textContent = "Ряд №" + (i + 1) + " Колонка №" + (j + 1);
+          row2.appendChild(cell2);
+        }
+        table2.appendChild(row2);
+      }
+
+      // Задание №3
+      let table3 = document.querySelector("#table3");
+      // Создаём 10 строк и 5 столбцов в таблице с помощью вложенных циклов
+      for (let i = 0; i < 10; i++) {
+        // Создаём новый ряд
+        let row3 = document.createElement("tr");
+
+        for (let j = 0; j < 5; j++) {
+          // Создаём новую ячейку в текущем ряду
+          let cell3 = document.createElement("td");
+          cell3.textContent = "Ряд №" + (i + 1) + " Колонка №" + (j + 1);
+          cell3.textContent += "x"; //добавляем текст 'x'
+          row3.appendChild(cell3);
+        }
+        table3.appendChild(row3);
+      }
+
+      // Задание №4
+      function generateTable() {
+        let width = document.getElementById("width").value;
+        let height = document.getElementById("height").value;
+
+        // Создаем таблицу
+        let table4 = document.createElement("table");
+
+        // Создаём новый ряд
+        for (let i = 0; i < height; i++) {
+          let row4 = document.createElement("tr");
+
+          // Создаём новую ячейку в текущем ряду
+          for (let j = 0; j < width; j++) {
+            let cell4 = document.createElement("td");
+            cell4.textContent = "Ряд №" + (i + 1) + " Колонка №" + (j + 1);
+            row4.appendChild(cell4);
+          }
+
+          table4.appendChild(row4);
+        }
+
+        // Добавляем таблицу в div
+        let container = document.getElementById("table");
+        container.innerHTML = "";
+        container.appendChild(table4);
+      }
+    </script>
+  </body>
+</html>
