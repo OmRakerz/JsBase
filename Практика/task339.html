@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Прячем текст при редактировании элемента на JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+
+      table {
+        border: 2px solid white;
+        border-collapse: collapse;
+      }
+      td {
+        font-size: 25px;
+        border: 1px solid white;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №339</h1>
+    <p>Прячем текст при редактировании элемента</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <div id="parent">
+      <p id="elem">text</p>
+    </div>
+
+    <script>
+      // Задание №1
+      let elem = document.querySelector("#elem");
+
+      elem.addEventListener("click", function func() {
+        let input = document.createElement("input");
+        input.value = elem.textContent; // сначала записываем текст абзаца в инпут
+
+        elem.textContent = ""; // затем убираем текст абзаца
+        elem.appendChild(input); // затем вставляем инпут
+
+        input.addEventListener("blur", function () {
+          elem.textContent = this.value;
+          elem.addEventListener("click", func); // повесим событие обратно
+        });
+
+        elem.removeEventListener("click", func); // отвяжем событие
+      });
+    </script>
+  </body>
+</html>
