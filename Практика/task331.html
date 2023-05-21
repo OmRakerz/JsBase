@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Создание HTML таблицы из массива на JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+
+      table {
+        border: 2px solid white;
+        border-collapse: collapse;
+      }
+      td {
+        font-size: 25px;
+        border: 1px solid white;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №331</h1>
+    <p>Создание HTML таблицы из массива</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <table id="table1"></table>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <table id="table2"></table>
+
+    <script>
+      // Задание №1
+      let arr1 = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+        [10, 11, 12],
+      ];
+      let table1 = document.querySelector("#table1");
+
+      for (let subArr1 of arr1) {
+        let tr1 = document.createElement("tr");
+
+        for (let elem1 of subArr1) {
+          let td1 = document.createElement("td");
+          td1.textContent = elem1;
+          tr1.appendChild(td1);
+        }
+
+        table1.appendChild(tr1);
+      }
+
+      // Задание №2
+      let arr2 = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+        [10, 11, 12],
+      ];
+      let table2 = document.querySelector("#table2");
+
+      for (let subArr2 of arr2) {
+        let tr2 = document.createElement("tr");
+
+        for (let elem2 of subArr2) {
+          let td2 = document.createElement("td");
+          td2.textContent = elem2 ** 2;
+          tr2.appendChild(td2);
+        }
+
+        table2.appendChild(tr2);
+      }
+    </script>
+  </body>
+</html>
