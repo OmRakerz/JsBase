@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Создание ссылок для удаление элементов на JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+
+      table {
+        border: 2px solid white;
+        border-collapse: collapse;
+      }
+      td {
+        font-size: 25px;
+        border: 1px solid white;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №337</h1>
+    <p>Создание ссылок для удаление элементов</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <ul id="parent">
+      <li>Текст 1</li>
+      <li>Текст 2</li>
+      <li>Текст 3</li>
+    </ul>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <table id="table">
+      <tr>
+        <td>Текст 1</td>
+        <td>Текст 2</td>
+      </tr>
+      <tr>
+        <td>Текст 3</td>
+        <td>Текст 4</td>
+      </tr>
+      <tr>
+        <td>Текст 5</td>
+        <td>Текст 6</td>
+      </tr>
+    </table>
+
+    <script>
+      // Задание №1
+      let elems = document.querySelectorAll("#parent li");
+
+      for (let elem of elems) {
+        let removeLink1 = document.createElement("a");
+        removeLink1.href = "";
+        removeLink1.textContent = "удалить";
+
+        elem.appendChild(removeLink1);
+
+        removeLink1.addEventListener("click", function (event) {
+          elem.remove();
+          event.preventDefault();
+        });
+      }
+
+      // Задание №2
+      let rows = document.querySelectorAll("#table tr");
+
+      for (let row of rows) {
+        let removeLink2 = document.createElement("a");
+        removeLink2.href = "";
+        removeLink2.textContent = "удалить";
+
+        let cell = document.createElement("td");
+        cell.appendChild(removeLink2);
+        row.appendChild(cell);
+
+        removeLink2.addEventListener("click", function (event) {
+          event.preventDefault();
+          row.remove();
+        });
+      }
+    </script>
+  </body>
+</html>
