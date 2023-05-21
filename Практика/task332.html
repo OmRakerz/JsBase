@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Создание HTML таблицы из массива объектов</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+
+      table {
+        border: 2px solid white;
+        border-collapse: collapse;
+      }
+      td {
+        font-size: 25px;
+        border: 1px solid white;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №332</h1>
+    <p>Создание HTML таблицы из массива объектов</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <table id="table1"></table>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <table id="table2"></table>
+
+    <!-- Задание №3 -->
+    <h3>Задание №3</h3>
+
+    <table id="table3"></table>
+
+    <script>
+      let employees = [
+        { name: "employee1", age: 30, salary: 400 },
+        { name: "employee2", age: 31, salary: 500 },
+        { name: "employee3", age: 32, salary: 600 },
+      ];
+
+      // Задание №1
+      let table1 = document.getElementById("table1");
+
+      for (let employee of employees) {
+        let tr1 = document.createElement("tr");
+
+        let td11 = document.createElement("td");
+        td11.textContent = employee.name;
+        tr1.appendChild(td11);
+
+        let td12 = document.createElement("td");
+        td12.textContent = employee.age;
+        tr1.appendChild(td12);
+
+        let td13 = document.createElement("td");
+        td13.textContent = employee.salary;
+        tr1.appendChild(td13);
+
+        table1.appendChild(tr1);
+      }
+
+      // Задание №2
+      let table2 = document.getElementById("table2");
+
+      for (let employee of employees) {
+        let tr2 = document.createElement("tr");
+
+        let td21 = document.createElement("td");
+        td21.textContent = employee.name;
+        tr2.appendChild(td21);
+
+        let td22 = document.createElement("td");
+        td22.textContent = employee.age;
+        td22.addEventListener("click", function () {
+          td22.textContent = employee.age + 1;
+        });
+        tr2.appendChild(td22);
+
+        let td23 = document.createElement("td");
+        td23.textContent = employee.salary;
+        tr2.appendChild(td23);
+
+        table2.append(tr2);
+      }
+
+      // Задание №3
+      let table3 = document.getElementById("table3");
+      for (let employee of employees) {
+        let tr3 = document.createElement("tr");
+
+        let td31 = document.createElement("td");
+        td31.textContent = employee.name;
+        tr3.appendChild(td31);
+
+        let td32 = document.createElement("td");
+        td32.textContent = employee.age;
+        td32.addEventListener("click", function () {
+          td32.textContent = employee.age + 1;
+        });
+        tr3.appendChild(td32);
+
+        let td33 = document.createElement("td");
+        let salary = employee.salary;
+        td33.textContent = salary;
+
+        td33.addEventListener("click", function () {
+          td33.textContent = salary * 1.1; // зарплата увеличина на 10%
+        });
+        tr3.appendChild(td33);
+
+        table3.appendChild(tr3);
+      }
+    </script>
+  </body>
+</html>
