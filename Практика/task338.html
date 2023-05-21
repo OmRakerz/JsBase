@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Редактирование отдельного элемента на JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+
+      table {
+        border: 2px solid white;
+        border-collapse: collapse;
+      }
+      td {
+        font-size: 25px;
+        border: 1px solid white;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №338</h1>
+    <p>Редактирование отдельного элемента</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <div id="parent1">
+      <p id="elem1">text</p>
+      <input id="input1" />
+    </div>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <div id="parent2">
+      <p id="elem2">text</p>
+    </div>
+
+    <script>
+      // Задание №1
+      let elem1 = document.querySelector("#elem1");
+      let input1 = document.querySelector("#input1");
+
+      input1.value = elem1.textContent; // записываем в инпут текст абзаца
+
+      input1.addEventListener("input", function () {
+        elem1.textContent = this.value; // присваиваем текст абзацу текущее значение инпута
+      });
+
+      // Задание №2
+      let elem2 = document.querySelector("#elem2");
+
+      elem2.addEventListener("click", function () {
+        let input2 = document.createElement("input");
+        input2.value = elem2.textContent;
+
+        input2.addEventListener("blur", function () {
+          elem2.textContent = this.value;
+          this.remove(); // удалим инпут
+        });
+
+        elem2.parentElement.appendChild(input2);
+      });
+    </script>
+  </body>
+</html>
