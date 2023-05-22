@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Стилизация элементов на JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+
+      table {
+        border: 2px solid white;
+        border-collapse: collapse;
+      }
+      td {
+        font-size: 25px;
+        border: 1px solid white;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №342</h1>
+    <p>Стилизация элементов</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <p>text1</p>
+    <p>text2</p>
+    <p>text3</p>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <p>text1</p>
+    <p>text2</p>
+    <p>text3</p>
+
+    <!-- Задание №3 -->
+    <h3>Задание №3</h3>
+
+    <table>
+      <tr>
+        <td>Текст 1</td>
+      </tr>
+      <tr>
+        <td>Текст 2</td>
+      </tr>
+    </table>
+
+    <!-- Задание №4 -->
+    <h3>Задание №4</h3>
+
+    <table>
+      <tr>
+        <td>Текст 1</td>
+      </tr>
+      <tr>
+        <td>Текст 2</td>
+      </tr>
+    </table>
+
+    <script>
+      // Задание №1
+      let p1 = document.querySelectorAll("p");
+
+      // Проходимся по каждому элементу и добавляем ссылку в конец
+      p1.forEach(function (p1) {
+        let link1 = document.createElement("a");
+
+        link1.textContent = "Перечеркнуть текст";
+        link1.href = "#";
+
+        // Обработчик события клика
+        link1.addEventListener("click", function (event) {
+          event.preventDefault(); // Предотвращаем переход по ссылке
+          p1.style.textDecoration = "line-through"; // Добавляем перечеркивание
+        });
+        // Добавляем ссылку в конец абзаца
+        p1.appendChild(link1);
+      });
+
+      // Задание №2
+      let p2 = document.querySelectorAll("p");
+
+      p2.forEach(function (p2) {
+        let link2 = document.createElement("a");
+
+        link2.textContent = "Перечеркнуть текст";
+        link2.href = "#";
+
+        link2.addEventListener("click", function (event) {
+          event.preventDefault();
+          p2.style.textDecoration = "line-through";
+          link2.remove(); // Удаляем ссылку
+        });
+
+        p2.appendChild(link2);
+      });
+
+      // Задание №3
+      let cells1 = document.querySelectorAll("td");
+
+      for (let cell1 of cells1) {
+        cell1.addEventListener("click", function () {
+          let input1 = document.createElement("input");
+          input1.value = cell1.textContent;
+
+          cell1.textContent = "";
+          cell1.appendChild(input1);
+
+          input1.addEventListener("blur", function () {
+            cell1.textContent = this.value;
+            cell1.addEventListener("click", func);
+          });
+
+          cell1.removeEventListener("click", func);
+        });
+      }
+
+      let rows1 = document.querySelectorAll("tr");
+
+      for (let row1 of rows1) {
+        let link1 = document.createElement("a");
+        link1.href = "#";
+        link1.textContent = "Click me!";
+
+        row1.appendChild(document.createElement("td")).appendChild(link1);
+
+        link1.addEventListener("click", function () {
+          row1.style.backgroundColor = "green";
+        });
+      }
+
+      // Задание №4
+      let cells2 = document.querySelectorAll("td");
+      for (let cell2 of cells2) {
+        cell2.addEventListener("click", function () {
+          let input2 = document.createElement("input");
+          input2.value = cell2.textContent;
+
+          cell2.textContent = "";
+          cell2.appendChild(input2);
+
+          input2.addEventListener("blur", function () {
+            cell2.textContent = this.value;
+            cell2.addEventListener("click", func);
+          });
+
+          cell2.removeEventListener("click", func);
+        });
+      }
+
+      let rows2 = document.querySelectorAll("tr");
+      for (let row2 of rows2) {
+        let link2 = document.createElement("a");
+        link2.href = "#";
+        link2.textContent = "click me!";
+
+        let clicked = false;
+
+        link2.addEventListener("click", function () {
+          if (!clicked) {
+            row2.style.backgroundColor = "green";
+            clicked = true;
+          } else {
+            row2.style.backgroundColor = "";
+            clicked = false;
+          }
+        });
+
+        row2.appendChild(document.createElement("td")).appendChild(link2);
+      }
+    </script>
+  </body>
+</html>
