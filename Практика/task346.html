@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Чередование стилей активации на JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+
+      table {
+        border: 2px solid white;
+        border-collapse: collapse;
+      }
+      td {
+        font-size: 25px;
+        border: 1px solid white;
+        color: white;
+      }
+
+      .color1 {
+        background: red;
+      }
+      .color2 {
+        background: green;
+      }
+      .color3 {
+        background: yellow;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №346</h1>
+    <p>Чередование стилей активации</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <table id="table1">
+      <tr>
+        <td>Текст 1</td>
+        <td>Текст 2</td>
+      </tr>
+      <tr>
+        <td>Текст 3</td>
+        <td>Текст 4</td>
+      </tr>
+    </table>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <table id="table2">
+      <tr>
+        <td>Текст 1</td>
+        <td>Текст 2</td>
+      </tr>
+      <tr>
+        <td>Текст 3</td>
+        <td>Текст 4</td>
+      </tr>
+    </table>
+
+    <script>
+      // Задание №1
+
+      // Получаем все ячейки таблицы с помощью метода querySelectorAll и сохраняем их в переменную tds1.
+      let tds1 = document.querySelectorAll("#table1 td");
+      // Инициализируем переменную color значением "color1".
+      let color = "color1";
+
+      // Проходим циклом for по всем элементам массива tds1 (всем ячейкам таблицы), для каждой ячейки назначаем обработчик кликов при помощи метода addEventListener.
+      for (let td1 of tds1) {
+        // В обработчике клика проверяем чередование классов в переменной color: если сейчас у ячейки класс "color1", то меняем на класс "color2", и наоборот.
+        td1.addEventListener("click", function () {
+          if (color == "color1") {
+            color = "color2";
+          } else {
+            color = "color1";
+          }
+
+          // Добавляем к кликнутой ячейке новый класс, соответствующий измененной переменной color.
+          this.classList.add(color);
+        });
+      }
+
+      // Задание №2
+
+      // Получаем все ячейки таблицы с помощью метода querySelectorAll.
+      let tds2 = document.querySelectorAll("#table2 td");
+      // Объявляем переменную i, которая будет использоваться для итерации по классам цветов.
+      let i = 0;
+      // Задаем массив colors с классами, которые будут применяться при клике на ячейку.
+      let colors = ["color1", "color2", "color3"];
+
+      // В цикле перебираются все ячейки с помощью for...of.
+      for (let td2 of tds2) {
+        // Для каждой ячейки добавляется обработчик события "клик".
+        td2.addEventListener("click", function () {
+          // В обработчике сначала добавляется класс цвета (в зависимости от значения i).
+          this.classList.add(colors[i]);
+
+          // Затем переменная i инкрементируется, и если она равна длине массива colors, то i снова устанавливается в 0, чтобы можно было начать цикл заново.
+          i++;
+          if (i == colors.length) {
+            i = 0;
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
