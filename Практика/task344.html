@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Много элементов с кнопками показа на JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+
+      table {
+        border: 2px solid white;
+        border-collapse: collapse;
+      }
+      td {
+        font-size: 25px;
+        border: 1px solid white;
+        color: white;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №344</h1>
+
+    <!-- Задание №1, №2, №3 -->
+    <h3>Задание №1, №2, №3</h3>
+
+    <p id="elem1">1</p>
+    <button data-elem="elem1">toggle</button>
+    <p id="elem2">2</p>
+    <button data-elem="elem2">toggle</button>
+    <p id="elem3">3</p>
+    <button data-elem="elem3">toggle</button>
+
+    <script>
+      // Первый способ
+      // Задание №1
+      let buttons1 = document.querySelectorAll("button");
+
+      for (let button1 of buttons1) {
+        button1.addEventListener("click", function () {
+          let elem1 = document.querySelector("#" + this.dataset.elem);
+          elem1.classList.toggle("hidden");
+        });
+      }
+
+      // Второй способ
+      // Задание №2
+      let buttons2 = document.querySelectorAll("button");
+      let elems2 = document.querySelectorAll("p");
+
+      for (let i = 0; i < buttons2.length; i++) {
+        buttons2[i].addEventListener("click", function () {
+          elems2[i].classList.toggle("hidden");
+        });
+      }
+
+      // Третий способ
+      // Задание №3
+      let buttons3 = document.querySelectorAll("button");
+
+      for (let button3 of buttons3) {
+        button3.addEventListener("click", function () {
+          this.previousElementSibling.classList.toggle("hidden");
+        });
+      }
+    </script>
+  </body>
+</html>
