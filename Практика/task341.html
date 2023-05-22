@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Одновременное редактирование и удаление элементов</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+
+      table {
+        border: 2px solid white;
+        border-collapse: collapse;
+      }
+      td {
+        font-size: 25px;
+        border: 1px solid white;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №341</h1>
+    <p>Одновременное редактирование и удаление элементов</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <div id="parent1">
+      <p><span>text1</span></p>
+      <p><span>text2</span></p>
+      <p><span>text3</span></p>
+    </div>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <div id="parent2">
+      <p>text1</p>
+      <p>text2</p>
+      <p>text3</p>
+    </div>
+
+    <script>
+      // Задание №1
+      let elems = document.querySelectorAll("#parent1 p");
+
+      for (let elem of elems) {
+        let removelink1 = document.createElement("a");
+
+        removelink1.href = "";
+        removelink1.textContent = "удалить";
+
+        elem.appendChild(removelink1);
+
+        removelink1.addEventListener("click", function (event) {
+          elem.remove();
+          event.preventDefault();
+        });
+
+        let spans = elem.querySelectorAll("span");
+
+        for (let span1 of spans) {
+          span1.addEventListener("click", function func() {
+            let input1 = document.createElement("input");
+
+            input1.value = span1.textContent;
+            span1.textContent = "";
+
+            span1.appendChild(input1);
+
+            input1.addEventListener("blur", function () {
+              span1.textContent = this.value;
+              span1.addEventListener("click", func);
+            });
+
+            span1.removeEventListener("click", func);
+          });
+        }
+      }
+
+      // Задание №2
+      let ps = document.querySelectorAll("#parent2 p");
+
+      for (let p of ps) {
+        let span2 = document.createElement("span");
+        span2.textContent = p.textContent;
+
+        p.textContent = "";
+        p.appendChild(span2);
+
+        span2.addEventListener("click", function func() {
+          let input2 = document.createElement("input");
+          input2.value = span2.textContent;
+
+          span2.textContent = "";
+          span2.appendChild(input2);
+
+          input2.addEventListener("blur", function () {
+            span2.textContent = this.value;
+            span2.addEventListener("click", func);
+          });
+
+          span2.removeEventListener("click", func);
+        });
+
+        let removelink2 = document.createElement("a");
+        removelink2.href = "";
+
+        removelink2.textContent = "удалить";
+        p.appendChild(removelink2);
+
+        removelink2.addEventListener("click", function (event) {
+          p.remove();
+          event.preventDefault();
+        });
+      }
+    </script>
+  </body>
+</html>
