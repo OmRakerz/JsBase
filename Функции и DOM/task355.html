@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Возврат таблицы из функции на JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div > p,
+      table {
+        font-size: 25px;
+        color: #90ee90;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+
+      table {
+        border: 2px solid white;
+        border-collapse: collapse;
+      }
+      td {
+        width: 150px;
+        height: 70px;
+        font-size: 25px;
+        border: 1px solid white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №355</h1>
+    <p>Возврат таблицы из функции</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <div id="elem1"></div>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <div id="elem2">
+      <p>1</p>
+      <p>2</p>
+      <p>3</p>
+    </div>
+
+    <script>
+      // Задание №1
+      function createTable(rows, cols) {
+        let table = document.createElement("table");
+
+        for (let i = 0; i < rows; i++) {
+          let row = document.createElement("tr");
+
+          for (let j = 0; j < cols; j++) {
+            let cell = document.createElement("td");
+            cell.textContent = "Строка " + (i + 1) + ", Столбец " + (j + 1);
+
+            row.appendChild(cell);
+          }
+
+          table.appendChild(row);
+        }
+
+        return table;
+      }
+
+      let div1 = document.querySelector("#elem1");
+
+      let table1 = createTable(3, 4);
+      table1.style.color = "red";
+
+      div1.appendChild(table1);
+
+      // Задание №2
+      let div2 = document.querySelector("#elem2");
+      let table2 = createTable(3, 3);
+
+      div2.appendChild(table2); // добавляем таблицу в конец дива
+    </script>
+  </body>
+</html>
