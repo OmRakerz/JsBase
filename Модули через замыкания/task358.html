@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Модули через замыкания в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: #4682b4;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+
+      table {
+        border: 2px solid white;
+        border-collapse: collapse;
+      }
+      td {
+        font-size: 25px;
+        border: 1px solid white;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №358</h1>
+    <h3>Модули через замыкания</h3>
+
+    <p>
+      Описанная выше проблема характерна для любого языка программирования. В
+      качестве решения применяют так называемые <i>модули.</i>
+    </p>
+
+    <p>
+      Модуль представляет собой некую конструкцию, сделанную так, чтобы
+      переменные и функции этой конструкции были видны только внутри нее и не
+      мешали никому снаружи.
+    </p>
+
+    <p>
+      В JavaScript существуют несколько типов модулей. Самые простые
+      <i>модули через замыкания</i> создаются с помощью вызова функции на месте
+    </p>
+
+    <p>
+      Переменные и функции, созданные в таком модуле, не будут видны снаружи
+      этого модуля
+    </p>
+
+    <h3>Практическое применение</h3>
+
+    <p>
+      По клику по первому диву его значение возводилось в квадрат, а по клику по
+      второму диву - в куб:
+    </p>
+
+    <div id="div1">10</div>
+    <div id="div2">10</div>
+
+    <p>
+      Теперь в каждом из модулей мы можем использовать любые переменные и
+      функции, не боясь того, что они будут конфликтовать с другими переменными
+      и функциями нашего скрипта.
+    </p>
+
+    <p>
+      Например, оба элемента мы храним в переменной <b><i>elem</i></b> - каждый
+      в своей переменной своего модуля. Если бы модулей здесь не было, пришлось
+      бы вводить разные переменные для хранения наши элементов. А с модулями мы
+      можем спокойно использовать нашу переменную, не боясь того, что кто-то
+      захочет также использовать эту переменную.
+    </p>
+
+    <script>
+      (function () {
+        // тут код модуля
+      })();
+
+      (function () {
+        let str = "переменная модуля";
+
+        function func() {
+          alert("функция модуля");
+        }
+      })();
+
+      // Тут переменные и функции модуля недоступны:
+      // alert(str);
+      // alert(func);
+
+      // Практическое применение
+
+      (function () {
+        let elem = document.querySelector("#div1"); // первый див
+
+        function func(num) {
+          return num * num; // возведем в квадрат
+        }
+
+        elem.addEventListener("click", function () {
+          this.textContent = func(elem.textContent);
+        });
+      })();
+
+      (function () {
+        let elem = document.querySelector("#div2"); // второй див
+
+        function func(num) {
+          return num * num * num; // возведем в куб
+        }
+
+        elem.addEventListener("click", function () {
+          this.textContent = func(elem.textContent);
+        });
+      })();
+    </script>
+  </body>
+</html>
