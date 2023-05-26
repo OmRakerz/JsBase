@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Экспорт переменных и функций в модулях через замыкания в JavaScript
+    </title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №362</h1>
+    <p>Экспорт переменных и функций в модулях через замыкания</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <script>
+      // Задание №1
+      (function () {
+        let str1 = "переменная модуля";
+        let str2 = "переменная модуля";
+        let str3 = "переменная модуля";
+
+        function func1() {
+          alert("функция модуля");
+        }
+
+        function func2() {
+          alert("функция модуля");
+        }
+
+        function func3() {
+          alert("функция модуля");
+        }
+
+        window.str1 = str1;
+        window.func1 = func1;
+        window.func2 = func2;
+      })();
+
+      console.log(str1);
+
+      func1();
+      func2();
+
+      // Экспорт объекта
+
+      // Задание №2
+      (function () {
+        let str4 = "переменная модуля";
+        let str5 = "переменная модуля";
+        let str6 = "переменная модуля";
+
+        function func4() {
+          alert("функция модуля");
+        }
+        function func5() {
+          alert("функция модуля");
+        }
+        function func6() {
+          alert("функция модуля");
+        }
+        function func7() {
+          alert("функция модуля");
+        }
+        function func8() {
+          alert("функция модуля");
+        }
+
+        window.module = {
+          str4,
+          str5,
+          func4,
+          func5,
+          func6,
+          func7,
+          func8,
+        };
+      })();
+
+      console.log(module.str4);
+      console.log(module.str5);
+
+      module.func4();
+      module.func5();
+      module.func6();
+      module.func7();
+      module.func8();
+    </script>
+  </body>
+</html>
