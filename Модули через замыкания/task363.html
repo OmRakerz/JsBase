@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Библиотеки через замыкания в JavaScript</title>
+
+    <style>
+      /* Стиль упражнений */
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(../background.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+        background-attachment: fixed;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #4682b4;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #4682b4;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 50px;
+        color: white;
+      }
+
+      p {
+        font-size: 25px;
+        display: block;
+        width: 80%;
+        color: white;
+      }
+
+      a {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
+
+      ol {
+        font-size: 25px;
+        color: white;
+      }
+      ul {
+        font-size: 25px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Упражнение №363</h1>
+    <p>Библиотеки через замыкания</p>
+
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <p>См. в консоль =></p>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <p>См. в консоль =></p>
+
+    <script>
+      // Задание №1
+      console.log("Задание №1:");
+
+      (function () {
+        function square(num) {
+          return num ** 2;
+        }
+        function cube(num) {
+          return num ** 3;
+        }
+        function avg1(arr) {
+          return sum(arr, 1) / arr.length;
+        }
+        function avg2(arr) {
+          return sum(arr, 2) / arr.length;
+        }
+        function avg3(arr) {
+          return sum(arr, 3) / arr.length;
+        }
+        function digitssum(num) {
+          return sum(String(num).split(""));
+        }
+        function sum(arr, pow) {
+          let res = 0;
+          for (let elem of arr) {
+            res += elem ** pow;
+          }
+          return res;
+        }
+
+        window.math = { square, cube, avg1, avg2, avg3, digitssum };
+      })();
+
+      console.log(math.avg1([1, 2, 3]) + math.cube(2));
+
+      // Задание №2
+      console.log("Задание №2:");
+
+      (function () {
+        function shuffle(array) {
+          let currentIndex = array.length,
+            temporaryValue,
+            randomIndex;
+          while (0 !== currentIndex) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+          }
+          return array;
+        }
+
+        function size(object) {
+          return Object.keys(object).length;
+        }
+
+        function last(array) {
+          return array[array.length - 1];
+        }
+
+        function rest(array, n) {
+          return Array.prototype.slice.call(array, n || 1);
+        }
+
+        function keys(object) {
+          let keys = [];
+          for (let key in object) {
+            if (object.hasOwnProperty(key)) {
+              keys.push(key);
+            }
+          }
+          return keys;
+        }
+
+        function clone(object) {
+          return JSON.parse(JSON.stringify(object));
+        }
+
+        function isMatch(object, properties) {
+          let keys = Object.keys(properties);
+          for (let i = 0; i < keys.length; i++) {
+            let key = keys[i];
+            if (object[key] !== properties[key]) {
+              return false;
+            }
+          }
+          return true;
+        }
+
+        function now() {
+          return new Date().getTime();
+        }
+
+        window.myUnderscore = {
+          shuffle: shuffle,
+          size: size,
+          last: last,
+          rest: rest,
+          keys: keys,
+          clone: clone,
+          isMatch: isMatch,
+          now: now,
+        };
+      })();
+
+      // вызов методов модуля
+      console.log(myUnderscore.shuffle([1, 2, 3, 4, 5]));
+      console.log(
+        myUnderscore.size({ name: "John", age: 30, city: "New York" })
+      );
+      console.log(myUnderscore.last(["apple", "banana", "cherry"]));
+      console.log(myUnderscore.rest([1, 2, 3, 4, 5], 2));
+      console.log(
+        myUnderscore.keys({ name: "John", age: 30, city: "New York" })
+      );
+      console.log(
+        myUnderscore.clone({ name: "John", age: 30, city: "New York" })
+      );
+      console.log(
+        myUnderscore.isMatch(
+          { name: "John", age: 30, city: "New York" },
+          { age: 30 }
+        )
+      );
+      console.log(myUnderscore.now());
+    </script>
+  </body>
+</html>
