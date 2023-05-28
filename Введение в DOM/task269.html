@@ -54,6 +54,11 @@
         font-size: 25px;
         color: white;
       }
+
+      div {
+        font-size: 25px;
+        color: white;
+      }
     </style>
   </head>
 
@@ -61,13 +66,143 @@
     <h1>Упражнение №269</h1>
     <p>Пользовательские атрибуты</p>
 
-    <div id="elem" data-num="1000"></div>
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <div id="elem" data-text="str">text</div>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <div data-num="1">text</div>
+    <div data-num="2">text</div>
+    <div data-num="3">text</div>
+    <div data-num="4">text</div>
+    <div data-num="5">text</div>
+
+    <!-- Задание №3 -->
+    <h3>Задание №3</h3>
+
+    <button id="btn" data-clicks="0">Кликни меня</button>
+
+    <!-- Задание №4 -->
+    <h3>Задание №4</h3>
+
+    <input type="text" id="input1" data-length="5" />
+    <p id="message1"></p>
+
+    <!-- Задание №5 -->
+    <h3>Задание №5</h3>
+
+    <input type="text" id="input2" data-min="5" data-max="10" />
+    <p id="message2"></p>
+
+    <!-- Задание №6 -->
+    <h3>Задание №6</h3>
+
+    <div id="elem2" data-product-price="1000" data-product-amount="5">
+      товар яблоки
+    </div>
+
+    <!-- Задание №7 -->
+    <h3>Задание №7</h3>
+
+    <p>Text</p>
+    <p>Text</p>
+    <p>Text</p>
 
     <script>
+      // Задание №1
       let elem = document.querySelector("#elem");
-      elem.dataset.num = 123;
 
-      console.log(elem.dataset.num);
+      elem.addEventListener("click", function () {
+        let dataText = elem.dataset.text;
+        elem.textContent += dataText;
+      });
+
+      // Задание №2
+
+      // Получаем все элементы с атрибутом data-num
+      let elems = document.querySelectorAll("[data-num]");
+
+      // Добавляем обработчик клика на каждый div
+      elems.forEach(function (div) {
+        div.addEventListener("click", function () {
+          let num = div.dataset.num; // получаем значение атрибута data-num
+
+          div.textContent += num; // записываем порядковый номер в конец текста
+        });
+      });
+
+      // Задание №3
+      let button = document.querySelector("#btn");
+
+      button.addEventListener("click", function () {
+        // Получаем текущее количество кликов из атрибута
+        let clicks = Number(this.dataset.clicks);
+
+        // Увеличиваем количество кликов на 1
+        clicks++;
+
+        // Сохраняем новое количество кликов в атрибуте
+        this.dataset.clicks = clicks;
+      });
+
+      button.addEventListener("dblclick", function () {
+        // Получаем количество кликов из атрибута и выводим его в консоль
+        let clicks = Number(this.dataset.clicks);
+        console.log(`Количество кликов: ${clicks}`);
+      });
+
+      // Задание №4
+      let input1 = document.querySelector("#input1");
+      let message1 = document.querySelector("#message1");
+
+      input1.addEventListener("blur", function () {
+        let dataLength = input1.dataset.length;
+        let inputValue = input1.value;
+
+        if (inputValue.length == dataLength) {
+          message1.innerHTML = `Длина совпадает c длиной в <b><i>data</i></b>`;
+        } else {
+          message1.textContent = `Вы ввели неверное количество символов. Пожалуйста, введите ${dataLength} символов.`;
+        }
+      });
+
+      // Задание №5
+      let input2 = document.querySelector("#input2");
+      let message2 = document.querySelector("#message2");
+
+      input2.addEventListener("blur", function () {
+        let dataMin = input2.dataset.min;
+        let dataMax = input2.dataset.max;
+        let inputLength = input2.value.length;
+
+        if (inputLength >= dataMin && inputLength <= dataMax) {
+          message2.textContent = "Количество символов в диапазоне.";
+        } else {
+          message2.textContent = `Количество символов должно быть от ${dataMin} до ${dataMax}.`;
+        }
+      });
+
+      // Задание №6
+      let elem2 = document.querySelector("#elem2");
+
+      elem2.addEventListener("click", function () {
+        let price = Number(this.dataset.productPrice);
+        let quantity = Number(this.dataset.productAmount);
+        let total = price * quantity;
+
+        this.textContent += ` Цена: ${total} ₽`;
+      });
+
+      // Задание №7
+      let paragraphs = document.querySelectorAll("p");
+
+      for (let i = 0; i < paragraphs.length; i++) {
+        // Перебираем все абзацы в цикле
+        paragraphs[i].setAttribute("data-num", i + 1); // Устанавливаем атрибут data-num и записываем порядковый номер абзаца
+      }
     </script>
   </body>
 </html>
