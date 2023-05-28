@@ -108,13 +108,13 @@
       let result2 = 0;
 
       for (let key in obj2) {
-        let obj_1_2_3 = obj2[key];
+        let subObj1 = obj2[key];
 
-        for (let subKey in obj_1_2_3) {
-          let obj_12 = obj_1_2_3[subKey];
+        for (let subKey in subObj1) {
+          let subObj2 = subObj1[subKey];
 
-          for (let subsubKey in obj_12) {
-            result2 += obj_12[subsubKey];
+          for (let subsubKey in subObj2) {
+            result2 += subObj2[subsubKey]; // добавляем значение элемента к сумме
           }
         }
       }
