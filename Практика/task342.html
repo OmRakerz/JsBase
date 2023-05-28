@@ -120,75 +120,84 @@
 
     <script>
       // Задание №1
-      let p1 = document.querySelectorAll("p");
+      // let paragraphs = document.querySelectorAll("p");
 
-      // Проходимся по каждому элементу и добавляем ссылку в конец
-      p1.forEach(function (p1) {
-        let link1 = document.createElement("a");
+      // // Оборачиваем текст каждого абзаца в тег span
+      // for (let p of paragraphs) {
+      //   p.innerHTML = `<span>${p.innerHTML}`;
+      // }
 
-        link1.textContent = "Перечеркнуть текст";
-        link1.href = "#";
+      // // Добавляем ссылку в конец каждого абзаца
+      // for (let p of paragraphs) {
+      //   let link = document.createElement("a");
+      //   link.href = "#";
+      //   link.textContent = "Перечеркнуть текст";
 
-        // Обработчик события клика
-        link1.addEventListener("click", function (event) {
-          event.preventDefault(); // Предотвращаем переход по ссылке
-          p1.style.textDecoration = "line-through"; // Добавляем перечеркивание
-        });
-        // Добавляем ссылку в конец абзаца
-        p1.appendChild(link1);
-      });
+      //   link.addEventListener("click", function () {
+      //     // Перечеркиваем текст абзаца при клике на ссылку
+      //     p.querySelector("span").style.textDecoration = "line-through";
+      //   });
+
+      //   p.appendChild(link);
+      // }
 
       // Задание №2
-      let p2 = document.querySelectorAll("p");
+      let paragraphs2 = document.querySelectorAll("p");
+      // Оборачиваем текст каждого абзаца в тег span
+      for (let p2 of paragraphs2) {
+        let newSpan = document.createElement("span");
 
-      p2.forEach(function (p2) {
-        let link2 = document.createElement("a");
+        newSpan.textContent = p2.textContent;
+        p2.textContent = "";
 
-        link2.textContent = "Перечеркнуть текст";
-        link2.href = "#";
+        p2.appendChild(newSpan);
 
-        link2.addEventListener("click", function (event) {
-          event.preventDefault();
-          p2.style.textDecoration = "line-through";
-          link2.remove(); // Удаляем ссылку
+        // Добавляем ссылку в конец каждого абзаца
+        let link = document.createElement("a");
+        link.href = "#";
+        link.textContent = "Перечеркнуть текст";
+        // Перечеркиваем текст абзаца при клике на ссылку
+        link.addEventListener("click", function () {
+          newSpan.style.textDecoration = "line-through";
+          p2.removeChild(link);
         });
 
-        p2.appendChild(link2);
-      });
+        p2.appendChild(link);
+      }
 
       // Задание №3
-      let cells1 = document.querySelectorAll("td");
+      // let cells1 = document.querySelectorAll("td");
 
-      for (let cell1 of cells1) {
-        cell1.addEventListener("click", function () {
-          let input1 = document.createElement("input");
-          input1.value = cell1.textContent;
+      // for (let cell1 of cells1) {
+      //   cell1.addEventListener("click", function () {
+      //     let input1 = document.createElement("input");
+      //     input1.value = cell1.textContent;
 
-          cell1.textContent = "";
-          cell1.appendChild(input1);
+      //     cell1.textContent = "";
+      //     cell1.appendChild(input1);
 
-          input1.addEventListener("blur", function () {
-            cell1.textContent = this.value;
-            cell1.addEventListener("click", func);
-          });
+      //     input1.addEventListener("blur", function () {
+      //       cell1.textContent = this.value;
+      //       cell1.addEventListener("click", func);
+      //     });
 
-          cell1.removeEventListener("click", func);
-        });
-      }
+      //     cell1.removeEventListener("click", func);
+      //   });
+      // }
 
-      let rows1 = document.querySelectorAll("tr");
+      // let rows1 = document.querySelectorAll("tr");
 
-      for (let row1 of rows1) {
-        let link1 = document.createElement("a");
-        link1.href = "#";
-        link1.textContent = "Click me!";
+      // for (let row1 of rows1) {
+      //   let link1 = document.createElement("a");
+      //   link1.href = "#";
+      //   link1.textContent = "Click me!";
 
-        row1.appendChild(document.createElement("td")).appendChild(link1);
+      //   row1.appendChild(document.createElement("td")).appendChild(link1);
 
-        link1.addEventListener("click", function () {
-          row1.style.backgroundColor = "green";
-        });
-      }
+      //   link1.addEventListener("click", function () {
+      //     row1.style.backgroundColor = "green";
+      //   });
+      // }
 
       // Задание №4
       let cells2 = document.querySelectorAll("td");
