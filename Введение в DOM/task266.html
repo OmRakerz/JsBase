@@ -110,13 +110,80 @@
     <!-- Задание №5 -->
     <h3>Задание №5</h3>
 
+    <div>
+      <ul>
+        <li>text</li>
+        <li>text</li>
+        <li id="elem5">text</li>
+        <li>text</li>
+        <li>text</li>
+      </ul>
+    </div>
+    <!-- Задание №6 -->
+    <h3>Задание №6</h3>
+
     <header>
-      <div>
+      <div id="parent1">
         <p>
-          <span id="elem5"></span>
+          <span id="elem6"></span>
         </p>
       </div>
     </header>
+
+    <!-- Задание №7 -->
+    <h3>Задание №7</h3>
+
+    <header>
+      <div class="www">
+        <p class="www">
+          <span id="elem7"></span>
+        </p>
+      </div>
+    </header>
+
+    <!-- Задание №8 -->
+    <h3>Задание №8</h3>
+
+    <ul>
+      <li>text</li>
+      <li>text</li>
+      <li id="elem8">text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+
+    <!-- Задание №9 -->
+    <h3>Задание №9</h3>
+
+    <ul>
+      <li>text</li>
+      <li>text</li>
+      <li id="elem9">text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+
+    <!-- Задание №10 -->
+    <h3>Задание №10</h3>
+
+    <ul>
+      <li>text</li>
+      <li>text</li>
+      <li id="elem10">text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+
+    <!-- Задание №11 -->
+    <h3>Задание №11</h3>
+
+    <ul>
+      <li>text1</li>
+      <li>text2</li>
+      <li id="elem11">text3</li>
+      <li>text4</li>
+      <li>text5</li>
+    </ul>
 
     <script>
       // Задание №1
@@ -146,16 +213,69 @@
 
       // Задание №4
       // Свойство parentElement содержит родительский элемент.
-
+      // элемент.parentElement
       let elem4 = document.querySelector("#elem4");
       let id = elem4.parentElement.id;
 
       elem4.style.border = "solid #F4A460";
 
       // Задание №5
-      // Метод closest ищет ближайший родительский элемент, подходящий под указанный CSS селектор, при этом сам элемент тоже включается в поиск.
+
       let elem5 = document.querySelector("#elem5");
-      let parent5 = elem5.closest("div");
+      let parent4 = elem5.parentElement.parentElement;
+
+      parent4.style.border = "1px solid red";
+
+      // Задание №6
+      // Метод closest ищет ближайший родительский элемент, подходящий под указанный CSS селектор, при этом сам элемент тоже включается в поиск.
+      let elem6 = document.querySelector("#elem6");
+      let parent5 = elem6.closest("div"); // находим ближайший родительский элемент div
+      console.log(parent5.id); // выводим в консоль найденный элемент
+
+      // Задание №7
+      let elem7 = document.getElementById("elem7");
+      let parent6 = elem7.closest(".www");
+      console.log(parent6);
+
+      // Задание №8
+
+      // Свойство previousElementSibling содержит предыдущий элемент, находящийся в этом же родителе. Если такого элемента нет - возвращается null.
+      // элемент.previousElementSibling
+      let elem8 = document.querySelector("#elem8");
+      let parent7 = elem8.previousElementSibling;
+
+      if (parent7) {
+        parent7.textContent += "!";
+      }
+
+      // Задание №9
+
+      // Свойство nextElementSibling содержит следующий элемент, находящийся в этом же родителе. Если такого элемента нет - возвращается null.
+      // элемент.nextElementSibling
+      let elem9 = document.querySelector("#elem9");
+      let parent8 = elem9.nextElementSibling;
+
+      if (parent8) {
+        // проверяем, есть ли сосед снизу
+        parent8.textContent += "!"; // добавляем в конец текста соседа восклицательный знак
+      }
+
+      // Задание №10
+      let elem10 = document.querySelector("#elem10");
+
+      let nextSibling = elem10.nextElementSibling;
+      let nextNextSibling = nextSibling.nextElementSibling;
+
+      nextNextSibling.textContent += "!";
+
+      // Задание №11
+      let elem = document.querySelector("#elem11");
+
+      let prev = elem.previousElementSibling.textContent;
+      let next = elem.nextElementSibling.textContent;
+
+      elem.previousElementSibling.textContent = next;
+      elem.nextElementSibling.textContent = prev;
     </script>
   </body>
 </html>
