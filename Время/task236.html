@@ -66,6 +66,55 @@
         `Задание №3. До НГ осталось ${diff3 / 1000 / 60 / 60 / 24} дней`
       );
 
+      // Задание №4
+      // Получаем текущий год
+      let year1 = new Date().getFullYear();
+      let count1 = 0;
+
+      // Проходим по всем месяцам текущего года
+      for (let month = 0; month < 12; month++) {
+        // Создаем объект даты для каждого месяца
+        let date1 = new Date(year1, month, 13);
+
+        if (date1.getDay() == 5) {
+          count1++;
+        }
+      }
+
+      console.log(`Задание №4. В ${year1} году будет ${count1} пятниц 13-е.`);
+
+      // Задание №5
+      let today1 = new Date(); // получаем текущую дату
+
+      let threeMonthsAgo = new Date(
+        today1.getFullYear(),
+        today1.getMonth() - 3,
+        today1.getDate()
+      ); // вычисляем дату, которая была три месяца назад
+
+      let year2 = threeMonthsAgo.getFullYear(); // получаем год этой даты
+
+      console.log(`Задание №5. 3 месяца назад был ${year2}`); // выводим год в консоль
+
+      // Задание №6
+      let week = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
+
+      function getLastDayOfMonth() {
+        let today = new Date();
+
+        let lastDayOfMonth = new Date(
+          today.getFullYear(),
+          today.getMonth() + 1,
+          0
+        ).getDay();
+
+        return week[lastDayOfMonth];
+      }
+
+      console.log(
+        `Задание №6. ${getLastDayOfMonth()} будет последним днем недели текущего месяца`
+      );
+
       // Задание №7
       function isLeap() {
         if (new Date().getFullYear() == 12) {
@@ -75,10 +124,50 @@
         }
       }
       if (isLeap == true) {
-        console.log("Високосный");
+        console.log("Задание №7. Этот год Високосный");
       } else {
-        console.log("Обычный");
+        console.log("Задание №7. Этот год Обычный");
       }
+
+      // Задание №8
+      function findPreviousLeapYear(year) {
+        while (true) {
+          year--;
+          if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
+            return year;
+          }
+        }
+      }
+
+      let currentYear1 = new Date().getFullYear();
+      let previousLeapYear1 = findPreviousLeapYear(currentYear1);
+
+      console.log(
+        `Задание №8. Предыдущий високосный год от ${currentYear1}: ${previousLeapYear1}`
+      );
+
+      // Задание №9
+      function findNextLeapYear(year) {
+        let nextYear = year + 1; // начинаем со следующего года
+
+        while (true) {
+          if (
+            (nextYear % 4 === 0 && nextYear % 100 !== 0) ||
+            nextYear % 400 === 0
+          ) {
+            return nextYear;
+          }
+
+          nextYear++;
+        }
+      }
+
+      let currentYear2 = new Date().getFullYear();
+      let nextLeapYear2 = findNextLeapYear(currentYear2);
+
+      console.log(
+        `Задание №9. Следующий високосный год после ${currentYear2}: ${nextLeapYear2}`
+      );
     </script>
   </head>
   <body>
