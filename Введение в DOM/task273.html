@@ -54,6 +54,11 @@
         font-size: 25px;
         color: white;
       }
+
+      label {
+        font-size: 20px;
+        color: #f0fff0;
+      }
     </style>
   </head>
 
@@ -61,24 +66,260 @@
     <h1>Упражнение №273</h1>
     <p>Отработка изученного материала на работу с DOM</p>
 
-    <input class="cls" type="text" value="" placeholder="число" />
-    <input class="cls" type="text" value="" placeholder="число" />
-    <input class="cls" type="text" value="" placeholder="число" />
-    <button id="task">Click</button>
-    <input id="sum" type="text" value="" />
+    <!-- Задание №1 -->
+    <h3>Задание №1</h3>
+
+    <input type="text" id="inp1" />
+    <p id="p1">Text</p>
+
+    <!-- Задание №2 -->
+    <h3>Задание №2</h3>
+
+    <input type="text" id="inp2" />
+    <input type="text" id="inp3" />
+    <input type="text" id="inp4" />
+    <p id="res1"></p>
+    <button id="btn1">Посчитать</button>
+
+    <!-- Задание №3 -->
+    <h3>Задание №3</h3>
+
+    <input type="text" id="inp5" />
+
+    <!-- Задание №4 -->
+    <h3>Задание №4</h3>
+
+    <input type="text" id="numbers" />
+    <button id="btn2">Посчитать</button>
+    <p id="res2"></p>
+
+    <!-- Задание №5 -->
+    <h3>Задание №5</h3>
+
+    <label>ФИО: <input id="fullName" type="text" /></label><br /><br />
+    <label>Фамилия: <input id="surname" type="text" /></label>
+    <label>Имя: <input id="name" type="text" /></label>
+    <label>Отчество: <input id="patronymic" type="text" /></label>
+
+    <!-- Задание №6 -->
+    <h3>Задание №6</h3>
+
+    <label>Введите ФИО:</label>
+    <input type="text" id="fio" />
+
+    <!-- Задание №7 -->
+    <h3>Задание №7</h3>
+
+    <input type="text" id="inp6" />
+
+    <!-- Задание №8 -->
+    <h3>Задание №8</h3>
+
+    <input type="text" id="date" />
+
+    <!-- Задание №9 -->
+    <h3>Задание №9</h3>
+
+    <input type="text" id="inp7" />
+    <button id="btn3">Проверить</button>
+    <p id="res3"></p>
+
+    <!-- Задание №10 -->
+    <h3>Задание №10</h3>
+
+    <input type="text" id="inp8" />
+    <p id="res4"></p>
+
+    <!-- Задание №11 -->
+    <h3>Задание №11</h3>
+
+    <div id="parent">
+      <p>Текст</p>
+      <p>Текст</p>
+      <p>Текст</p>
+    </div>
+    <button id="btn4">Добавить номера в абзацы</button>
+
+    <!-- Задание №12 -->
+    <h3>Задание №12</h3>
+
+    <a href="#">Ссылка</a> <br />
+    <a href="#">Ссылка</a> <br />
+    <a href="#">Ссылка</a> <br />
 
     <script>
-      var elem = document.getElementById("task");
-      elem.addEventListener("click", func);
-      var elem1 = document.getElementsByClassName("cls");
+      // Задание №1
+      let input1 = document.querySelector("#inp1");
+      let p1 = document.querySelector("#p1");
 
-      function func() {
-        var sum = 0;
-        for (var i = 0; i < elem1.length; i++) {
-          sum += +elem1[i].value;
+      input1.addEventListener("blur", function () {
+        p1.textContent += " " + input1.value;
+      });
+
+      // Задание №2
+      let num1 = document.querySelector("#inp2");
+      let num2 = document.querySelector("#inp3");
+      let num3 = document.querySelector("#inp4");
+      let res1 = document.querySelector("#res1");
+      let calculateBtn1 = document.querySelector("#btn1");
+
+      calculateBtn1.addEventListener("click", function () {
+        let sum1 = Number(num1.value) + Number(num2.value) + Number(num3.value);
+
+        res1.textContent = `Сумма чисел: ${sum1}`;
+      });
+
+      // Задание №3
+      let elem1 = document.querySelector("#inp5");
+
+      elem1.addEventListener("blur", function () {
+        let number = elem1.value;
+        let sum2 = 0;
+
+        for (let digit of number) {
+          sum2 += Number(digit); // прибавляем каждую цифру числа к сумме
         }
-        var newElem = document.getElementById("sum");
-        newElem.value = sum;
+
+        console.log(`Сумма цифр числа: ${sum2}`);
+      });
+
+      // Задание №4
+      let elems1 = document.querySelector("#numbers");
+      let calculateBtn2 = document.querySelector("#btn2");
+      let result2 = document.querySelector("#res2");
+
+      calculateBtn2.addEventListener("click", function () {
+        let numbersArr = elems1.value.split(",");
+
+        let sum3 = 0;
+        for (let i = 0; i < numbersArr.length; i++) {
+          sum3 += Number(numbersArr[i]);
+        }
+
+        let average = sum3 / numbersArr.length;
+        result2.textContent = `Среднее арифметическое: ${average.toFixed(3)}`;
+      });
+
+      // Задание №5
+      let fullNameInput = document.querySelector("#fullName");
+
+      let surnameInput = document.querySelector("#surname");
+      let nameInput = document.querySelector("#name");
+      let patronymicInput = document.querySelector("#patronymic");
+
+      fullNameInput.addEventListener("blur", function () {
+        let fullName = fullNameInput.value.split(" ");
+
+        let surname = fullName[0];
+        let name = fullName[1];
+        let patronymic = fullName[2];
+
+        surnameInput.value = surname;
+        nameInput.value = name;
+        patronymicInput.value = patronymic;
+      });
+
+      // Задание №6
+      let fioInput = document.querySelector("#fio");
+
+      fioInput.addEventListener("blur", function () {
+        let fio = fioInput.value.split(" ");
+
+        for (let i = 0; i < fio.length; i++) {
+          let word = fio[i];
+
+          fio[i] = word[0].toUpperCase() + word.slice(1);
+        }
+
+        fioInput.value = fio.join(" ");
+      });
+
+      // Задание №7
+      let input2 = document.querySelector("#inp6");
+
+      input2.addEventListener("blur", function () {
+        let text = input2.value;
+
+        // Делим текст на слова
+        let words = text.split(" ");
+
+        // Получаем количество слов в тексте
+        let wordsCount = words.length;
+
+        // Выводим результат
+        console.log(`Количество слов в тексте: ${wordsCount}`);
+      });
+
+      // Задание №8
+      const date = document.querySelector("#date");
+
+      date.addEventListener("blur", function () {
+        let dateArr = date.value.split(".");
+
+        let year = dateArr[2];
+        let month = dateArr[1];
+        let day = dateArr[0];
+
+        let formattedDate = `${year}-${month}-${day}`;
+        date.value = formattedDate;
+      });
+
+      // Задание №9
+      let inputWord = document.querySelector("#inp7");
+      let checkBtn = document.querySelector("#btn3");
+      let p2 = document.querySelector("#res3");
+
+      checkBtn.addEventListener("click", function () {
+        let word = inputWord.value.toLowerCase();
+
+        let reversedWord = word.split("").reverse().join("");
+
+        if (word === reversedWord) {
+          p2.innerHTML = `${word} является палиндромом.`;
+        } else {
+          p2.innerHTML = `${word} не является палиндромом.`;
+        }
+      });
+
+      // Задание №10
+      const input3 = document.querySelector("#inp8");
+      const p3 = document.getElementById("res4");
+
+      input3.addEventListener("blur", function () {
+        let number = input3.value;
+        let containsThree = false;
+
+        for (let i = 0; i < number.length; i++) {
+          if (number[i] === "3") {
+            containsThree = true;
+            break;
+          }
+        }
+        if (containsThree) {
+          p3.textContent = `${number} содержит цифру 3`;
+        } else {
+          p3.textContent = `${number} не содержит цифру 3`;
+        }
+      });
+
+      // Задание №11
+      let button = document.querySelector("#btn4");
+      let paragraphs = document.querySelectorAll("#parent p");
+
+      button.addEventListener("click", function () {
+        for (let i = 0; i < paragraphs.length; i++) {
+          // проходим циклом по всем абзацам
+          let num = i + 1; // определяем порядковый номер
+          paragraphs[i].innerHTML += ` ${num}`; // добавляем порядковый номер в конец абзаца
+        }
+      });
+
+      // Задание №12
+      const links = document.querySelectorAll("a");
+
+      for (let i = 0; i < links.length; i++) {
+        const href = links[i].getAttribute("href");
+        links[i].textContent += ` (${href})`;
       }
     </script>
   </body>
