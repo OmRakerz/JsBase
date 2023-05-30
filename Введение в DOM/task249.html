@@ -65,24 +65,43 @@
     <!-- Задание №3 -->
     <h2>Задание №3</h2>
 
-    <a id="link1" href="#"> ссылка </a> <br /><br />
+    <a id="link1" href="https://ya.ru">Ссылка</a> <br /><br />
     <button id="btn3">button</button>
     <p id="p3">Lorem ipsum dolor sit amet.</p>
 
     <!-- Задание №4 -->
     <h2>Задание №4</h2>
 
+    <a href="https://ya.ru" id="link2">Ссылка</a>
+    <button id="btn4">Добавить</button>
+
     <!-- Задание №5 -->
     <h2>Задание №5</h2>
+
+    <img src="./гамелифе.jpg" width="300px" alt="а да" /><br />
+    <button id="btn5">Показать путь к картинке</button>
+    <p id="output"></p>
 
     <!-- Задание №6 -->
     <h2>Задание №6</h2>
 
+    <img src="./гамелифе.jpg" alt="а да" id="img2" /> <br />
+    <button id="btn6">Установить width = 300px</button>
+
     <!-- Задание №7 -->
     <h2>Задание №7</h2>
 
+    <img src="./гамелифе.jpg" width="150px" alt="а да" id="img3" /><br />
+    <button id="btn7">Увеличить ширину картинки в 2 раза</button>
+
     <!-- Задание №8 -->
     <h2>Задание №8</h2>
+
+    <img src="./гамелифе2.jpg" width="150px" alt="слип" id="image" /><br />
+
+    <button id="btn8">Картинка 1</button>
+    <button id="btn9">Картинка 2</button>
+    <p id="output2"></p>
 
     <script>
       // Задание №1
@@ -108,18 +127,58 @@
       let p3 = document.querySelector("#p3");
 
       button3.addEventListener("click", function () {
-        p3.innerHTML = `${link1.textContent}`;
+        p3.innerHTML = `${link1.href}`;
       });
 
       // Задание №4
+      const link2 = document.querySelector("#link2");
+      const button4 = document.querySelector("#btn4");
+
+      button4.addEventListener("click", function () {
+        link2.textContent += ` (${link2.href})`;
+      });
 
       // Задание №5
+      let button5 = document.querySelector("#btn5");
+      let output = document.querySelector("#output");
+      let img1 = document.querySelector("img");
+
+      button5.addEventListener("click", function () {
+        output.textContent = ` ${img1.getAttribute("src")}`;
+      });
 
       // Задание №6
+      let img2 = document.querySelector("#img2");
+      let button6 = document.querySelector("#btn6");
+
+      button6.addEventListener("click", function () {
+        img2.setAttribute("width", "300");
+      });
 
       // Задание №7
+      let img3 = document.querySelector("#img3");
+      let button7 = document.querySelector("#btn7");
+
+      button7.addEventListener("click", function () {
+        let currentWidth = img3.getAttribute("width");
+
+        img3.setAttribute("width", currentWidth * 2);
+      });
 
       // Задание №8
+      let image = document.querySelector("#image");
+      let button8 = document.querySelector("#btn8");
+      let button9 = document.querySelector("#btn9");
+
+      // Обработчик клика на первую кнопку
+      button1.addEventListener("click", function () {
+        image.src = "./гамелифе2.jpg";
+      });
+
+      // Обработчик клика на вторую кнопку
+      button2.addEventListener("click", function () {
+        image.src = "./гамелифе.jpg";
+      });
     </script>
   </body>
 </html>
