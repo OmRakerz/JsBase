@@ -43,11 +43,16 @@
         font-size: 20px;
         color: #f0fff0;
       }
+
+      label {
+        font-size: 20px;
+        color: #f0fff0;
+      }
     </style>
   </head>
 
   <body>
-    <h1>Упражнение №249</h1>
+    <h1>Упражнение №250</h1>
     <p>Работа с текстовыми полями</p>
 
     <!-- Задание №1 -->
@@ -72,11 +77,27 @@
     <!-- Задание №4 -->
     <h2>Задание №4</h2>
 
+    <input type="number" id="num" />
+    <input type="number" id="squared" />
+    <button id="btn4">Вычислить квадрат</button>
+
     <!-- Задание №5 -->
     <h2>Задание №5</h2>
 
+    <input type="text" id="elem51" />
+    <input type="text" id="elem52" />
+    <button id="btn5">Swap</button>
+
     <!-- Задание №6 -->
     <h2>Задание №6</h2>
+
+    <label>Число 1: <input type="number" id="num1" /></label><br />
+    <label>Число 2: <input type="number" id="num2" /></label><br />
+    <label>Число 3: <input type="number" id="num3" /></label><br />
+    <label>Число 4: <input type="number" id="num4" /></label><br />
+    <label>Число 5: <input type="number" id="num5" /></label><br /><br />
+    <button id="btn6">Рассчитать ср. арифметическое</button>
+    <p id="result"></p>
 
     <script>
       // Задание №1
@@ -107,10 +128,50 @@
       });
 
       // Задание №4
+      let numInput = document.querySelector("#num");
+      let squaredInput = document.querySelector("#squared");
+      let btn4 = document.querySelector("#btn4");
+
+      btn4.addEventListener("click", function () {
+        let num = numInput.value;
+        let squared = num ** 2;
+
+        squaredInput.value = squared;
+      });
 
       // Задание №5
+      let input51 = document.querySelector("#elem51");
+      let input52 = document.querySelector("#elem52");
+      let btn5 = document.querySelector("#btn5");
+
+      btn5.addEventListener("click", function () {
+        let temp = input51.value;
+
+        input51.value = input52.value;
+        input52.value = temp;
+      });
 
       // Задание №6
+      let num1 = document.querySelector("#num1");
+      let num2 = document.querySelector("#num2");
+      let num3 = document.querySelector("#num3");
+      let num4 = document.querySelector("#num4");
+      let num5 = document.querySelector("#num5");
+
+      let btn6 = document.querySelector("#btn6");
+      let result = document.querySelector("#result");
+
+      btn6.addEventListener("click", function () {
+        let sum =
+          Number(num1.value) +
+          Number(num2.value) +
+          Number(num3.value) +
+          Number(num4.value) +
+          Number(num5.value);
+        let average = sum / 5;
+
+        result.textContent = `Среднее арифметическое: ${average.toFixed(3)}`;
+      });
     </script>
   </body>
 </html>
