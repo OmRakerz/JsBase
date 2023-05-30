@@ -38,6 +38,11 @@
         color: white;
       }
 
+      div {
+        font-size: 20px;
+        color: #f0fff0;
+      }
+
       p {
         font-size: 25px;
         display: block;
@@ -97,17 +102,47 @@
     <!-- Задание №6 -->
     <h3>Задание №6</h3>
 
+    <div id="elem6">
+      txt<b>tag</b
+      ><!--com-->txt<b>tag</b
+      ><!--com-->
+    </div>
+
     <!-- Задание №7 -->
     <h3>Задание №7</h3>
+
+    <div id="elem7">
+      txt<b>tag</b
+      ><!--com-->txt<b>tag</b
+      ><!--com-->
+    </div>
 
     <!-- Задание №8 -->
     <h3>Задание №8</h3>
 
+    <div id="elem8">
+      txt<b>tag</b
+      ><!--com-->txt<b>tag</b
+      ><!--com-->
+    </div>
+
     <!-- Задание №9 -->
     <h3>Задание №9</h3>
 
+    <div id="elem9">
+      txt<b>tag</b
+      ><!--com-->txt<b>tag</b
+      ><!--com-->
+    </div>
+
     <!-- Задание №10 -->
     <h3>Задание №10</h3>
+
+    <div id="elem10">
+      txt<b>tag</b
+      ><!--com-->txt<b>tag</b
+      ><!--com-->
+    </div>
 
     <script>
       // Задание №1
@@ -153,14 +188,71 @@
       }
 
       // Задание №6
+      console.log("Задание №6");
+
+      let elem6 = document.querySelector("#elem6");
+
+      for (let i = 0; i < elem6.childNodes.length; i++) {
+        let node = elem6.childNodes[i];
+
+        if (
+          node.nodeType === Node.ELEMENT_NODE ||
+          node.nodeType === Node.TEXT_NODE
+        ) {
+          console.log(node);
+        }
+      }
 
       // Задание №7
+      console.log("Задание №7");
+
+      let elem7 = document.querySelector("#elem7");
+      let nodes1 = elem7.childNodes;
+
+      for (let i = 0; i < nodes1.length; i++) {
+        console.log(nodes1[i].textContent);
+      }
 
       // Задание №8
+      console.log("Задание №8");
+
+      let elem8 = document.querySelector("#elem8");
+      let childNodes = elem8.childNodes; // получаем массив всех дочерних узлов
+
+      for (let i = 0; i < childNodes.length; i++) {
+        let node = childNodes[i];
+        if (
+          node.nodeType === Node.TEXT_NODE ||
+          node.nodeType === Node.COMMENT_NODE
+        ) {
+          console.log(node.textContent || node.nodeValue || node.data); // выводим текст узла
+        }
+      }
 
       // Задание №9
+      console.log("Задание №9");
+
+      let elem9 = document.querySelector("#elem9");
+      let nodes2 = elem9.childNodes; // получаем все узлы элемента дива
+
+      for (let i = 0; i < nodes2.length; i++) {
+        if (nodes2[i].nodeType === 1) {
+          console.log(nodes2[i].textContent); // если узел - элемент, выводим текстовый контент
+        } else if (nodes2[i].nodeType === 3) {
+          console.log(nodes2[i].data); // если узел - текстовый узел, выводим данные
+        }
+      }
 
       // Задание №10
+      console.log("Задание №10");
+
+      let elem10 = document.querySelector("#elem10");
+      let nodes = elem10.childNodes;
+
+      for (let node of nodes) {
+        // перебираем все узлы этого div
+        node.textContent += " " + node.nodeType; // добавляем в конец тип узла
+      }
     </script>
   </body>
 </html>
